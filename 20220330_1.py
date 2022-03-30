@@ -2,8 +2,9 @@ from time import perf_counter_ns as ns
 
 
 def solution(numbers, hand):
-    """Result: Passed
-    https://programmers.co.kr/learn/courses/30/lessons/67256
+    """
+    Problem: https://programmers.co.kr/learn/courses/30/lessons/67256
+    Result: Passed
     """
     answer, l, r  = '', 10, 12
     for n in (n if n else 11 for n in numbers):
@@ -30,8 +31,7 @@ if __name__ == '__main__':
     )
     for numbers, hand, expected in tests:
         print(f'solution({numbers}, "{hand}") returned', end=' ')
-        result = solution(numbers, hand)
-        if result == expected:
+        if (result := solution(numbers, hand)) == expected:
             print(f'the expected result "{expected}"', end=' ')
             fastest = float('inf')
             slowest = total = 0
