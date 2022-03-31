@@ -1,4 +1,3 @@
-from doctest import OutputChecker
 from time import perf_counter_ns as ns
 
 
