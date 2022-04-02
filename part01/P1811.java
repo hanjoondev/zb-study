@@ -1,13 +1,13 @@
 public class P1811 {
-    public static void solution(int num) {
-
+    public static int solution(int n) {
+        return n < 0 ? -solution(-n) : Integer.parseInt(new StringBuilder().append(n).reverse().toString());
     }
 
     public static void main(String[] args) {
         // Test code
-        solution(12345);
-        solution(-12345);
-        solution(100);
-        solution(0);
+        System.out.println(solution(12345));
+        System.out.println(solution(-12345));
+        System.out.println(solution(100));
+        System.out.println(solution(0));
     }
 }
