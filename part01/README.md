@@ -2,10 +2,10 @@
 ## Table of Contents
 | Part | Chapter | Subchapter |              Number             |                 Solution                  | Description |
 | :--: | :-----: | :--------: | :-----------------------------: | :---------------------------------------: | :---------: |
-|  01  |   01    |    18_1    | [01](./README.md#practice-1811) | [Java](./P1811.java)                      | 정수 역순으로 뒤집기 |
-|  01  |   01    |    18_1    | [02](./README.md#practice-1812) | [Java](./P1812.java)                      | 대소문자 변경 |
-|  01  |   01    |    18_1    | [03](./README.md#practice-1813) | [Java](./P1813.java)                      | String.replace() 구현 |
-|  01  |   01    |    18_1    | [04](./README.md#practice-1814) | [Java](./P1814.java)                      | 별 모양 프린트 |
+|  01  |   01    |    18_1    | [01](./README.md#practice-1811) | [Java](./P1811.java) [Python](./P1811.py) | 정수 역순으로 뒤집기 |
+|  01  |   01    |    18_1    | [02](./README.md#practice-1812) | [Java](./P1812.java) [Python](./P1812.py) | 대소문자 변경 |
+|  01  |   01    |    18_1    | [03](./README.md#practice-1813) | [Java](./P1813.java) [Python](./P1813.py) | String.replace() 구현 |
+|  01  |   01    |    18_1    | [04](./README.md#practice-1814) | [Java](./P1814.java) [Python](./P1814.py) | 별 모양 프린트 |
 |  01  |   01    |    18_1    | [05](./README.md#practice-1815) | [Java](./P1815.java)                      | 저수량이 최대가 되는 벽 고르기 |
 |  01  |   01    |    18_2    | [01](./README.md#practice-1821) | [Java](./P1821.java)                      | 로마 숫자 → Integer |
 |  01  |   01    |    18_2    | [02](./README.md#practice-1822) | [Java](./P1822.java)                      | Integer → 로마 숫자 |
