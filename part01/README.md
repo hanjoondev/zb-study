@@ -1,22 +1,22 @@
 # Part 01. Java 기초 연습문제
 ## Table of Contents
-| Part | Chapter | Subchapter |              Number             |       Solution       | Description |
-| :--: | :-----: | :--------: | :-----------------------------: | :------------------: | :---------: |
-|  01  |   01    |    18_1    | [01](./README.md#practice-1811) | [Java](./P1811.java) | 정수 역순으로 뒤집기 |
-|  01  |   01    |    18_1    | [02](./README.md#practice-1812) | [Java](./P1812.java) | 대소문자 변경 |
-|  01  |   01    |    18_1    | [03](./README.md#practice-1813) | [Java](./P1813.java) | String.replace() 구현 |
-|  01  |   01    |    18_1    | [04](./README.md#practice-1814) | [Java](./P1814.java) | 별 모양 프린트 |
-|  01  |   01    |    18_1    | [05](./README.md#practice-1815) | [Java](./P1815.java) | 저수량이 최대가 되는 벽 고르기 |
-|  01  |   01    |    18_2    | [01](./README.md#practice-1821) | [Java](./P1821.java) | 로마 숫자 → Integer |
-|  01  |   01    |    18_2    | [02](./README.md#practice-1822) | [Java](./P1822.java) | Integer → 로마 숫자 |
-|  01  |   01    |    18_2    | [03](./README.md#practice-1823) | [Java](./P1823.java) | 간단한 에디터 구현 |
-|  01  |   01    |    18_2    | [04](./README.md#practice-1824) | [Java](./P1824.java) | ASCII → String |
-|  01  |   01    |    18_2    | [05](./README.md#practice-1825) | [Java](./P1825.java) | 사탕 나눠주기 |
-|  01  |   01    |    18_3    | [01](./README.md#practice-1831) | [Java](./P1831.java) | 배열에서 중복 제거 후 정렬 |
-|  01  |   01    |    18_3    | [02](./README.md#practice-1832) | [Java](./P1832.java) | 배열에서 두 번 나타나는 정수들 반환 | 
-|  01  |   01    |    18_3    | [03](./README.md#practice-1833) | [Java](./P1833.java) | 배열에서 절대값 가까운 수 k개 출력 (작은 수 우선) |
-|  01  |   01    |    18_3    | [04](./README.md#practice-1834) | [Java](./P1834.java) | 2D 배열 나선형 방향 출력 |
-|  01  |   01    |    18_3    | [05](./README.md#practice-1835) | [Java](./P1835.java) | 벽 사이 총 저수량 |
+| Part | Chapter | Subchapter |              Number             |                 Solution                  | Description |
+| :--: | :-----: | :--------: | :-----------------------------: | :---------------------------------------: | :---------: |
+|  01  |   01    |    18_1    | [01](./README.md#practice-1811) | [Java](./P1811.java)                      | 정수 역순으로 뒤집기 |
+|  01  |   01    |    18_1    | [02](./README.md#practice-1812) | [Java](./P1812.java)                      | 대소문자 변경 |
+|  01  |   01    |    18_1    | [03](./README.md#practice-1813) | [Java](./P1813.java)                      | String.replace() 구현 |
+|  01  |   01    |    18_1    | [04](./README.md#practice-1814) | [Java](./P1814.java)                      | 별 모양 프린트 |
+|  01  |   01    |    18_1    | [05](./README.md#practice-1815) | [Java](./P1815.java)                      | 저수량이 최대가 되는 벽 고르기 |
+|  01  |   01    |    18_2    | [01](./README.md#practice-1821) | [Java](./P1821.java)                      | 로마 숫자 → Integer |
+|  01  |   01    |    18_2    | [02](./README.md#practice-1822) | [Java](./P1822.java)                      | Integer → 로마 숫자 |
+|  01  |   01    |    18_2    | [03](./README.md#practice-1823) | [Java](./P1823.java)                      | 간단한 에디터 구현 |
+|  01  |   01    |    18_2    | [04](./README.md#practice-1824) | [Java](./P1824.java) [Python](./P1824.py) | ASCII → String |
+|  01  |   01    |    18_2    | [05](./README.md#practice-1825) | [Java](./P1825.java)                      | 사탕 나눠주기 |
+|  01  |   01    |    18_3    | [01](./README.md#practice-1831) | [Java](./P1831.java)                      | 배열에서 중복 제거 후 정렬 |
+|  01  |   01    |    18_3    | [02](./README.md#practice-1832) | [Java](./P1832.java)                      | 배열에서 두 번 나타나는 정수들 반환 | 
+|  01  |   01    |    18_3    | [03](./README.md#practice-1833) | [Java](./P1833.java)                      | 배열에서 절대값 가까운 수 k개 출력 (작은 수 우선) |
+|  01  |   01    |    18_3    | [04](./README.md#practice-1834) | [Java](./P1834.java)                      | 2D 배열 나선형 방향 출력 |
+|  01  |   01    |    18_3    | [05](./README.md#practice-1835) | [Java](./P1835.java)                      | 벽 사이 총 저수량 |
 
 
 ## Chapter 01. Java 프로그래밍
