@@ -1,6 +1,14 @@
 public class P1815 {
     public static int solution(int[] height) {
-        return 0;
+        int w = 0, l = 0, r = height.length - 1;
+        while (l < r) {
+            w = Math.max(Math.min(height[l], height[r]) * (r - l), w);
+            if (height[l] < height[r])
+                l++;
+            else
+                r--;
+        }
+        return w;
     }
 
     public static void main(String[] args) {
