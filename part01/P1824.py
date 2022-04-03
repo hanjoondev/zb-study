@@ -6,7 +6,7 @@ def solution(l):
     for n in l:
         t = d.get(n, "") if caps + shift in (0, 2) else d.get(n, "").swapcase()
         t = s.get(n, "") if shift and 48 <= n < 58 else t
-        r = r[:p] + t + r[p + 1 if insert else p:]
+        r = r[:p] + t + r[p + 1 if insert and t else p:]
         r = (r[:p] + r[p + 1:]) if n == 127 else r
         p += 1 * t != ""
         p -= 1 * p > 0 and n == 37
@@ -17,8 +17,9 @@ def solution(l):
         if n == 32:
             r = (r[:p] + " " + r[p:])
             p += 1
-        insert = 1 * n == 155
         shift = 1 * n == 16
+        if n == 155:
+            insert = 1 * insert != 1
         if n == 20:
             caps = 1 * caps != 1
     return r
