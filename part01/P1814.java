@@ -42,8 +42,8 @@ public class P1814 {
 
     public static void type5(int n) {
         System.out.println("== Type5 ==");
-        IntStream.range(0, (int) Math.ceil(n / 2) + 1).forEach(i -> System.out.printf("%s%s%s\n", " ".repeat((int) Math.round(n / 2) - i), "*".repeat(i + 1), "*".repeat(i)));
-        IntStream.range(0, (int) Math.ceil(n / 2)).forEach(i -> System.out.printf("%s%s%s\n", " ".repeat(i + 1), "*".repeat((int) Math.round(n / 2) - i), "*".repeat((int) Math.round(n / 2) - i - 1)));
+        IntStream.range(0, (int) Math.ceil(n / 2) + 1).forEach(i -> System.out.printf("%s%s\n", " ".repeat((int) Math.round(n / 2) - i), "*".repeat(2 * i + 1)));
+        IntStream.range(0, (int) Math.ceil(n / 2)).forEach(i -> System.out.printf("%s%s\n", " ".repeat(i + 1), "*".repeat(n - 2 * (i + 1))));
         System.out.println();
     }
 
