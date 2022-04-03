@@ -5,9 +5,9 @@ public class P1812 {
         Scanner userInput = new Scanner(System.in);
         System.out.printf("Enter any string: ");
         String s = userInput.nextLine();
-        System.out.println(s.chars().map(c -> Character.isLowerCase(c) ? Character.toUpperCase(c) : Character.toLowerCase(c))
-                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString());
         userInput.close();
+        System.out.println(s.chars().map(c -> Character.isLowerCase(c) ? Character.toUpperCase(c) : Character.toLowerCase(c))
+                                    .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString());
     }
 
     public static void reference() {
