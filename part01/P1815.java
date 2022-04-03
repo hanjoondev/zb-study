@@ -18,6 +18,5 @@ public class P1815 {
 
         height = new int[]{5, 3, 9, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2};
         System.out.println(solution(height));
-
     }
 }
