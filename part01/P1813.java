@@ -1,6 +1,28 @@
 public class P1813 {
     public static String solution(char[] str, char[] find, char[] to) {
-        return null;
+        String ans = "";
+        int sLen = str.length, fLen = find.length, tLen = to.length;
+        for (int i = 0; i < sLen; i++) {
+            if (str[i] == find[0] && i + fLen <= sLen) {
+                Boolean isEqual = true;
+                for (int j = 0; j < fLen; j++) {
+                    if (str[i + j] != find[j]) {
+                        isEqual = false;
+                        break;
+                    }
+                }
+                if (isEqual) {
+                    for (int j = 0; j < tLen; j++)
+                        ans += to[j];
+                    i += fLen - 1;
+                } else {
+                    ans += str[i];
+                }
+            } else {
+                ans += str[i];
+            }
+        }
+        return ans;
     }
 
     public static void main(String[] args) {
