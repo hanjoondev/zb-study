@@ -2,13 +2,13 @@
 
 |    Date    | Num | Problem | Solution |
 | :--------: | :-: | :-----: | :------: |
-| 2022-03-30 |  1  | [[카카오 인턴] 키패드 누르기](https://programmers.co.kr/learn/courses/30/lessons/67256) | [Python](https://github.com/hanjoondev/zb-study/blob/main/20220330_1.py) |
-| 2022-03-30 |  2  | [[카카오 인턴] 수식 최대화](https://programmers.co.kr/learn/courses/30/lessons/67257) | [Python](https://github.com/hanjoondev/zb-study/blob/main/20220330_2.py) |
+| 2022-03-30 |  1  | [[카카오 인턴] 키패드 누르기](https://programmers.co.kr/learn/courses/30/lessons/67256) | [Python](./20220330_1.py) |
+| 2022-03-30 |  2  | [[카카오 인턴] 수식 최대화](https://programmers.co.kr/learn/courses/30/lessons/67257) | [Python](./20220330_2.py) |
 | 2022-03-30 |  3  | [양궁대회](https://programmers.co.kr/learn/courses/30/lessons/92342) |  |
-| 2022-03-30 |  4  | [게임 맵 최단거리](https://programmers.co.kr/learn/courses/30/lessons/1844) | [Python](https://github.com/hanjoondev/zb-study/blob/main/20220330_4.py) |
+| 2022-03-30 |  4  | [게임 맵 최단거리](https://programmers.co.kr/learn/courses/30/lessons/1844) | [Python](./20220330_4.py) |
 | 2022-03-30 |  5  | [빙산](https://www.acmicpc.net/problem/2573) |  |
-| 2022-03-31 |  1  | [비밀번호 찾기](https://www.acmicpc.net/problem/17219) | [Python](https://github.com/hanjoondev/zb-study/blob/main/20220331_1.py) |
-| 2022-03-31 |  2  | [프린터](https://programmers.co.kr/learn/courses/30/lessons/42587) | [Python](https://github.com/hanjoondev/zb-study/blob/main/20220331_2.py) |
+| 2022-03-31 |  1  | [비밀번호 찾기](https://www.acmicpc.net/problem/17219) | [Python](./20220331_1.py) |
+| 2022-03-31 |  2  | [프린터](https://programmers.co.kr/learn/courses/30/lessons/42587) | [Python](./20220331_2.py) |
 | 2022-03-31 |  3  | [피보나치 함수](https://www.acmicpc.net/problem/1003) |  |
 | 2022-03-31 |  4  | [봄버맨](https://www.acmicpc.net/problem/16918) |  |
 | 2022-03-31 |  5  | [마법사 상어와 파이어볼](https://www.acmicpc.net/problem/20056) |  |
