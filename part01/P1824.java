@@ -8,8 +8,42 @@ public class P1824 {
         final int KEY_RIGHT = 39;
         final int INSERT = 155;
         final int DELETE = 127;
-
-        return null;
+        String ans = "";
+        char[] sym = {')', '!', '@', '#', '$', '%', '^', '&', '*', '('};
+        int cur = 0;
+        Boolean caps = false, shift = false, insert = false;
+        for (int k : keyLog) {
+            if (k == CAPS_LOCK) {
+                caps = caps ? false : true;
+            } else if (k == INSERT) {
+                insert = insert ? false : true;
+            } else if (k == KEY_LEFT && cur > 0) {
+                cur--;
+            } else if (k == KEY_RIGHT && cur <= ans.length()) {
+                cur++;
+            } else if (k == SPACE_BAR) {
+                ans = ans.substring(0, cur) + " " + ans.substring(cur, ans.length());
+                cur++;
+            } else if (k == BACK_SPACE) {
+                ans = ans.substring(0, cur > 0 ? cur - 1 : 0) + ans.substring(cur, ans.length());
+                cur--;
+            } else if (97 <= k && k <= 122) {
+                String tmp = Character.toString(shift && caps || !shift && !caps ? k : k - 32);
+                ans = ans.substring(0, cur) + tmp + ans.substring(insert ? cur + 1 : cur, ans.length());
+                cur++;
+            } else if (48 <= k && k <= 57) {
+                String tmp = Character.toString(!shift ? k : sym[k - 48]);
+                ans = ans.substring(0, cur) + tmp + ans.substring(insert ? cur + 1 : cur, ans.length());
+                cur++;
+            } else if (k == DELETE) {
+                ans = ans.substring(0, cur) + ans.substring(cur + 1, ans.length());
+            }
+            if (k == SHIFT)
+                shift = true;
+            else
+                shift = false;
+        }
+        return ans;
     }
 
     public static void main(String[] args) {
