@@ -16,3 +16,9 @@
 | 2022-04-01 |  2  | [스타트와 링크](https://www.acmicpc.net/problem/14889) |  |
 | 2022-04-01 |  3  | [[1차] 캐시](https://programmers.co.kr/learn/courses/30/lessons/17680) |  |
 | 2022-04-01 |  4  | [2105. [모의 SW 역량테스트] 디저트 카페](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5VwAr6APYDFAWu) |  |
+| 2022-04-04 |  1  | [좀비 바이러스](https://www.acmicpc.net/problem/24513) |  |
+| 2022-04-04 |  2  | [골드바흐의 추측](https://www.acmicpc.net/problem/9020) |  |
+| 2022-04-04 |  3  | [[1차] 비밀지도](https://programmers.co.kr/learn/courses/30/lessons/17681) |  |
+| 2022-04-05 |  1  | [알파벳](https://www.acmicpc.net/problem/1987) |  |
+| 2022-04-05 |  2  | [사탕 게임](https://www.acmicpc.net/problem/3085) |  |
+| 2022-04-05 |  3  | [탈출](https://www.acmicpc.net/problem/3055) |  |
