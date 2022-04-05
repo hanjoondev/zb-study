@@ -3,10 +3,18 @@ import java.util.Arrays;
 public class L1411 {
 
     public static int[] solution(int[] arr){
-        int[] arrNew = new int[arr.length];
-
-
-        return arrNew;
+        int idx = 0, len = arr.length;
+        int[] ans = new int[len];
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                if (ans[i] == 0) 
+                    break;
+                idx = (idx + 1) % len;
+            }
+            ans[idx] = arr[i];
+            idx = (idx + 1) % len;
+        }
+        return ans;
     }
 
     public static int[] modification(int[] arr) {
