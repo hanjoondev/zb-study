@@ -1,6 +1,24 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class P1833 {
     public static void solution(int[] arr, int k, int x) {
-
+        Arrays.sort(arr);
+        Map<Integer, Integer> m = IntStream.range(0, arr.length)
+            .boxed().collect(Collectors.toMap(i -> arr[i], 
+                                              i -> Math.abs(x - arr[i])))
+            .entrySet().stream().sorted(Entry.comparingByValue())
+            .collect(Collectors.toMap(Entry::getKey, Entry::getValue, 
+                                      (e1, e2) -> e1, LinkedHashMap::new));
+        List<Integer> perSpec = m.keySet().stream().limit(k).collect(Collectors.toList());
+        Collections.sort(perSpec);  // as per the example, not the specification
+        System.out.println(perSpec);
     }
 
     public static void main(String[] args) {
