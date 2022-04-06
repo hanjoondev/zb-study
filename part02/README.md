@@ -3,12 +3,12 @@
 | Part | Chapter | Subchapter |              Number             |                 Solution                  | Description |
 | :--: | :-----: | :--------: | :-----------------------------: | :---------------------------------------: | :---------: |
 |  02  |   01    |    09_1    | [01](./README.md#practice-0911) | [Java](./M0911.java)                      | 파스칼 삼각형 출력 |
-|  02  |   01    |    09_1    | [02](./README.md#practice-0912) | [Java](./M0912.java)                      | 한자리 정수 배열, 현배열 다음으로 큰 수 및 1스왑으로 가능한 가장 큰 수 구하기 |
+|  02  |   01    |    09_1    | [02](./README.md#practice-0912) | [Java](./M0912.java)                      | 한자리 정수 배열, 현배열 다음으로 큰 수 구하기 (1스왑) |
 |  02  |   01    |    09_1    | [03](./README.md#practice-0913) | [Java](./M0913.java)                      | String 1의 permutation이 String 2에 포함되는지 판별 |
 |  02  |   01    |    09_1    | [04](./README.md#practice-0914) | [Java](./M0914.java)                      | 각 자리수를 제곱해서 더했을 때 1로 수렴하는지 판별 |
 |  02  |   01    |    09_1    | [05](./README.md#practice-0915) | [Java](./M0915.java)                      | 해안선 길이 구하기 |
 |  02  |   01    |    09_2    | [01](./README.md#practice-0921) | [Java](./M0921.java)                      | nth Catalan number |
-|  02  |   01    |    09_2    | [02](./README.md#practice-0922) | [Java](./M0922.java)                      | palindrome / pseudopalindrome (which becomes a palindrome after removing exactly one character) |
+|  02  |   01    |    09_2    | [02](./README.md#practice-0922) | [Java](./M0922.java)                      | palindrome / pseudopalindrome[^1] |
 |  02  |   01    |    09_2    | [03](./README.md#practice-0923) | [Java](./M0923.java)                      | 1차 방정식 풀이 |
 |  02  |   01    |    09_2    | [04](./README.md#practice-0924) | [Java](./M0924.java)                      | 짝수 인덱스에는 짝수, 홀수 인덱스에는 소수인 숫자 갯수 구하기 |
 |  02  |   01    |    09_2    | [05](./README.md#practice-0925) | [Java](./M0925.java)                      | 하노이의 탑 |
@@ -23,6 +23,7 @@
 |  02  |   02    |    14_2    | [04](./README.md#practice-1424) | [Java](./L1424.java)                      | 참가자 배열 중 완주자 배열에 포함되지 않은 요소 구하기 (중복 가능) |
 |  02  |   02    |    14_2    | [05](./README.md#practice-1425) | [Java](./L1425.java)                      | 배열상 요소를 한 종류씩 포함하는 최단 구간 |
 
+[^1]: which becomes a palindrome after removing exactly one character.
 
 ## Chapter 01. 기초 수학
 ### [Practice 0911](./M0911.java)

@@ -31,12 +31,12 @@
 |  01  | [01. 18_3. 04](./part01/README.md#practice-1834) | [Java](./part01/P1834.java)                             | 2D 배열 나선형 방향 출력 |
 |  01  | [01. 18_3. 05](./part01/README.md#practice-1835) | [Java](./part01/P1835.java)                             | 벽 사이 총 저수량 |
 |  02  | [02. 09_1. 01](./part02/README.md#practice-0911) | [Java](./part02/M0911.java)                             | 파스칼 삼각형 출력 |
-|  02  | [01. 09_1. 02](./part02/README.md#practice-0912) | [Java](./part02/M0912.java)                             | 한자리 정수 배열, 현배열 다음으로 큰 수 및 1스왑으로 가능한 가장 큰 수 구하기 |
+|  02  | [01. 09_1. 02](./part02/README.md#practice-0912) | [Java](./part02/M0912.java)                             | 한자리 정수 배열, 현배열 다음으로 큰 수 구하기 (1스왑) |
 |  02  | [01. 09_1. 03](./part02/README.md#practice-0913) | [Java](./part02/M0913.java)                             | String 1의 permutation이 String 2에 포함되는지 판별 |
 |  02  | [01. 09_1. 04](./part02/README.md#practice-0914) | [Java](./part02/M0914.java)                             | 각 자리수를 제곱해서 더했을 때 1로 수렴하는지 판별 |
 |  02  | [01. 09_1. 05](./part02/README.md#practice-0915) | [Java](./part02/M0915.java)                             | 해안선 길이 구하기 |
 |  02  | [01. 09_2. 01](./part02/README.md#practice-0921) | [Java](./part02/M0921.java)                             | nth Catalan number |
-|  02  | [01. 09_2. 02](./part02/README.md#practice-0922) | [Java](./part02/M0922.java)                             | palindrome / pseudopalindrome (which becomes a palindrome after removing exactly one character) |
+|  02  | [01. 09_2. 02](./part02/README.md#practice-0922) | [Java](./part02/M0922.java)                             | palindrome / pseudopalindrome[^2] |
 |  02  | [01. 09_2. 03](./part02/README.md#practice-0923) | [Java](./part02/M0923.java)                             | 1차 방정식 풀이 |
 |  02  | [01. 09_2. 04](./part02/README.md#practice-0924) | [Java](./part02/M0924.java)                             | 짝수 인덱스에는 짝수, 홀수 인덱스에는 소수인 숫자 갯수 구하기 |
 |  02  | [01. 09_2. 05](./part02/README.md#practice-0925) | [Java](./part02/M0925.java)                             | 하노이의 탑 |
@@ -52,3 +52,4 @@
 |  02  | [02. 14_2. 05](./part02/README.md#practice-1425) | [Java](./part02/L1425.java)                             | 배열상 요소를 한 종류씩 포함하는 최단 구간 |
 
 [^1]: `String.format("%02d. %02d_%d. %02d", chapter, subchapter, subchapterOfSubchapter, problemNo)`
+[^2]: which becomes a palindrome after removing exactly one character.
