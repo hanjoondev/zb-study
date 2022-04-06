@@ -1,19 +1,19 @@
 import java.util.HashMap;
 
-class Node {
+class N1334Node {
     HashMap<Character, Node> child;
     boolean isTerminal;
 
-    public Node() {
+    public void Node() {
         this.child = new HashMap<>();
         this.isTerminal = false;
     }
 }
 
-class Trie {
+class N1334Trie {
     Node root;
 
-    public Trie() {
+    public void Trie() {
         this.root = new Node();
     }
 
