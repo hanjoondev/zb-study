@@ -50,6 +50,20 @@
 |  02  | [02. 14_2. 03](./part02/README.md#practice-1423) | [Java](./part02/L1423.java)                             | 장르카운트 > 고유카운트 > 고유번호 순서로 정렬 (장르별 2개씩) |
 |  02  | [02. 14_2. 04](./part02/README.md#practice-1424) | [Java](./part02/L1424.java)                             | 참가자 배열 중 완주자 배열에 포함되지 않은 요소 구하기 (중복 가능) |
 |  02  | [02. 14_2. 05](./part02/README.md#practice-1425) | [Java](./part02/L1425.java)                             | 배열상 요소를 한 종류씩 포함하는 최단 구간 |
-
+|  02  | [02. 13_1. 01](./part02/README.md#practice-1321) | [Java](./part02/N1311.java)                             | 2D array에서 문자열 찾기 |
+|  02  | [02. 13_1. 02](./part02/README.md#practice-1312) | [Java](./part02/N1312.java)                             | 2D array에서 x로 둘러싸인 부분 찾기 |
+|  02  | [02. 13_1. 03](./part02/README.md#practice-1313) | [Java](./part02/N1313.java)                             | 중복 이메일 병합 (동명이인 존재) |
+|  02  | [02. 13_1. 04](./part02/README.md#practice-1314) | [Java](./part02/N1314.java)                             | 4 digit combination padlock 회전수 계산 |
+|  02  | [02. 13_1. 05](./part02/README.md#practice-1315) | [Java](./part02/N1315.java)                             | 1D 로봇 이동횟수 계산 |
+|  02  | [02. 13_1. 01](./part02/README.md#practice-1321) | [Java](./part02/N1321.java)                             | 가장 낮은 번호 의자에 앉기 |
+|  02  | [02. 13_1. 02](./part02/README.md#practice-1322) | [Java](./part02/N1322.java)                             | 각 쿼리를 포함하는 최소구간 |
+|  02  | [02. 13_1. 03](./part02/README.md#practice-1323) | [Java](./part02/N1323.java)                             | 초기 배열을 타겟 배열로 변형 가부 판단 |
+|  02  | [02. 13_1. 04](./part02/README.md#practice-1324) | [Java](./part02/N1324.java)                             | 총 작업성능이 최대가 되는 선택 |
+|  02  | [02. 13_1. 05](./part02/README.md#practice-1325) | [Java](./part02/N1325.java)                             | 문자열+패턴으로 주어진 문자열들을 만들 수 있는지 판별 |
+|  02  | [02. 13_1. 01](./part02/README.md#practice-1331) | [Java](./part02/N1331.java)                             | 일반인과 색약자에게 보이는 구역수 판정 |
+|  02  | [02. 13_1. 02](./part02/README.md#practice-1332) | [Java](./part02/N1332.java)                             | 불을 켤 수 있는 방의 최대수 |
+|  02  | [02. 13_1. 03](./part02/README.md#practice-1333) | [Java](./part02/N1333.java)                             | 여러 계산대가 있을 때 계산 완료 순서 |
+|  02  | [02. 13_1. 04](./part02/README.md#practice-1334) | [Java](./part02/N1334.java)                             | 전화번호 목록 일관성 여부 식별 |
+|  02  | [02. 13_1. 05](./part02/README.md#practice-1335) | [Java](./part02/N1335.java)                             | 자동완성 구현 및 평균 타이핑 수 계산 |
 [^1]: `String.format("%02d. %02d_%d. %02d", chapter, subchapter, subchapterOfSubchapter, problemNo)`
 [^2]: which becomes a palindrome after removing exactly one character.
