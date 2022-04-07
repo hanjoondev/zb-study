@@ -133,8 +133,11 @@ dmypy.json
 .idea
 **/.vscode/
 **/*.iml
-**/out/*
-**/*.class
 
 # macOS
 .DS_Store
+
+# others
+**/out/*
+**/*.class
+*.out
