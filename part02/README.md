@@ -4,23 +4,23 @@
 | :--: | :-----: | :--------: | :-----------------------------: | :---------------------------------------: | :---------: |
 |  02  |   01    |    09_1    | [01](./README.md#practice-0911) | [Java](./M0911.java)                      | 파스칼 삼각형 출력 |
 |  02  |   01    |    09_1    | [02](./README.md#practice-0912) | [Java](./M0912.java)                      | 한자리 정수 배열, 현배열 다음으로 큰 수 구하기 (1스왑) |
-|  02  |   01    |    09_1    | [03](./README.md#practice-0913) | [Java](./M0913.java)                      | String 1의 permutation이 String 2에 포함되는지 판별 |
-|  02  |   01    |    09_1    | [04](./README.md#practice-0914) | [Java](./M0914.java)                      | 각 자리수를 제곱해서 더했을 때 1로 수렴하는지 판별 |
+|  02  |   01    |    09_1    | [03](./README.md#practice-0913) | [Java](./M0913.java)                      | str1의 permutation이 str2에 포함되는지 판별 |
+|  02  |   01    |    09_1    | [04](./README.md#practice-0914) | [Java](./M0914.java)                      | 각 자리수 제곱의 합이 1로 수렴하는지 판정[^1] |
 |  02  |   01    |    09_1    | [05](./README.md#practice-0915) | [Java](./M0915.java)                      | 해안선 길이 구하기 |
-|  02  |   01    |    09_2    | [01](./README.md#practice-0921) | [Java](./M0921.java)                      | nth Catalan number |
-|  02  |   01    |    09_2    | [02](./README.md#practice-0922) | [Java](./M0922.java)                      | palindrome / pseudopalindrome[^1] |
+|  02  |   01    |    09_2    | [01](./README.md#practice-0921) | [Java](./M0921.java)                      | nth Catalan number[^2] |
+|  02  |   01    |    09_2    | [02](./README.md#practice-0922) | [Java](./M0922.java)                      | palindrome / pseudopalindrome[^3] |
 |  02  |   01    |    09_2    | [03](./README.md#practice-0923) | [Java](./M0923.java)                      | 1차 방정식 풀이 |
-|  02  |   01    |    09_2    | [04](./README.md#practice-0924) | [Java](./M0924.java)                      | 짝수 인덱스에는 짝수, 홀수 인덱스에는 소수인 숫자 갯수 구하기 |
+|  02  |   01    |    09_2    | [04](./README.md#practice-0924) | [Java](./M0924.java)                      | 짝수 인덱스에는 짝수, 홀수 인덱스에는 소수인 숫자 갯수 |
 |  02  |   01    |    09_2    | [05](./README.md#practice-0925) | [Java](./M0925.java)                      | 하노이의 탑 |
 |  02  |   02    |    14_1    | [01](./README.md#practice-1421) | [Java](./L1411.java)                      | 주어진 코드에 의해 변형된 배열을 원배열로 되돌리기 |
 |  02  |   02    |    14_1    | [02](./README.md#practice-1412) | [Java](./L1412.java)                      | 2D 배열에서 0이 있는 행과 열을 0으로 변경 |
 |  02  |   02    |    14_1    | [03](./README.md#practice-1413) | [Java](./L1413.java)                      | 풍선 터뜨리는 순서 |
 |  02  |   02    |    14_1    | [04](./README.md#practice-1414) | [Java](./L1414.java)                      | 괄호 정상여부 판정 |
 |  02  |   02    |    14_1    | [05](./README.md#practice-1415) | [Java](./L1415.java)                      | Snake 게임 종료시점 계산 |
-|  02  |   02    |    14_2    | [01](./README.md#practice-1421) | [Java](./L1421.java)                      | 문서 중요도순 출력 |
+|  02  |   02    |    14_2    | [01](./README.md#practice-1421) | [Java](./L1421.java) [Python](./L1421.py) | 문서 중요도순 출력 |
 |  02  |   02    |    14_2    | [02](./README.md#practice-1422) | [Java](./L1422.java)                      | stack으로 특정 수열 만들기 |
-|  02  |   02    |    14_2    | [03](./README.md#practice-1423) | [Java](./L1423.java)                      | 장르카운트 > 고유카운트 > 고유번호 순서로 정렬 (장르별 2개씩) |
-|  02  |   02    |    14_2    | [04](./README.md#practice-1424) | [Java](./L1424.java)                      | 참가자 배열 중 완주자 배열에 포함되지 않은 요소 구하기 (중복 可) |
+|  02  |   02    |    14_2    | [03](./README.md#practice-1423) | [Java](./L1423.java)                      | 장르카운트 → 고유카운트 → uid 순서 정렬 (장르별 2개) |
+|  02  |   02    |    14_2    | [04](./README.md#practice-1424) | [Java](./L1424.java)                      | p배열 중 c배열에 포함되지 않은 요소 구하기 (중복可) |
 |  02  |   02    |    14_2    | [05](./README.md#practice-1425) | [Java](./L1425.java)                      | 배열상 요소를 한 종류씩 포함하는 최단 구간 |
 |  02  |   03    |    13_1    | [01](./README.md#practice-1321) | [Java](./N1311.java)                      | 2D array에서 문자열 찾기 |
 |  02  |   03    |    13_1    | [02](./README.md#practice-1312) | [Java](./N1312.java)                      | 2D array에서 x로 둘러싸인 부분 찾기 |
@@ -37,8 +37,9 @@
 |  02  |   03    |    13_3    | [03](./README.md#practice-1333) | [Java](./N1333.java)                      | 여러 계산대가 있을 때 계산 완료 순서 |
 |  02  |   03    |    13_3    | [04](./README.md#practice-1334) | [Java](./N1334.java)                      | 전화번호 목록 일관성 여부 식별 |
 |  02  |   03    |    13_3    | [05](./README.md#practice-1335) | [Java](./N1335.java)                      | 자동완성 구현 및 평균 타이핑 수 계산 |
-
-[^1]: which becomes a palindrome after removing exactly one character.
+[^1]: [Happy Number](https://en.wikipedia.org/wiki/Happy_number)
+[^2]: [Catalan Number](https://en.wikipedia.org/wiki/Catalan_number)
+[^3]: which becomes a palindrome after removing exactly one character.
 
 ## Chapter 01. 기초 수학
 ### [Practice 0911](./M0911.java)
