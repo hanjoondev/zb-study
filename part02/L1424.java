@@ -1,9 +1,14 @@
-import java.util.Hashtable;
+import java.util.Arrays;
 
 public class L1424 {
-    public static String solution(String[] participant, String[] completion) {
-
-        return null;
+    public static String solution(String[] p, String[] c) {
+        Arrays.sort(p);
+        Arrays.sort(c);
+        int i = 0, len = c.length;
+        for (; i < len; i++)
+            if (!p[i].equals(c[i]))
+                return p[i];
+        return p[i];
     }
 
     public static void main(String[] args) {
