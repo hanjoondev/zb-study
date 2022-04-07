@@ -1,6 +1,44 @@
-public class L1421 {
-    public static void solution(int docs, int target, int[] priority) {
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 
+public class L1421 {
+    public static void solution(int docs, int target, int[] priorities) {
+        Queue<Integer> papers = new LinkedList<Integer>();
+        Queue<Integer> marker = new LinkedList<Integer>();
+        HashMap<Integer, Integer> counts = new HashMap<>();
+        for (int i = 0; i < docs; i++) {
+            int p = priorities[i];
+            if (counts.containsValue(p)) {
+                int tmp = counts.get(p);
+                counts.put(p, ++tmp);
+            } else {
+                counts.put(p, 1);
+            }
+            papers.add(priorities[i]);
+            marker.add(i == target ? 1 : 0);
+        }
+        int ans = 1;
+        while (true) {
+            int p = papers.poll(), t = marker.poll();
+            if (p >= Collections.max(counts.keySet())) {
+                if (t == 1) {
+                    System.out.println(ans);
+                    return;
+                }
+                ans++;
+                int tmp = counts.get(p);
+                if (tmp > 1)
+                    counts.put(p, --tmp);
+                else
+                    counts.remove(p);
+
+            } else {
+                papers.add(p);
+                marker.add(t);
+            }
+        }
     }
 
     public static void main(String[] args) {
