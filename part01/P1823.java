@@ -24,6 +24,50 @@ public class P1823 {
         return input;
     }
 
+/* acmicpc submission
+    // Source: 1406. 에디터 https://www.acmicpc.net/problem/1406
+    // Submission detail: https://www.acmicpc.net/source/41723152
+    //     Runtime: 672 ms
+    //     Memory Usage: 81168 KB
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        Stack<String> l = new Stack<String>(), r = new Stack<String>();
+        String text = br.readLine();
+        for (String s : text.split(""))
+            l.push(s);
+        int numCommands = Integer.parseInt(br.readLine());
+        for (int i = 0; i < numCommands; i++) {
+            String command = br.readLine();
+            if (command.equals("L") && !l.isEmpty()) {
+                r.push(l.pop());
+            } else if (command.equals("D") && !r.isEmpty()) {
+                l.push(r.pop());
+            } else if (command.equals("B") && !l.isEmpty()) {
+                l.pop();
+            } else if (command.startsWith("P")) {
+                l.push(String.valueOf(command.charAt(2)));
+            }
+        }
+        while (!l.isEmpty())
+            r.push(l.pop());
+        while (!r.isEmpty())
+            bw.write(r.pop());
+        bw.flush();
+        bw.close();
+
+    }
+}
+*/
+
     public static void main(String[] args) {
         // test code
         System.out.println(solution("aba", "L B"));

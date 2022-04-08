@@ -14,6 +14,23 @@ public class P1825 {
         return ans;
     }
 
+/* leetcode submission
+    // Source: 135. Candy https://leetcode.com/problems/candy/
+    // Submission detail: https://leetcode.com/submissions/detail/676509118/
+    //     Runtime: 4 ms, faster than 68.10% of Java online submissions for Candy.
+    //     Memory Usage: 52 MB, less than 42.08% of Java online submissions for Candy.
+    public int reverse(int x) {
+        Boolean neg = x < 0;
+        x = neg ? -x : x;
+        String ans = new StringBuilder().append(x).reverse().toString();
+        try {
+            return Integer.parseInt(ans) * (neg ? -1 : 1);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+    }
+*/
+
     public static void main(String[] args) {
         // Test code
         int[] ratings = {1, 2, 3};
