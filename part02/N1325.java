@@ -1,38 +1,30 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-class Node {
-    HashMap<Character, Node> child;
+class N1325Node {
+    HashMap<Character, N1325Node> child;
     boolean isTerminal;
 
-    public Node() {
+    public N1325Node() {
         this.child = new HashMap<>();
         this.isTerminal = false;
     }
 }
 
-class Trie {
-    Node root;
-    // 대문자 기록용
-    ArrayList<Character> capitals;
+class N1325Trie {
+    N1325Node root;
 
-    public Trie() {
-        this.root = new Node();
-        capitals = new ArrayList<>();
+    public N1325Trie() {
+        this.root = new N1325Node();
     }
 
     public void insert(String str) {
-        Node cur = this.root;
+        N1325Node cur = this.root;
 
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
 
-            // 대문자인 경우 추가
-            if (c < 'a') {
-                capitals.add(c);
-            }
-
-            cur.child.putIfAbsent(c, new Node());
+            cur.child.putIfAbsent(c, new N1325Node());
             cur = cur.child.get(c);
 
             if (i == str.length() - 1) {
@@ -43,24 +35,15 @@ class Trie {
     }
 
     public boolean search(String str) {
-        Node cur = this.root;
-        ArrayList<Character> cap = new ArrayList<>(capitals);
+        N1325Node cur = this.root;
 
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
 
             if (cur.child.containsKey(c)) {
-                // 해당 문자 포함한 경우 대문자에서 삭제 후 다음으로
-                cap.remove(new Character(c));
                 cur = cur.child.get(c);
             } else {
-                // 트라이에 없는데 대문자인 경우 바로 false
-                if (c < 'a') {
-                    return false;
-                } else {
-                    // 그 외 패턴에는 없는 문자인 경우 우선 continue
-                    continue;
-                }
+                return false;
             }
 
             if (i == str.length() - 1) {
@@ -69,23 +52,14 @@ class Trie {
                 }
             }
         }
-        return cap.size() == 0;
+        return true;
     }
 }
 
 public class N1325 {
     public static ArrayList<Boolean> solution(String[] queries, String pattern) {
-        // 트라이 구성
-        Trie trie = new Trie();
-        trie.insert(pattern);
 
-        ArrayList<Boolean> result = new ArrayList<>();
-
-        for (String query : queries) {
-            result.add(trie.search(query));
-        }
-
-        return result;
+        return null;
     }
 
     public static void main(String[] args) {

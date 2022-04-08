@@ -1,29 +1,29 @@
 import java.util.HashMap;
 
 class N1334Node {
-    HashMap<Character, Node> child;
+    HashMap<Character, N1334Node> child;
     boolean isTerminal;
 
-    public void Node() {
+    public N1334Node() {
         this.child = new HashMap<>();
         this.isTerminal = false;
     }
 }
 
 class N1334Trie {
-    Node root;
+    N1334Node root;
 
-    public void Trie() {
-        this.root = new Node();
+    public N1334Trie() {
+        this.root = new N1334Node();
     }
 
     public void insert(String str) {
-        Node cur = this.root;
+        N1334Node cur = this.root;
 
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
 
-            cur.child.putIfAbsent(c, new Node());
+            cur.child.putIfAbsent(c, new N1334Node());
             cur = cur.child.get(c);
 
             if (i == str.length() - 1) {
@@ -36,43 +36,7 @@ class N1334Trie {
 
 public class N1334 {
     public static boolean solution(String[] nums) {
-        if (nums == null || nums.length == 0) {
-            return false;
-        }
 
-        Trie trie = new Trie();
-
-        // 우선 트라이에 문자열 하나 추가
-        trie.insert(nums[0]);
-
-        // 그 다음 문자열 부터는 prefix 검사 하면서 추가
-        // prefix 에 해당하면 false
-        // prefix 에 해당하지 않으면 계속 추가
-        for (int i = 1; i < nums.length; i++) {
-            if (isPrefix(trie.root, nums[i])) {
-                return false;
-            } else {
-                trie.insert(nums[i]);
-            }
-        }
-
-        return true;
-    }
-
-    public static boolean isPrefix(Node node, String prefix) {
-        Node cur = node;
-        for (int i = 0; i < prefix.length(); i++) {
-            char c = prefix.charAt(i);
-            if (cur.child.get(c) == null) {
-                return false;
-            }
-
-            cur = cur.child.get(c);
-
-            if (cur.isTerminal) {
-                return true;
-            }
-        }
         return true;
     }
 
