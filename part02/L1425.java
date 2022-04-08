@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -28,14 +29,15 @@ public class L1425 {
     public static ArrayList<Integer> solution(String[] gems) {
         HashSet<String> set = new HashSet<String>(Arrays.asList(gems));
         HashMap<String, Integer> count = new HashMap<String, Integer>();
-        ArrayList<List<Integer>> possibles = new ArrayList<List<Integer>>();
+        ArrayList<ArrayList<Integer>> possibles = new ArrayList<ArrayList<Integer>>();
         int numTypes = set.size(), last = gems.length - 1;
         int l = 0, r = numTypes - 1;
         for (int i = 0; i < numTypes; i++)
             addSub(gems[i], null, count);
         while (l != last) {
             if (count.size() == numTypes) {
-                possibles.add(Stream.of(new Integer[] {r - l, l, r}).toList());
+                possibles.add(Stream.of(new Integer[] {r - l, l + 1, r + 1})
+                                    .collect(ArrayList::new, ArrayList::add, ArrayList::addAll));
                 addSub(null, gems[l], count);
                 l++;
             } else if (r != last) {
@@ -44,14 +46,14 @@ public class L1425 {
             } else if (r - l <= numTypes)
                 break;
         }
-        int min = Integer.MAX_VALUE;
-        for (List<Integer> possible : possibles)
-            if (possible.get(0) < min) {
-                min = possible.get(0);
-                l = possible.get(1) + 1;
-                r = possible.get(2) + 1;
-            }
-        return IntStream.of(l, r).boxed().collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+        Collections.sort(possibles, new Comparator<ArrayList<Integer>>() {    
+            @Override
+            public int compare(ArrayList<Integer> al1, ArrayList<Integer> al2) {
+                return al1.get(0).compareTo(al2.get(0));
+            }               
+        });
+        return IntStream.of(possibles.get(0).get(1), possibles.get(0).get(2))
+                        .boxed().collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
     }
 
     public static void main(String[] args) {
