@@ -26,13 +26,8 @@ public class M0922 {
     public static void main(String[] args) {
         // Test code
         String[] str = {"abba", "summuus", "xabba", "xabbay", "comcom", "comwwmoc", "comwwtmoc"};
-        System.out.println(solution("abba"));
-        System.out.println(solution("summuus"));
-        System.out.println(solution("xabba"));
-        System.out.println(solution("xabbay"));
-        System.out.println(solution("comcom"));
-        System.out.println(solution("comwwmoc"));
-        System.out.println(solution("comwwtmoc"));
+        for (String s : str)
+            System.out.println(solution(s));
     }
 }
 
