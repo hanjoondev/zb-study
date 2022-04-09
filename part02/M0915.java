@@ -15,7 +15,30 @@ public class M0915 {
         }
         return ans;
     }
+
+/* leetcode submission
+    // Source: 463. Island Perimeter https://leetcode.com/problems/island-perimeter/
+    // Submission detail: https://leetcode.com/submissions/detail/676695578/
+    //     Runtime: 9 ms, faster than 72.92% of Java online submissions for Island Perimeter.
+    //     Memory Usage: 43 MB, less than 89.50% of Java online submissions for Island Perimeter.
+    private static HashMap<Integer, Integer> memo = new HashMap<Integer, Integer>();
     
+    public boolean isHappy(int n) {
+        if (n < 11)
+            return n == 1 || n == 7 || n == 10 ? true : false;
+        if (memo.get(n) == null) {
+            int rem = 0, sum = 0, num = n;
+            while (num > 0) {
+                rem = num % 10;
+                sum += rem * rem;
+                num /= 10;
+            }
+            memo.put(n, sum);
+        }
+        return isHappy(memo.get(n));
+    }
+*/
+
     // 재귀 풀이
     public static int solution2(int[][] grid) {
         int h = grid.length, w = grid[0].length;

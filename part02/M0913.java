@@ -46,6 +46,26 @@ public class M0913 {
         return false;
     }
 
+/* leetcode submission
+    // Source: 567. Permutation in String https://leetcode.com/problems/permutation-in-string/
+    // Submission detail: https://leetcode.com/submissions/detail/676693908/
+    //     Runtime: 805 ms, faster than 9.33% of Java online submissions for Permutation in String.
+    //     Memory Usage: 43 MB, less than 70.40% of Java online submissions for Permutation in String.
+    public boolean checkInclusion(String s1, String s2) {
+        char[] c1 = s1.toCharArray();
+        Arrays.sort(c1);
+        String target = new String(c1);
+        for (int i = 0; i < s2.length() - c1.length + 1; i++) {
+            char[] tmp = s2.substring(i, c1.length + i).toCharArray();
+            Arrays.sort(tmp);
+            String sub = new String(tmp);
+            if (sub.equals(target))
+                return true;
+        }
+        return false;
+    }
+*/
+
     public static boolean solution3(String s1, String s2) {  // sorted brute force
         char[] c1 = s1.toCharArray(), c2 = s2.toCharArray();
         Arrays.sort(c1);
