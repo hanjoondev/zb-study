@@ -6,14 +6,8 @@ import java.util.stream.IntStream;
 
 public class L1425 {
     public static void addSub(String add, String sub, HashMap<String, Integer> count) {
-        if (add != null) {
-            if (count.containsKey(add)) {
-                int tmp = count.get(add);
-                count.put(add, tmp + 1);
-            } else {
-                count.put(add, 1);
-            }
-        }
+        if (add != null)
+            count.put(add, count.getOrDefault(add, 0) + 1);
         if (sub != null) {
             int tmp = count.get(sub);
             if (tmp > 1)
@@ -66,37 +60,37 @@ public class L1425 {
     // Source: [카카오 인턴] 보석 쇼핑 https://programmers.co.kr/learn/courses/30/lessons/67258
     // Submission detail:
     //     정확성  테스트
-    //     테스트 1 〉	통과 (0.13ms, 83.9MB)
-    //     테스트 2 〉	통과 (0.32ms, 74.4MB)
-    //     테스트 3 〉	통과 (0.41ms, 82MB)
-    //     테스트 4 〉	통과 (0.49ms, 87MB)
-    //     테스트 5 〉	통과 (0.34ms, 77.3MB)
-    //     테스트 6 〉	통과 (0.17ms, 84.3MB)
-    //     테스트 7 〉	통과 (0.19ms, 77.8MB)
-    //     테스트 8 〉	통과 (0.79ms, 78.4MB)
-    //     테스트 9 〉	통과 (1.26ms, 77MB)
-    //     테스트 10 〉	통과 (0.79ms, 79.2MB)
-    //     테스트 11 〉	통과 (1.33ms, 77.4MB)
-    //     테스트 12 〉	통과 (1.58ms, 79.7MB)
-    //     테스트 13 〉	통과 (2.27ms, 80.9MB)
-    //     테스트 14 〉	통과 (2.18ms, 79.2MB)
-    //     테스트 15 〉	통과 (3.37ms, 79MB)
+    //     테스트 1 〉	통과 (0.16ms, 84.1MB)
+    //     테스트 2 〉	통과 (0.26ms, 73.6MB)
+    //     테스트 3 〉	통과 (0.61ms, 78.6MB)
+    //     테스트 4 〉	통과 (0.53ms, 75.6MB)
+    //     테스트 5 〉	통과 (0.20ms, 76.6MB)
+    //     테스트 6 〉	통과 (0.17ms, 76.1MB)
+    //     테스트 7 〉	통과 (0.15ms, 73MB)
+    //     테스트 8 〉	통과 (0.87ms, 69.2MB)
+    //     테스트 9 〉	통과 (0.97ms, 87.1MB)
+    //     테스트 10 〉	통과 (0.97ms, 76.8MB)
+    //     테스트 11 〉	통과 (0.92ms, 76.3MB)
+    //     테스트 12 〉	통과 (1.47ms, 87.4MB)
+    //     테스트 13 〉	통과 (1.52ms, 78.5MB)
+    //     테스트 14 〉	통과 (1.48ms, 82.5MB)
+    //     테스트 15 〉	통과 (2.17ms, 80.3MB)
     //     효율성  테스트
-    //     테스트 1 〉	통과 (9.86ms, 54.2MB)
-    //     테스트 2 〉	통과 (10.12ms, 56.2MB)
-    //     테스트 3 〉	통과 (9.90ms, 59.5MB)
-    //     테스트 4 〉	통과 (12.16ms, 60.5MB)
-    //     테스트 5 〉	통과 (17.55ms, 61.7MB)
-    //     테스트 6 〉	통과 (20.22ms, 63.1MB)
-    //     테스트 7 〉	통과 (29.46ms, 66.7MB)
-    //     테스트 8 〉	통과 (26.65ms, 68.1MB)
-    //     테스트 9 〉	통과 (34.55ms, 70.3MB)
-    //     테스트 10 〉	통과 (34.46ms, 74.6MB)
-    //     테스트 11 〉	통과 (51.62ms, 79.6MB)
-    //     테스트 12 〉	통과 (38.43ms, 81.5MB)
-    //     테스트 13 〉	통과 (67.20ms, 79.7MB)
-    //     테스트 14 〉	통과 (53.34ms, 80.7MB)
-    //     테스트 15 〉	통과 (67.83ms, 82.4MB)
+    //     테스트 1 〉	통과 (6.90ms, 55.2MB)
+    //     테스트 2 〉	통과 (7.13ms, 56.9MB)
+    //     테스트 3 〉	통과 (14.31ms, 58.4MB)
+    //     테스트 4 〉	통과 (10.00ms, 60.1MB)
+    //     테스트 5 〉	통과 (16.16ms, 62.3MB)
+    //     테스트 6 〉	통과 (17.59ms, 64.6MB)
+    //     테스트 7 〉	통과 (26.76ms, 64.5MB)
+    //     테스트 8 〉	통과 (24.75ms, 67.6MB)
+    //     테스트 9 〉	통과 (35.58ms, 70.4MB)
+    //     테스트 10 〉	통과 (35.93ms, 74.7MB)
+    //     테스트 11 〉	통과 (49.58ms, 79.2MB)
+    //     테스트 12 〉	통과 (43.07ms, 80MB)
+    //     테스트 13 〉	통과 (61.16ms, 79.9MB)
+    //     테스트 14 〉	통과 (52.36ms, 97.8MB)
+    //     테스트 15 〉	통과 (60.42ms, 81.2MB)
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -104,14 +98,8 @@ import java.util.HashSet;
 
 class Solution {
     public static void addSub(String add, String sub, HashMap<String, Integer> count) {
-        if (add != null) {
-            if (count.containsKey(add)) {
-                int tmp = count.get(add);
-                count.put(add, tmp + 1);
-            } else {
-                count.put(add, 1);
-            }
-        }
+        if (add != null)
+            count.put(add, count.getOrDefault(add, 0) + 1);
         if (sub != null) {
             int tmp = count.get(sub);
             if (tmp > 1)

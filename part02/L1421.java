@@ -9,13 +9,7 @@ public class L1421 {
         Queue<Integer> marker = new LinkedList<Integer>();
         HashMap<Integer, Integer> counts = new HashMap<>();
         for (int i = 0; i < docs; i++) {
-            int p = priorities[i];
-            if (counts.containsKey(p)) {
-                int tmp = counts.get(p);
-                counts.put(p, ++tmp);
-            } else {
-                counts.put(p, 1);
-            }
+            counts.put(priorities[i], counts.getOrDefault(priorities[i], 0) + 1);
             papers.add(priorities[i]);
             marker.add(i == target ? 1 : 0);
         }
@@ -64,26 +58,26 @@ public class L1421 {
     // Source: 프린터 https://programmers.co.kr/learn/courses/30/lessons/42587?language=java
     // Submission detail:
     //     정확성  테스트
-    //     테스트 1 〉	통과 (0.41ms, 73.2MB)
-    //     테스트 2 〉	통과 (1.29ms, 76.1MB)
-    //     테스트 3 〉	통과 (0.36ms, 72.6MB)
-    //     테스트 4 〉	통과 (0.29ms, 80.4MB)
-    //     테스트 5 〉	통과 (0.22ms, 77.8MB)
-    //     테스트 6 〉	통과 (0.58ms, 75.5MB)
-    //     테스트 7 〉	통과 (0.53ms, 76.6MB)
-    //     테스트 8 〉	통과 (1.02ms, 74.1MB)
-    //     테스트 9 〉	통과 (0.28ms, 75MB)
-    //     테스트 10 〉	통과 (0.58ms, 72.8MB)
-    //     테스트 11 〉	통과 (0.98ms, 76.7MB)
-    //     테스트 12 〉	통과 (0.29ms, 65.7MB)
-    //     테스트 13 〉	통과 (0.96ms, 75MB)
-    //     테스트 14 〉	통과 (0.12ms, 73.3MB)
-    //     테스트 15 〉	통과 (0.31ms, 81.3MB)
-    //     테스트 16 〉	통과 (0.43ms, 76.9MB)
-    //     테스트 17 〉	통과 (1.65ms, 75.6MB)
-    //     테스트 18 〉	통과 (0.29ms, 75.1MB)
-    //     테스트 19 〉	통과 (0.97ms, 76MB)
-    //     테스트 20 〉	통과 (0.53ms, 83.3MB)
+    //     테스트 1 〉	통과 (0.45ms, 79.1MB)
+    //     테스트 2 〉	통과 (1.44ms, 75.7MB)
+    //     테스트 3 〉	통과 (0.33ms, 77.5MB)
+    //     테스트 4 〉	통과 (0.37ms, 75.8MB)
+    //     테스트 5 〉	통과 (0.16ms, 77.1MB)
+    //     테스트 6 〉	통과 (0.57ms, 73.4MB)
+    //     테스트 7 〉	통과 (0.53ms, 76.9MB)
+    //     테스트 8 〉	통과 (1.16ms, 73.1MB)
+    //     테스트 9 〉	통과 (0.35ms, 79.1MB)
+    //     테스트 10 〉	통과 (0.69ms, 76MB)
+    //     테스트 11 〉	통과 (1.10ms, 77.8MB)
+    //     테스트 12 〉	통과 (0.33ms, 75.6MB)
+    //     테스트 13 〉	통과 (0.99ms, 77.9MB)
+    //     테스트 14 〉	통과 (0.14ms, 71.7MB)
+    //     테스트 15 〉	통과 (0.22ms, 77.2MB)
+    //     테스트 16 〉	통과 (0.50ms, 75.8MB)
+    //     테스트 17 〉	통과 (1.25ms, 74.4MB)
+    //     테스트 18 〉	통과 (0.27ms, 77.3MB)
+    //     테스트 19 〉	통과 (0.98ms, 78.2MB)
+    //     테스트 20 〉	통과 (0.54ms, 76MB)
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -95,13 +89,7 @@ class Solution {
         Queue<Integer> marker = new LinkedList<Integer>();
         HashMap<Integer, Integer> counts = new HashMap<>();
         for (int i = 0; i < priorities.length; i++) {
-            int p = priorities[i];
-            if (counts.containsKey(p)) {
-                int tmp = counts.get(p);
-                counts.put(p, ++tmp);
-            } else {
-                counts.put(p, 1);
-            }
+            counts.put(priorities[i], counts.getOrDefault(priorities[i], 0) + 1);
             papers.add(priorities[i]);
             marker.add(i == location ? 1 : 0);
         }
