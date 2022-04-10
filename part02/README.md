@@ -21,7 +21,7 @@
 | [02. 14_2. 02](./README.md#practice-1422) | [Java](./L1422.java)                      | [acmicpc](https://www.acmicpc.net/problem/1874)                                       | stack으로 특정 수열 만들기 |
 | [02. 14_2. 03](./README.md#practice-1423) | [Java](./L1423.java)                      | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42579)                                      | 장르카운트 → 고유카운트 → uid 순서 정렬 (장르별 2개) |
 | [02. 14_2. 04](./README.md#practice-1424) | [Java](./L1424.java)                      | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42576)                                      | p배열 중 c배열에 포함되지 않은 요소 구하기 (중복可) |
-| [02. 14_2. 05](./README.md#practice-1425) | [Java](./L1425.java)                      | [programmers](https://programmers.co.kr/learn/courses/30/lessons/67258)                                      | 배열상 요소를 한 종류씩 포함하는 최단 구간 |
+| [02. 14_2. 05](./README.md#practice-1425) | [Java](./L1425.java) [Python](./L1425.py) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/67258)                                      | 배열상 요소를 한 종류씩 포함하는 최단 구간 |
 | [03. 13_1. 01](./README.md#practice-1321) | [Java](./N1311.java)                      | [leetcode](https://leetcode.com/problems/word-search/)                                           | 2D array에서 문자열 찾기 |
 | [03. 13_1. 02](./README.md#practice-1312) | [Java](./N1312.java)                      | [leetcode](https://leetcode.com/problems/surrounded-regions/)                                           | 2D array에서 x로 둘러싸인 부분 찾기 |
 | [03. 13_1. 03](./README.md#practice-1313) | [Java](./N1313.java)                      | [leetcode](https://leetcode.com/problems/accounts-merge/)                                           | 중복 이메일 병합 (동명이인 존재) |
