@@ -1,35 +1,29 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class P1832 {
     public static ArrayList<Integer> solution(int[] nums) {
+        Arrays.sort(nums);
         ArrayList<Integer> arr = new ArrayList<Integer>();
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = 0; j < nums.length; j++) {
-                if (i != j && nums[i] == nums[j]) {
-                    nums[i] *= -1;
-                    arr.add(nums[j]);
-                }
-            }
-        }
+        for (int i = 1; i < nums.length; i++) 
+            if (nums[i] == nums[i - 1])
+                arr.add(nums[i]);
         return arr;
     }
 
 /* leetcode submission
     // Source: 442. Find All Duplicates in an Array https://leetcode.com/problems/find-all-duplicates-in-an-array/
     // Submission detail: https://leetcode.com/submissions/detail/676525781/
-    //     Time Limit Exceeded (24 / 28 test cases passed.)
-    //     TODO: fix it
+    //     Runtime: 26 ms, faster than 20.62% of Java online submissions for Find All Duplicates in an Array.
+    //     Memory Usage: 67.9 MB, less than 28.25% of Java online submissions for Find All Duplicates in an Array.
     public List<Integer> findDuplicates(int[] nums) {
+        Arrays.sort(nums);
         ArrayList<Integer> arr = new ArrayList<Integer>();
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = 0; j < nums.length; j++) {
-                if (i != j && nums[i] == nums[j]) {
-                    nums[i] *= -1;
-                    arr.add(nums[j]);
-                }
-            }
-        }
+        for (int i = 1; i < nums.length; i++) 
+            if (nums[i] == nums[i - 1])
+                arr.add(nums[i]);
         return arr;
+    }
     }
 */
 
