@@ -8,7 +8,7 @@
 | 2022-03-30 |  4  | [게임 맵 최단거리](https://programmers.co.kr/learn/courses/30/lessons/1844) | [Python](./20220330_4.py) |
 | 2022-03-30 |  5  | [빙산](https://www.acmicpc.net/problem/2573) |  |
 | 2022-03-31 |  1  | [비밀번호 찾기](https://www.acmicpc.net/problem/17219) | [Python](./20220331_1.py) |
-| 2022-03-31 |  2  | [프린터](https://programmers.co.kr/learn/courses/30/lessons/42587) | [Python](./20220331_2.py) |
+| 2022-03-31 |  2  | [프린터](https://programmers.co.kr/learn/courses/30/lessons/42587) | [Java](./J20220331_2.java) [Python](./20220331_2.py) |
 | 2022-03-31 |  3  | [피보나치 함수](https://www.acmicpc.net/problem/1003) |  |
 | 2022-03-31 |  4  | [봄버맨](https://www.acmicpc.net/problem/16918) |  |
 | 2022-03-31 |  5  | [마법사 상어와 파이어볼](https://www.acmicpc.net/problem/20056) |  |
@@ -22,3 +22,9 @@
 | 2022-04-05 |  1  | [알파벳](https://www.acmicpc.net/problem/1987) |  |
 | 2022-04-05 |  2  | [사탕 게임](https://www.acmicpc.net/problem/3085) |  |
 | 2022-04-05 |  3  | [탈출](https://www.acmicpc.net/problem/3055) |  |
+| 2022-04-06 |  1  | [괄호](https://www.acmicpc.net/problem/9012) |  |
+| 2022-04-06 |  2  | [골드바흐의 추측](https://www.acmicpc.net/problem/6588) |  |
+| 2022-04-06 |  3  | [영어 끝말잇기](https://programmers.co.kr/learn/courses/30/lessons/12981) |  |
+| 2022-04-07 |  1  | [길 찾기 게임](https://programmers.co.kr/learn/courses/30/lessons/42892) |  |
+| 2022-04-07 |  2  | [암호 만들기](https://www.acmicpc.net/problem/1759) |  |
+| 2022-04-12 |  1  | [스택 수열](https://www.acmicpc.net/problem/1874) | [Java](./J20220412_1.java) |

@@ -2,7 +2,7 @@
 ## Table of Contents
 |               Problem #[^1]               |                 Solution                  | Origin | Description |
 | :---------------------------------------: | :---------------------------------------: | :----: | :---------: |
-| [01. 09_1. 01](./README.md#practice-0911) | [Java](./M0911.java)                      | [leetcode](https://leetcode.com/problems/pascals-triangle/)                                           | 파스칼 삼각형 출력 |
+| [01. 09_1. 01](./README.md#practice-0911) | [Java](./M0911.java) [Python](./M0911.py) | [leetcode](https://leetcode.com/problems/pascals-triangle/)                                           | 파스칼 삼각형 출력 |
 | [01. 09_1. 02](./README.md#practice-0912) | [Java](./M0912.java)                      | [leetcode](https://leetcode.com/problems/previous-permutation-with-one-swap/)                                           | 한자리 정수 배열, 현배열 다음으로 큰 수 구하기 (1스왑) |
 | [01. 09_1. 03](./README.md#practice-0913) | [Java](./M0913.java)                      | [leetcode](https://leetcode.com/problems/permutation-in-string/)                                           | str1의 permutation이 str2에 포함되는지 판별 |
 | [01. 09_1. 04](./README.md#practice-0914) | [Java](./M0914.java)                      | [leetcode](https://leetcode.com/problems/happy-number/)                                           | 각 자리수 제곱의 합이 1로 수렴하는지 판정[^2] |
