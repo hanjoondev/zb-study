@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class P1834 {
     public static ArrayList<Integer> solution(int[][] matrix) {
         int h = matrix.length - 1, w = matrix[0].length - 1;
-        ArrayList<Integer> ans = new ArrayList<Integer>();
+        ArrayList<Integer> ans = new ArrayList<>();
         int r = 0, c = 0;
         while (r <= h && c <= w) {
             for (int i = c; i <= w; i++)

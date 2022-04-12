@@ -40,7 +40,7 @@ public class M0923 {
                 coeff += Integer.parseInt(tmp);
             }
         }
-        return new int[]{coeff, constant};
+        return new int[] {coeff, constant};
     }
 
     // # 2 정규표현식 사용
@@ -55,7 +55,7 @@ public class M0923 {
                       tmp.equals("-") ? "-1" : tmp;
                 coeff += Integer.parseInt(tmp);
             }
-        return new int[]{coeff, constant};
+        return new int[] {coeff, constant};
     }
 
 /* leetcode submission

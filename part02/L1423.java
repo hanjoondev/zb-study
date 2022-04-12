@@ -82,7 +82,6 @@ public class L1423 {
         String[] genres = {"classic", "pop", "classic", "classic", "pop"};
         int[] plays = {500, 600, 150, 800, 2500};
         solution(genres, plays);
-
     }
 }
 

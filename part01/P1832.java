@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class P1832 {
     public static ArrayList<Integer> solution(int[] n) {
-        ArrayList<Integer> ans = new ArrayList<Integer>();
+        ArrayList<Integer> ans = new ArrayList<>();
         int i = 0, len = n.length;
         while (i < len) {
             if (n[i] - 1 == i || n[n[i] - 1] == n[i]) {

@@ -5,8 +5,8 @@ import java.util.Queue;
 
 public class L1421 {
     public static void solution(int docs, int target, int[] priorities) {
-        Queue<Integer> papers = new LinkedList<Integer>();
-        Queue<Integer> marker = new LinkedList<Integer>();
+        Queue<Integer> papers = new LinkedList<>();
+        Queue<Integer> marker = new LinkedList<>();
         HashMap<Integer, Integer> counts = new HashMap<>();
         for (int i = 0; i < docs; i++) {
             counts.put(priorities[i], counts.getOrDefault(priorities[i], 0) + 1);

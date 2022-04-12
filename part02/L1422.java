@@ -3,8 +3,8 @@ import java.util.Stack;
 
 public class L1422 {
     public static void solution(int[] nums) {
-        Stack<Integer> stack = new Stack<Integer>();
-        ArrayList<String> ans = new ArrayList<String>();
+        Stack<Integer> stack = new Stack<>();
+        ArrayList<String> ans = new ArrayList<>();
 
         int count = 1;
         for (int i = 0; i < nums.length; i++) {
