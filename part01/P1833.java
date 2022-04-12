@@ -1,42 +1,29 @@
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class P1833 {
     public static void solution(int[] arr, int k, int x) {
-        Arrays.sort(arr);
-        Map<Integer, Integer> m = IntStream.range(0, arr.length)
-            .boxed().collect(Collectors.toMap(i -> arr[i],
-                                              i -> Math.abs(x - arr[i])))
-            .entrySet().stream().sorted(Entry.comparingByValue())
-            .collect(Collectors.toMap(Entry::getKey, Entry::getValue,
-                                      (e1, e2) -> e1, LinkedHashMap::new));
-        List<Integer> perSpec = m.keySet().stream().limit(k).collect(Collectors.toList());
-        Collections.sort(perSpec);  // as per the example, not the specification
-        System.out.println(perSpec);
+        int l = 0, r = arr.length - 1;
+        while (r - l + 1 > k)
+            if (Math.abs(x - arr[l]) > Math.abs(x - arr[r]))
+                l++;
+            else
+                r--;
+        System.out.println(Arrays.stream(arr).boxed().toList().subList(l, r + 1));
     }
 
 /* leetcode submission
-    // Source: 442. Find All Duplicates in an Array https://leetcode.com/problems/find-all-duplicates-in-an-array/
-    // Submission detail: https://leetcode.com/submissions/detail/676527334/
-    //     Runtime Error (5 / 63 test cases passed.)
-    //     TODO: fix it
+    // Source: 658. Find K Closest Elements https://leetcode.com/problems/find-k-closest-elements/
+    // Submission detail: https://leetcode.com/submissions/detail/678643249/
+    //     Runtime: 7 ms, faster than 54.20% of Java online submissions for Find K Closest Elements.
+    //     Memory Usage: 44.5 MB, less than 84.01% of Java online submissions for Find K Closest Elements.
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
-        Arrays.sort(arr);
-        Map<Integer, Integer> m = IntStream.range(0, arr.length)
-            .boxed().collect(Collectors.toMap(i -> arr[i],
-                                              i -> Math.abs(x - arr[i])))
-            .entrySet().stream().sorted(Entry.comparingByValue())
-            .collect(Collectors.toMap(Entry::getKey, Entry::getValue,
-                                      (e1, e2) -> e1, LinkedHashMap::new));
-        List<Integer> perSpec = m.keySet().stream().limit(k).collect(Collectors.toList());
-        Collections.sort(perSpec);
-        return perSpec;
+        int l = 0, r = arr.length - 1;
+        while (r - l + 1 > k)
+            if (Math.abs(x - arr[l]) > Math.abs(x - arr[r]))
+                l++;
+            else
+                r--;
+        return Arrays.stream(arr).boxed().toList().subList(l, r + 1);
     }
 */
 
