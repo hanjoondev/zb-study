@@ -1,13 +1,8 @@
 import java.util.ArrayList;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class P1834 {
     public static ArrayList<Integer> solution(int[][] matrix) {
         int h = matrix.length - 1, w = matrix[0].length - 1;
-        if (h < 1 && w < 1)
-            return Stream.of(matrix).flatMapToInt(IntStream::of).boxed().collect(Collectors.toCollection(ArrayList::new));
         ArrayList<Integer> ans = new ArrayList<Integer>();
         int r = 0, c = 0;
         while (r <= h && c <= w) {
@@ -31,13 +26,11 @@ public class P1834 {
 
 /* leetcode submission
     // Source: 54. Spiral Matrix https://leetcode.com/problems/spiral-matrix/
-    // Submission detail: https://leetcode.com/submissions/detail/676523389/
-    //     Runtime: 3 ms, faster than 11.67% of Java online submissions for Spiral Matrix.
-    //     Memory Usage: 42.3 MB, less than 29.93% of Java online submissions for Spiral Matrix.
+    // Submission detail: https://leetcode.com/submissions/detail/678646528/
+    //     Runtime: 0 ms, faster than 100.00% of Java online submissions for Spiral Matrix.
+    //     Memory Usage: 42.2 MB, less than 49.20% of Java online submissions for Spiral Matrix.
     public List<Integer> spiralOrder(int[][] matrix) {
         int h = matrix.length - 1, w = matrix[0].length - 1;
-        if (h < 1 && w < 1)
-            return Stream.of(matrix).flatMapToInt(IntStream::of).boxed().collect(Collectors.toCollection(ArrayList::new));
         ArrayList<Integer> ans = new ArrayList<Integer>();
         int r = 0, c = 0;
         while (r <= h && c <= w) {
