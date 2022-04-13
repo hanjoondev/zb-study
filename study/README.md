@@ -19,7 +19,7 @@
 | 2022-04-04 |  1  | [좀비 바이러스](https://www.acmicpc.net/problem/24513) |  |
 | 2022-04-04 |  2  | [골드바흐의 추측](https://www.acmicpc.net/problem/9020) |  |
 | 2022-04-04 |  3  | [[1차] 비밀지도](https://programmers.co.kr/learn/courses/30/lessons/17681) |  |
-| 2022-04-05 |  1  | [알파벳](https://www.acmicpc.net/problem/1987) |  |
+| 2022-04-05 |  1  | [알파벳](https://www.acmicpc.net/problem/1987) | [Python](./20220405_1.py) |
 | 2022-04-05 |  2  | [사탕 게임](https://www.acmicpc.net/problem/3085) |  |
 | 2022-04-05 |  3  | [탈출](https://www.acmicpc.net/problem/3055) |  |
 | 2022-04-06 |  1  | [괄호](https://www.acmicpc.net/problem/9012) |  |
