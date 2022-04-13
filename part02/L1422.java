@@ -40,42 +40,41 @@ public class L1422 {
     // Submission detail: https://www.acmicpc.net/source/41762939
     //     Runtime: 352 ms
     //     Memory Usage: 27364 KB
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.*;
 
 public class Main {
-    public static void solution(int[] data) {
+    public static void solution(int[] nums) {
+        Stack<Integer> stack = new Stack<Integer>();
         StringBuilder sb = new StringBuilder();
-        int len = data.length, remaining = data.length - 1, nxt = data[0];
-        int cur = 0, dir = nxt > 0 ? 1 : -1;
-        int[] popped = new int[len];
-        popped[cur] = 1;
-        sb.append(cur + 1 + " ");
-        while (remaining > 0) {
-            int moveCount = 0;
-            while (moveCount < Math.abs(nxt)) {
-                cur += dir;
-                cur = cur == len ? 0 : cur < 0 ? len - 1 : cur;
-                moveCount += popped[cur] == 0 ? 1 : 0;
+
+        int count = 1;
+        for (int i = 0; i < nums.length; i++) {
+            int target = nums[i];
+            while (count <= target) {
+                stack.push(count);
+                sb.append("+" + "\n");
+                count++;
             }
-            popped[cur] = 1;
-            sb.append(cur + 1 + " ");
-            nxt = data[cur];
-            dir = nxt > 0 ? 1 : -1;
-            remaining--;
+            if (stack.peek() == target) {
+                stack.pop();
+                sb.append("-" + "\n");
+            } else {
+                System.out.println("NO");
+                return;
+            }
         }
         System.out.println(sb);
     }
 
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int len = Integer.parseInt(br.readLine());
-        int[] balloon = new int[len];
-        String[] ball = br.readLine().split(" ");
-        for (int i = 0; i < len; i++)
-            balloon[i] = Integer.parseInt(ball[i]);
-        solution(balloon);
+
+        int n = Integer.parseInt(br.readLine());
+        int[] nums = new int[n];
+        for (int i = 0; i < n; i++)
+            nums[i] = Integer.parseInt(br.readLine());
+        solution(nums);
     }
 }
 */
