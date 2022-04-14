@@ -83,20 +83,4 @@ if __name__ == '__main__':
     #     테스트 13 〉	통과 (38.51ms, 16.2MB)
     #     테스트 14 〉	통과 (62.15ms, 17MB)
     #     테스트 15 〉	통과 (62.64ms, 17.7MB)
-def solution(gems):
-    d, num_types = {gems[0]: 1}, len(set(gems))
-    ans = [1, (length := len(gems))]
-    l = r = 0
-    while l <= r < length:
-        if len(d) == num_types:
-            ans = [l + 1, r + 1] if ans[1] - ans[0] > r - l else ans
-            d[gems[l]] -= 1
-            if not d[gems[l]]:
-                del d[gems[l]]
-            l += 1
-            continue
-        r += 1
-        if r < length:
-            d[gems[r]] = d.get(gems[r], 0) + 1
-    return ans
 '''
