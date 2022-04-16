@@ -21,21 +21,21 @@ public class M0915 {
     // Submission detail: https://leetcode.com/submissions/detail/676695578/
     //     Runtime: 9 ms, faster than 72.92% of Java online submissions for Island Perimeter.
     //     Memory Usage: 43 MB, less than 89.50% of Java online submissions for Island Perimeter.
-    private static HashMap<Integer, Integer> memo = new HashMap<Integer, Integer>();
-    
-    public boolean isHappy(int n) {
-        if (n < 11)
-            return n == 1 || n == 7 || n == 10 ? true : false;
-        if (memo.get(n) == null) {
-            int rem = 0, sum = 0, num = n;
-            while (num > 0) {
-                rem = num % 10;
-                sum += rem * rem;
-                num /= 10;
+    public int islandPerimeter(int[][] grid) {
+        int ans = 0, h = grid.length, w = grid[0].length;
+        for (int r = 0; r < h; r++) {
+            for (int c = 0; c < w; c++) {
+                if (grid[r][c] == 1) {
+                    int tmp = 4;
+                    int[][] nxt = {{r, c + 1}, {r + 1, c}, {r, c - 1}, {r - 1, c}};
+                    for (int[] n : nxt)
+                        if (n[0] >= 0 && n[0] < h && n[1] >= 0 && n[1] < w && grid[n[0]][n[1]] == 1)
+                            tmp--;
+                    ans += tmp;
+                }
             }
-            memo.put(n, sum);
         }
-        return isHappy(memo.get(n));
+        return ans;
     }
 */
 
