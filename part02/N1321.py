@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
 
 ''' 1942. The Number of the Smallest Unoccupied Chair https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair/
-https://leetcode.com/submissions/detail/680490786/
-Runtime: 5902 ms, faster than 5.35% of Python3 online submissions for The Number of the Smallest Unoccupied Chair.
-Memory Usage: 20 MB, less than 89.29% of Python3 online submissions for The Number of the Smallest Unoccupied Chair.
+    https://leetcode.com/submissions/detail/680490786/
+    Runtime: 5902 ms, faster than 5.35% of Python3 online submissions for The Number of the Smallest Unoccupied Chair.
+    Memory Usage: 20 MB, less than 89.29% of Python3 online submissions for The Number of the Smallest Unoccupied Chair.
 '''
