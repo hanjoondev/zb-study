@@ -1,7 +1,18 @@
+import java.io.*;
+import java.nio.charset.*;
+import java.nio.file.*;
 import java.text.*;
 import java.util.*;
+import java.util.stream.*;
+
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import acmicpc.*;
+import kickstart.*;
 import leetcode.*;
+import programmers.*;
 
 class Benchmark {
     void L00007Benchmark() {
@@ -245,32 +256,115 @@ public class TestRunner {
         Assertions.assertEquals(564908303, test.countGoodNumbers(50L));
     }
 
-    public static void main(String[] args) {
-        TestRunner leetcode = new TestRunner();
-        leetcode.L00007Test();
-        leetcode.L00011Test();
-        leetcode.L00012Test();
-        leetcode.L00013Test();
-        leetcode.L00020Test();
-        leetcode.L00026Test();
-        leetcode.L00042Test();
-        leetcode.L00054Test();
-        leetcode.L00073Test();
-        leetcode.L00079Test();
-        leetcode.L00096Test();
-        leetcode.L00118Test();
-        leetcode.L00130Test();
-        leetcode.L00135Test();
-        leetcode.L00202Test();
-        leetcode.L00442Test();
-        leetcode.L00463Test();
-        leetcode.L00567Test();
-        leetcode.L00640Test();
-        leetcode.L00658Test();
-        leetcode.L00721Test();
-        leetcode.L00752Test();
-        leetcode.L01053Test();
-        leetcode.L01654Test();
-        leetcode.L01922Test();
+    @Test
+    void K22A1Test(ArrayList<String[]> files) throws IOException {
+        K22A1 test = new K22A1();
+        final PrintStream sysOut = System.out;
+        for (int i = 0; i < files.size() / 2; i++) {
+            String mockData = files.get(0)[i], expected = files.get(1)[i];
+            InputStream sysIn = System.in;
+            ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+            System.setIn(new ByteArrayInputStream(mockData.getBytes()));
+            System.setOut(new PrintStream(actualOutput));
+            test.reader();
+            Assertions.assertEquals(expected, actualOutput.toString().trim());
+            System.setIn(sysIn);
+            
+        }
+        System.setOut(sysOut);
+    }
+
+    void leetcodeRunner(Boolean silent, TestRunner testRunner) {
+        String msg = "";
+        testRunner.L00007Test();
+        msg += silent ? "" : "L00007Test(): SUCCESS\n" ;
+        testRunner.L00011Test();
+        msg += silent ? "" : "L00011Test(): SUCCESS\n" ;
+        testRunner.L00012Test();
+        msg += silent ? "" : "L00012Test(): SUCCESS\n" ;
+        testRunner.L00013Test();
+        msg += silent ? "" : "L00013Test(): SUCCESS\n" ;
+        testRunner.L00020Test();
+        msg += silent ? "" : "L00020Test(): SUCCESS\n" ;
+        testRunner.L00026Test();
+        msg += silent ? "" : "L00026Test(): SUCCESS\n" ;
+        testRunner.L00042Test();
+        msg += silent ? "" : "L00042Test(): SUCCESS\n" ;
+        testRunner.L00054Test();
+        msg += silent ? "" : "L00054Test(): SUCCESS\n" ;
+        testRunner.L00073Test();
+        msg += silent ? "" : "L00073Test(): SUCCESS\n" ;
+        testRunner.L00079Test();
+        msg += silent ? "" : "L00079Test(): SUCCESS\n" ;
+        testRunner.L00096Test();
+        msg += silent ? "" : "L00096Test(): SUCCESS\n" ;
+        testRunner.L00118Test();
+        msg += silent ? "" : "L00118Test(): SUCCESS\n" ;
+        testRunner.L00130Test();
+        msg += silent ? "" : "L00130Test(): SUCCESS\n" ;
+        testRunner.L00135Test();
+        msg += silent ? "" : "L00135Test(): SUCCESS\n" ;
+        testRunner.L00202Test();
+        msg += silent ? "" : "L00202Test(): SUCCESS\n" ;
+        testRunner.L00442Test();
+        msg += silent ? "" : "L00442Test(): SUCCESS\n" ;
+        testRunner.L00463Test();
+        msg += silent ? "" : "L00463Test(): SUCCESS\n" ;
+        testRunner.L00567Test();
+        msg += silent ? "" : "L00567Test(): SUCCESS\n" ;
+        testRunner.L00640Test();
+        msg += silent ? "" : "L00640Test(): SUCCESS\n" ;
+        testRunner.L00658Test();
+        msg += silent ? "" : "L00658Test(): SUCCESS\n" ;
+        testRunner.L00721Test();
+        msg += silent ? "" : "L00721Test(): SUCCESS\n" ;
+        testRunner.L00752Test();
+        msg += silent ? "" : "L00752Test(): SUCCESS\n" ;
+        testRunner.L01053Test();
+        msg += silent ? "" : "L01053Test(): SUCCESS\n" ;
+        testRunner.L01654Test();
+        msg += silent ? "" : "L01654Test(): SUCCESS\n" ;
+        testRunner.L01922Test();
+        msg += silent ? "" : "L01922Test(): SUCCESS\n" ;
+        System.out.printf("%sAll leetcode tests have been completed successfully.\n", silent ? "" : msg);
+    }
+
+    private ArrayList<String[]> kickstartTestHelper(String filename) throws IOException {
+        String path = "zb-study/data";
+        List<String> files = Stream.of(new File(path).listFiles())
+                                   .filter(file -> !file.isDirectory() 
+                                                   && file.toString().contains(filename))
+                                   .map(File::getName).collect(Collectors.toList());
+        List<String> inFileNames = files.stream().filter(file -> file.contains("in")).collect(Collectors.toList());
+        List<String> outFileNames = files.stream().filter(file -> file.contains("out")).collect(Collectors.toList());
+        Collections.sort(inFileNames);
+        Collections.sort(outFileNames);
+        path += "/";
+        String[] mockInput = new String[inFileNames.size()], expected = new String[outFileNames.size()];
+        for (int i = 0; i < inFileNames.size(); i++) {
+            ByteArrayInputStream iC = new ByteArrayInputStream(
+                Files.readString(Paths.get(path + inFileNames.get(i))).getBytes(StandardCharsets.UTF_8));
+            ByteArrayInputStream oC = new ByteArrayInputStream(
+                Files.readString(Paths.get(path + outFileNames.get(i))).getBytes(StandardCharsets.UTF_8));
+            mockInput[i] = new BufferedReader(new InputStreamReader(iC)).lines().collect(Collectors.joining("\n"));
+            expected[i] = new BufferedReader(new InputStreamReader(oC)).lines().collect(Collectors.joining("\n"));
+        }
+        return new ArrayList<>() {{
+            add(mockInput);
+            add(expected);
+        }};
+    }
+
+    void kickstartRunner(Boolean silent, TestRunner testRunner) throws IOException {
+        String resultMsg = "";
+        testRunner.K22A1Test(kickstartTestHelper("K22A1"));
+        resultMsg += silent ? "" : "K22A1Test(): SUCCESS\n" ;
+        System.out.printf("%sAll kickstart tests have been completed successfully.\n", silent ? "" : resultMsg);
+    }
+
+    public static void main(String[] args) throws IOException {
+        TestRunner testRunner = new TestRunner();
+        testRunner.leetcodeRunner(false, testRunner);
+        testRunner.kickstartRunner(false, testRunner);
     }
 }
