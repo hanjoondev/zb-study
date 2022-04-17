@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
-class P67258 {
+public class P67258 {
     public static void addSub(String add, String sub, HashMap<String, Integer> count) {
         if (add != null)
             count.put(add, count.getOrDefault(add, 0) + 1);

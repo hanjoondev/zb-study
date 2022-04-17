@@ -273,6 +273,52 @@ public class TestRunner {
                 new int[][] { { 3, 10 }, { 1, 5 }, { 2, 6 } }, 0));
     }
 
+    void P01878Test() {
+        P01878 test = new P01878();
+        Assertions.assertArrayEquals(new int[] { 1, 10 }, 
+            test.solution(new int[][] { { 1, 4 }, { 3, 4 }, { 3, 10 } }));
+        Assertions.assertArrayEquals(new int[] { 2, 1 }, 
+            test.solution(new int[][] { { 1, 1 }, { 2, 2 }, { 1, 2 } }));
+    }
+
+    void P42576Test() {
+        P42576 test = new P42576();
+        Assertions.assertEquals("leo",
+            test.solution(new String[] { "leo", "kiki", "eden" }, 
+                          new String[] { "eden", "kiki"}));
+        Assertions.assertEquals("vinko",
+            test.solution(new String[] { "marina", "josipa", "nikola", "vinko", "filipa" }, 
+                          new String[] { "josipa", "filipa", "marina", "nikola" }));
+        Assertions.assertEquals("mislav",
+            test.solution(new String[] { "mislav", "stanko", "mislav", "ana" },
+                          new String[] { "stanko", "ana", "mislav" }));
+    }
+
+    void P42579Test() {
+        P42579 test = new P42579();
+        Assertions.assertArrayEquals(new int[] { 4, 1, 3, 0 }, 
+            test.solution(new String[] { "classic", "pop", "classic", "classic", "pop" },
+                          new int[] { 500, 600, 150, 800, 2500 }));
+    }
+
+    void P42587Test() {
+        P42587 test = new P42587();
+        Assertions.assertEquals(1, test.solution(new int[] { 2, 1, 3, 2 }, 2));
+        Assertions.assertEquals(5, test.solution(new int[] { 1, 1, 9, 1, 1, 1 }, 0));
+    }
+
+    void P67258Test() {
+        P67258 test = new P67258();
+        Assertions.assertArrayEquals(new int[] { 3, 7 }, 
+            test.solution(new String[] { "DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA" }));
+        Assertions.assertArrayEquals(new int[] { 1, 3 }, 
+            test.solution(new String[] { "AA", "AB", "AC", "AA", "AC" }));
+        Assertions.assertArrayEquals(new int[] { 1, 1 }, 
+            test.solution(new String[] { "XYZ", "XYZ", "XYZ" }));
+        Assertions.assertArrayEquals(new int[] { 1, 5 }, 
+            test.solution(new String[] { "ZZZ", "YYY", "NNNN", "YYY", "BBB" }));
+    }
+
     @Test
     void K22A1Test(String fileName, Boolean silent) throws IOException {
         K22A1 test = new K22A1();
@@ -413,6 +459,32 @@ public class TestRunner {
             System.out.printf("%sTest(): SUCCESS\n", fileName);
     }
 
+    private ArrayList<String[]> mockInOutTestHelper(String filename) throws IOException {
+        String path = "zb-study/data";
+        List<String> files = Stream.of(new File(path).listFiles())
+                                   .filter(file -> !file.isDirectory() 
+                                                   && file.toString().contains(filename))
+                                   .map(File::getName).collect(Collectors.toList());
+        List<String> inFileNames = files.stream().filter(file -> file.contains("in")).collect(Collectors.toList());
+        List<String> outFileNames = files.stream().filter(file -> file.contains("out")).collect(Collectors.toList());
+        Collections.sort(inFileNames);
+        Collections.sort(outFileNames);
+        path += "/";
+        String[] mockInput = new String[inFileNames.size()], expected = new String[outFileNames.size()];
+        for (int i = 0; i < inFileNames.size(); i++) {
+            ByteArrayInputStream iC = new ByteArrayInputStream(
+                Files.readString(Paths.get(path + inFileNames.get(i))).getBytes(StandardCharsets.UTF_8));
+            ByteArrayInputStream oC = new ByteArrayInputStream(
+                Files.readString(Paths.get(path + outFileNames.get(i))).getBytes(StandardCharsets.UTF_8));
+            mockInput[i] = new BufferedReader(new InputStreamReader(iC)).lines().collect(Collectors.joining("\n"));
+            expected[i] = new BufferedReader(new InputStreamReader(oC)).lines().collect(Collectors.joining("\n"));
+        }
+        return new ArrayList<>() {{
+            add(mockInput);
+            add(expected);
+        }};
+    }
+
     void leetcodeRunner(Boolean silent, TestRunner testRunner) {
         String msg = "";
         testRunner.L00007Test();
@@ -472,30 +544,19 @@ public class TestRunner {
         System.out.printf("%sAll leetcode tests have been completed successfully.\n", silent ? "" : msg);
     }
 
-    private ArrayList<String[]> mockInOutTestHelper(String filename) throws IOException {
-        String path = "zb-study/data";
-        List<String> files = Stream.of(new File(path).listFiles())
-                                   .filter(file -> !file.isDirectory() 
-                                                   && file.toString().contains(filename))
-                                   .map(File::getName).collect(Collectors.toList());
-        List<String> inFileNames = files.stream().filter(file -> file.contains("in")).collect(Collectors.toList());
-        List<String> outFileNames = files.stream().filter(file -> file.contains("out")).collect(Collectors.toList());
-        Collections.sort(inFileNames);
-        Collections.sort(outFileNames);
-        path += "/";
-        String[] mockInput = new String[inFileNames.size()], expected = new String[outFileNames.size()];
-        for (int i = 0; i < inFileNames.size(); i++) {
-            ByteArrayInputStream iC = new ByteArrayInputStream(
-                Files.readString(Paths.get(path + inFileNames.get(i))).getBytes(StandardCharsets.UTF_8));
-            ByteArrayInputStream oC = new ByteArrayInputStream(
-                Files.readString(Paths.get(path + outFileNames.get(i))).getBytes(StandardCharsets.UTF_8));
-            mockInput[i] = new BufferedReader(new InputStreamReader(iC)).lines().collect(Collectors.joining("\n"));
-            expected[i] = new BufferedReader(new InputStreamReader(oC)).lines().collect(Collectors.joining("\n"));
-        }
-        return new ArrayList<>() {{
-            add(mockInput);
-            add(expected);
-        }};
+    void programmersRunner(Boolean silent, TestRunner testRunner) {
+        String msg = "";
+        testRunner.P01878Test();
+        msg += silent ? "" : "P01878Test(): SUCCESS\n";
+        testRunner.P42576Test();
+        msg += silent ? "" : "P42576Test(): SUCCESS\n";
+        testRunner.P42579Test();
+        msg += silent ? "" : "P42579Test(): SUCCESS\n";
+        testRunner.P42587Test();
+        msg += silent ? "" : "P42587Test(): SUCCESS\n";
+        testRunner.P67258Test();
+        msg += silent ? "" : "P67258Test(): SUCCESS\n";
+        System.out.printf("%sAll programmers tests have been completed successfully.\n", silent ? "" : msg);
     }
 
     void kickstartRunner(Boolean silent, TestRunner testRunner) throws IOException {
@@ -516,6 +577,7 @@ public class TestRunner {
     public static void main(String[] args) throws IOException {
         TestRunner testRunner = new TestRunner();
         testRunner.leetcodeRunner(false, testRunner);
+        testRunner.programmersRunner(false, testRunner);
         testRunner.kickstartRunner(false, testRunner);
         testRunner.acmicpcRunner(false, testRunner);
     }

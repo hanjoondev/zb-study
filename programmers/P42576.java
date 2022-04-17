@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.Arrays;
 
-class P42576 {
+public class P42576 {
     public String solution(String[] p, String[] c) {
         Arrays.sort(p);
         Arrays.sort(c);

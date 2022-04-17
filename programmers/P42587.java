@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class P42587 {
+public class P42587 {
     public int solution(int[] priorities, int location) {
         Queue<Integer> papers = new LinkedList<Integer>();
         Queue<Integer> marker = new LinkedList<Integer>();

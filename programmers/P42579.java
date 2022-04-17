@@ -65,7 +65,7 @@ class Chart {
     }
 }
 
-class P42579 {
+public class P42579 {
     public int[] solution(String[] genres, int[] plays) {
         Chart chart = new Chart();
         for (int i = 0; i < genres.length; i++)
