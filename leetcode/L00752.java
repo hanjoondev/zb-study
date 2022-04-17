@@ -1,32 +1,44 @@
 package leetcode;
 
 import java.util.*;
-import java.util.stream.*;
 
 public class L00752 {
     public int openLock(String[] deadends, String target) {
-        if (Arrays.stream(deadends).anyMatch(s -> s.equals("0000")))
+        boolean[] visited = new boolean[10000];
+        for (String deadend : deadends) {
+            if (deadend.equals(target))
+                return -1;
+            visited[Integer.parseInt(deadend)] = true;
+        }
+        if (visited[0])
             return -1;
+        int t = Integer.parseInt(target), counter = 0, qlen;
+        if (t == 0)
+            return 0;
         Queue<Integer> queue = new LinkedList<>() {{ add(0); }};
-        HashSet<Integer> visited = new HashSet<>() {{ add(0); }};
-        int[] d = Stream.of(deadends).mapToInt(Integer::parseInt).toArray();
-        int t = Integer.parseInt(target), counter = 0, qlen = queue.size();
-        while (qlen > 0) {
+        queue.add(0);
+        counter++;
+        while (!queue.isEmpty()) {
+            qlen = queue.size();
             for (int i = 0; i < qlen; i++) {
                 int cur = queue.poll();
-                if (cur == t)
-                    return counter;
                 for (int j = 1; j < 10000; j *= 10) {
-                    int f = cur % (j * 10) / j == 9 ? cur - 9 * j : cur + j;
-                    int b = cur % (j * 10) / j == 0 ? cur + 9 * j : cur - j;
-                    for (int k : new int[] {f, b})
-                        if (!visited.contains(k) && !Arrays.stream(d).anyMatch(x -> x == k)) {
-                            queue.add(k);
-                            visited.add(k);
-                        }
+                    int tDigit = (cur / j) % 10;
+                    int base = cur - tDigit * j;
+                    int u = base + (tDigit + 1) % 10 * j;
+                    int d = base + (tDigit + 9) % 10 * j;
+                    if (u == t || d == t)
+                        return counter;
+                    if (!visited[u]) {
+                        visited[u] = true;
+                        queue.offer(u);
+                    }
+                    if (!visited[d]) {
+                        visited[d] = true;
+                        queue.offer(d);
+                    }
                 }
             }
-            qlen = queue.size();
             counter++;
         }
         return -1;
