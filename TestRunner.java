@@ -6,7 +6,6 @@ import java.util.*;
 import java.util.stream.*;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import acmicpc.*;
@@ -275,8 +274,9 @@ public class TestRunner {
     }
 
     @Test
-    void K22A1Test(ArrayList<String[]> files) throws IOException {
+    void K22A1Test(String fileName, Boolean silent) throws IOException {
         K22A1 test = new K22A1();
+        ArrayList<String[]> files = mockInOutTestHelper(fileName);
         final PrintStream sysOut = System.out;
         for (int i = 0; i < files.size() / 2; i++) {
             String mockData = files.get(0)[i], expected = files.get(1)[i];
@@ -287,71 +287,192 @@ public class TestRunner {
             test.reader();
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
-            
         }
         System.setOut(sysOut);
+        if (silent == false)
+            System.out.printf("%sTest(): SUCCESS\n", fileName);
+    }
+
+    @Test
+    void A01406Test(String fileName, Boolean silent) throws IOException {
+        A01406 test = new A01406();
+        ArrayList<String[]> files = mockInOutTestHelper(fileName);
+        final PrintStream sysOut = System.out;
+        for (int i = 0; i < files.size() / 2; i++) {
+            String mockData = files.get(0)[i], expected = files.get(1)[i];
+            InputStream sysIn = System.in;
+            ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+            System.setIn(new ByteArrayInputStream(mockData.getBytes()));
+            System.setOut(new PrintStream(actualOutput));
+            test.solution();
+            Assertions.assertEquals(expected, actualOutput.toString().trim());
+            System.setIn(sysIn);
+        }
+        System.setOut(sysOut);
+        if (silent == false)
+            System.out.printf("%sTest(): SUCCESS\n", fileName);
+    }
+
+    @Test
+    void A01874Test(String fileName, Boolean silent) throws IOException {
+        A01874 test = new A01874();
+        ArrayList<String[]> files = mockInOutTestHelper(fileName);
+        final PrintStream sysOut = System.out;
+        for (int i = 0; i < files.size() / 2; i++) {
+            String mockData = files.get(0)[i], expected = files.get(1)[i];
+            InputStream sysIn = System.in;
+            ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+            System.setIn(new ByteArrayInputStream(mockData.getBytes()));
+            System.setOut(new PrintStream(actualOutput));
+            test.reader();
+            Assertions.assertEquals(expected, actualOutput.toString().trim());
+            System.setIn(sysIn);
+        }
+        System.setOut(sysOut);
+        if (silent == false)
+            System.out.printf("%sTest(): SUCCESS\n", fileName);
+    }
+
+    @Test
+    void A01914Test(String fileName, Boolean silent) throws IOException {
+        ArrayList<String[]> files = mockInOutTestHelper(fileName);
+        final PrintStream sysOut = System.out;
+        for (int i = 0; i < files.size() / 2; i++) {
+            String mockData = files.get(0)[i], expected = files.get(1)[i];
+            InputStream sysIn = System.in;
+            ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+            System.setIn(new ByteArrayInputStream(mockData.getBytes()));
+            System.setOut(new PrintStream(actualOutput));
+            A01914 test = new A01914();
+            test.reader();
+            Assertions.assertEquals(expected, actualOutput.toString().trim());
+            System.setIn(sysIn);
+        }
+        System.setOut(sysOut);
+        if (silent == false)
+            System.out.printf("%sTest(): SUCCESS\n", fileName);
+    }
+
+    @Test
+    void A02346Test(String fileName, Boolean silent) throws IOException {
+        A02346 test = new A02346();
+        ArrayList<String[]> files = mockInOutTestHelper(fileName);
+        final PrintStream sysOut = System.out;
+        for (int i = 0; i < files.size() / 2; i++) {
+            String mockData = files.get(0)[i], expected = files.get(1)[i];
+            InputStream sysIn = System.in;
+            ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+            System.setIn(new ByteArrayInputStream(mockData.getBytes()));
+            System.setOut(new PrintStream(actualOutput));
+            test.reader();
+            Assertions.assertEquals(expected, actualOutput.toString().trim());
+            System.setIn(sysIn);
+        }
+        System.setOut(sysOut);
+        if (silent == false)
+            System.out.printf("%sTest(): SUCCESS\n", fileName);
+    }
+
+    @Test
+    void A03190Test(String fileName, Boolean silent) throws IOException {
+        A03190 test = new A03190();
+        ArrayList<String[]> files = mockInOutTestHelper(fileName);
+        final PrintStream sysOut = System.out;
+        for (int i = 0; i < files.size() / 2; i++) {
+            String mockData = files.get(0)[i], expected = files.get(1)[i];
+            InputStream sysIn = System.in;
+            ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+            System.setIn(new ByteArrayInputStream(mockData.getBytes()));
+            System.setOut(new PrintStream(actualOutput));
+            test.reader();
+            Assertions.assertEquals(expected, actualOutput.toString().trim());
+            System.setIn(sysIn);
+        }
+        System.setOut(sysOut);
+        if (silent == false)
+            System.out.printf("%sTest(): SUCCESS\n", fileName);
+    }
+
+    @Test
+    void A17609Test(String fileName, Boolean silent) throws IOException {
+        A17609 test = new A17609();
+        ArrayList<String[]> files = mockInOutTestHelper(fileName);
+        final PrintStream sysOut = System.out;
+        for (int i = 0; i < files.size() / 2; i++) {
+            String mockData = files.get(0)[i], expected = files.get(1)[i];
+            InputStream sysIn = System.in;
+            ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+            System.setIn(new ByteArrayInputStream(mockData.getBytes()));
+            System.setOut(new PrintStream(actualOutput));
+            test.solution();
+            Assertions.assertEquals(expected, actualOutput.toString().trim());
+            System.setIn(sysIn);
+        }
+        System.setOut(sysOut);
+        if (silent == false)
+            System.out.printf("%sTest(): SUCCESS\n", fileName);
     }
 
     void leetcodeRunner(Boolean silent, TestRunner testRunner) {
         String msg = "";
         testRunner.L00007Test();
-        msg += silent ? "" : "L00007Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00007Test(): SUCCESS\n";
         testRunner.L00011Test();
-        msg += silent ? "" : "L00011Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00011Test(): SUCCESS\n";
         testRunner.L00012Test();
-        msg += silent ? "" : "L00012Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00012Test(): SUCCESS\n";
         testRunner.L00013Test();
-        msg += silent ? "" : "L00013Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00013Test(): SUCCESS\n";
         testRunner.L00020Test();
-        msg += silent ? "" : "L00020Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00020Test(): SUCCESS\n";
         testRunner.L00026Test();
-        msg += silent ? "" : "L00026Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00026Test(): SUCCESS\n";
         testRunner.L00042Test();
-        msg += silent ? "" : "L00042Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00042Test(): SUCCESS\n";
         testRunner.L00054Test();
-        msg += silent ? "" : "L00054Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00054Test(): SUCCESS\n";
         testRunner.L00073Test();
-        msg += silent ? "" : "L00073Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00073Test(): SUCCESS\n";
         testRunner.L00079Test();
-        msg += silent ? "" : "L00079Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00079Test(): SUCCESS\n";
         testRunner.L00096Test();
-        msg += silent ? "" : "L00096Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00096Test(): SUCCESS\n";
         testRunner.L00118Test();
-        msg += silent ? "" : "L00118Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00118Test(): SUCCESS\n";
         testRunner.L00130Test();
-        msg += silent ? "" : "L00130Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00130Test(): SUCCESS\n";
         testRunner.L00135Test();
-        msg += silent ? "" : "L00135Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00135Test(): SUCCESS\n";
         testRunner.L00202Test();
-        msg += silent ? "" : "L00202Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00202Test(): SUCCESS\n";
         testRunner.L00442Test();
-        msg += silent ? "" : "L00442Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00442Test(): SUCCESS\n";
         testRunner.L00463Test();
-        msg += silent ? "" : "L00463Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00463Test(): SUCCESS\n";
         testRunner.L00567Test();
-        msg += silent ? "" : "L00567Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00567Test(): SUCCESS\n";
         testRunner.L00640Test();
-        msg += silent ? "" : "L00640Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00640Test(): SUCCESS\n";
         testRunner.L00658Test();
-        msg += silent ? "" : "L00658Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00658Test(): SUCCESS\n";
         testRunner.L00721Test();
-        msg += silent ? "" : "L00721Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00721Test(): SUCCESS\n";
         testRunner.L00752Test();
-        msg += silent ? "" : "L00752Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L00752Test(): SUCCESS\n";
         testRunner.L01053Test();
-        msg += silent ? "" : "L01053Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L01053Test(): SUCCESS\n";
         testRunner.L01654Test();
-        msg += silent ? "" : "L01654Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L01654Test(): SUCCESS\n";
         testRunner.L01851Test();
-        msg += silent ? "" : "L01851Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L01851Test(): SUCCESS\n";
         testRunner.L01922Test();
-        msg += silent ? "" : "L01922Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L01922Test(): SUCCESS\n";
         testRunner.L01942Test();
-        msg += silent ? "" : "L01942Test(): SUCCESS\n" ;
+        msg += silent ? "" : "L01942Test(): SUCCESS\n";
         System.out.printf("%sAll leetcode tests have been completed successfully.\n", silent ? "" : msg);
     }
 
-    private ArrayList<String[]> kickstartTestHelper(String filename) throws IOException {
+    private ArrayList<String[]> mockInOutTestHelper(String filename) throws IOException {
         String path = "zb-study/data";
         List<String> files = Stream.of(new File(path).listFiles())
                                    .filter(file -> !file.isDirectory() 
@@ -378,15 +499,24 @@ public class TestRunner {
     }
 
     void kickstartRunner(Boolean silent, TestRunner testRunner) throws IOException {
-        String resultMsg = "";
-        testRunner.K22A1Test(kickstartTestHelper("K22A1"));
-        resultMsg += silent ? "" : "K22A1Test(): SUCCESS\n" ;
-        System.out.printf("%sAll kickstart tests have been completed successfully.\n", silent ? "" : resultMsg);
+        testRunner.K22A1Test("K22A1", false);
+        System.out.println("All kickstart tests have been completed successfully.");
+    }
+
+    void acmicpcRunner(Boolean silent, TestRunner testRunner) throws IOException {
+        testRunner.A01406Test("A01406", false);
+        testRunner.A01874Test("A01874", false);
+        testRunner.A01914Test("A01914", false);
+        testRunner.A02346Test("A02346", false);
+        testRunner.A03190Test("A03190", false);
+        testRunner.A17609Test("A17609", false);
+        System.out.println("All acmicpc tests have been completed successfully.");
     }
 
     public static void main(String[] args) throws IOException {
         TestRunner testRunner = new TestRunner();
         testRunner.leetcodeRunner(false, testRunner);
         testRunner.kickstartRunner(false, testRunner);
+        testRunner.acmicpcRunner(false, testRunner);
     }
 }

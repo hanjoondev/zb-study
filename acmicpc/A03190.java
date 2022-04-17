@@ -34,7 +34,7 @@ public class A03190 {
         }
     }
 
-    public static void main(String[] args) throws NumberFormatException, IOException {
+    public void reader () throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         map = new int[n][n];
@@ -54,54 +54,9 @@ public class A03190 {
         }
         System.out.println((solution(n, k, l)));
     }
+
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        A03190 test = new A03190();
+        test.reader();
+    }
 }
-
-/* input 1
-6
-3
-3 4
-2 5
-5 3
-3
-3 D
-15 L
-17 D
-*/
-/* output 1
-9
-*/
-
-/* input 2
-10
-4
-1 2
-1 3
-1 4
-1 5
-4
-8 D
-10 D
-11 D
-13 L
-*/
-/* output 2
-21
-*/
-
-/* input 3
-10
-5
-1 5
-1 3
-1 2
-1 6
-1 7
-4
-8 D
-10 D
-11 D
-13 L
-*/
-/* output 3
-13
-*/

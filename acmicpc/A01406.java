@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class A01406 {
-    public static void main(String[] args) throws IOException {
+    public void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         Stack<String> l = new Stack<String>(), r = new Stack<String>();
@@ -30,53 +30,10 @@ public class A01406 {
             bw.write(r.pop());
         bw.flush();
         bw.close();
+    }
 
+    public static void main(String[] args) throws IOException {
+        A01406 test = new A01406();
+        test.solution();
     }
 }
-
-/* input 1
-abcd
-3
-P x
-L
-P y
-*/
-/* output 1
-abcdyx
-*/
-
-/* input 2
-abc
-9
-L
-L
-L
-L
-L
-P x
-L
-B
-P y
-*/
-/* output 2
-yxabc
-*/
-
-/* input 3
-dmih
-11
-B
-B
-P x
-L
-B
-B
-B
-P y
-D
-D
-P z
-*/
-/* output 3
-yxz
-*/

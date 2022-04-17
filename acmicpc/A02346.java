@@ -26,7 +26,7 @@ public class A02346 {
         System.out.println(sb);
     }
 
-    public static void main(String[] args) throws NumberFormatException, IOException {
+    public void reader() throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int len = Integer.parseInt(br.readLine());
         int[] balloon = new int[len];
@@ -35,12 +35,9 @@ public class A02346 {
             balloon[i] = Integer.parseInt(ball[i]);
         solution(balloon);
     }
-}
 
-/* input 1
-5
-3 2 1 -3 -1
-*/
-/* output 1
-1 4 5 3 2
-*/
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        A02346 test = new A02346();
+        test.reader();
+    }
+}

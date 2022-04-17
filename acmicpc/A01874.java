@@ -27,7 +27,7 @@ public class A01874 {
         System.out.println(sb);
     }
 
-    public static void main(String[] args) throws NumberFormatException, IOException {
+    public void reader() throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
@@ -36,46 +36,9 @@ public class A01874 {
             nums[i] = Integer.parseInt(br.readLine());
         solution(nums);
     }
+
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        A01874 test = new A01874();
+        test.reader();
+    }
 }
-
-/* input 1
-8
-4
-3
-6
-8
-7
-5
-2
-1
-*/
-/* output 1
-+
-+
-+
-+
--
--
-+
-+
--
-+
-+
--
--
--
--
--
-*/
-
-/* input 2
-5
-1
-2
-5
-3
-4
-*/
-/* output 2
-NO
-*/
