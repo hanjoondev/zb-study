@@ -249,11 +249,29 @@ public class TestRunner {
         Assertions.assertEquals(2, test.minimumJumps(new int[] { 1, 6, 2, 14, 5, 17, 4 }, 16, 9, 7));
     }
 
+    void L01851Test() {
+        L01851 test = new L01851();
+        Assertions.assertArrayEquals(new int[] { 3, 3, 1, 4 },
+                test.minInterval(new int[][] { { 1, 4 }, { 2, 4 }, { 3, 6 }, { 4,4 } },
+                                 new int[] { 2, 3, 4, 5 }));
+        Assertions.assertArrayEquals(new int[] { 2, -1, 4, 6 },
+                    test.minInterval(new int[][] { { 2, 3 }, { 2, 5 }, { 1, 8 }, { 20,25 } },
+                        new int[] { 2, 9, 5, 22 }));
+    }
+
     void L01922Test() {
         L01922 test = new L01922();
         Assertions.assertEquals(5, test.countGoodNumbers(1L));
         Assertions.assertEquals(400, test.countGoodNumbers(4L));
         Assertions.assertEquals(564908303, test.countGoodNumbers(50L));
+    }
+
+    void L01942Test() {
+        L01942 test = new L01942();
+        Assertions.assertEquals(1, test.smallestChair(
+                new int[][] { { 1, 4 }, { 2, 3 }, { 4, 6 } }, 1));
+        Assertions.assertEquals(2, test.smallestChair(
+                new int[][] { { 3, 10 }, { 1, 5 }, { 2, 6 } }, 0));
     }
 
     @Test
@@ -324,8 +342,12 @@ public class TestRunner {
         msg += silent ? "" : "L01053Test(): SUCCESS\n" ;
         testRunner.L01654Test();
         msg += silent ? "" : "L01654Test(): SUCCESS\n" ;
+        testRunner.L01851Test();
+        msg += silent ? "" : "L01851Test(): SUCCESS\n" ;
         testRunner.L01922Test();
         msg += silent ? "" : "L01922Test(): SUCCESS\n" ;
+        testRunner.L01942Test();
+        msg += silent ? "" : "L01942Test(): SUCCESS\n" ;
         System.out.printf("%sAll leetcode tests have been completed successfully.\n", silent ? "" : msg);
     }
 
