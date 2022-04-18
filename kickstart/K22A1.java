@@ -1,19 +1,17 @@
 package kickstart;
 
-import java.util.*;
+import java.io.*;
 
 public class K22A1 {
-    public void reader() {
-        Scanner sc = new Scanner(System.in);
-        int numCases = Integer.parseInt(sc.nextLine());
-        String[] I = new String[numCases], P = new String[numCases];
-        for (int i = 0; i < numCases; i++) {
-            I[i] = sc.nextLine();
-            P[i] = sc.nextLine();
-        }
-        sc.close();
+    public void reader() throws NumberFormatException, IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int numCases = Integer.parseInt(br.readLine());
         for (int i = 0; i < numCases; i++)
-            System.out.printf("Case #%d: %s\n", i + 1, solver(I[i], P[i]));
+            bw.write(String.format("Case #%d: %s\n", i + 1, 
+                                    solver(br.readLine(), br.readLine())));
+        bw.flush();
+        bw.close();
     }
 
     public static String solver(String I, String P) {
@@ -26,7 +24,7 @@ public class K22A1 {
         return j == I.length() ? String.valueOf(ans) : "IMPOSSIBLE";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NumberFormatException, IOException {
         K22A1 k22A1 = new K22A1();
         k22A1.reader();
     }
