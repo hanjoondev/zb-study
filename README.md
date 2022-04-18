@@ -53,6 +53,7 @@
 | Year | Round | Problem | Solution | Related |
 | :--: | :---: | :-----: | :------: | :-----: |
 | 2022 |   A   | [Speed Typing](https://codingcompetitions.withgoogle.com/kickstart/round/00000000008cb33e/00000000009e7021)                                                                                                                                                                                    | [Java](./kickstart/K22A1.java)                                                                                                                                                                                                                               |                                               |
+| 2022 |   A   | [Challenge Nine](https://codingcompetitions.withgoogle.com/kickstart/round/00000000008cb33e/00000000009e7997)                                                                                                                                                                                    | [Java](./kickstart/K22A2.java)                                                                                                                                                                                                                               |                                               |
 
 ## [programmers](https://programmers.co.kr/learn/challenges)
 |                                  Problem                                  | Solution | Related |

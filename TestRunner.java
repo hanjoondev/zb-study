@@ -322,6 +322,7 @@ public class TestRunner {
     @Test
     void K22A1Test(String fileName, Boolean silent) throws IOException {
         K22A1 test = new K22A1();
+        long start = System.nanoTime();
         ArrayList<String[]> files = mockInOutTestHelper(fileName);
         final PrintStream sysOut = System.out;
         for (int i = 0; i < files.size() / 2; i++) {
@@ -335,8 +336,33 @@ public class TestRunner {
             System.setIn(sysIn);
         }
         System.setOut(sysOut);
+        long end = System.nanoTime();
         if (silent == false)
-            System.out.printf("%sTest(): SUCCESS\n", fileName);
+            System.out.printf("%sTest(): SUCCESS%s\n", fileName,
+                String.format(" in %.2fms", (end - start) / 1e6));
+    }
+
+    @Test
+    void K22A2Test(String fileName, Boolean silent) throws IOException {
+        K22A2 test = new K22A2();
+        long start = System.nanoTime();
+        ArrayList<String[]> files = mockInOutTestHelper(fileName);
+        final PrintStream sysOut = System.out;
+        for (int i = 0; i < files.size() / 2; i++) {
+            String mockData = files.get(0)[i], expected = files.get(1)[i];
+            InputStream sysIn = System.in;
+            ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+            System.setIn(new ByteArrayInputStream(mockData.getBytes()));
+            System.setOut(new PrintStream(actualOutput));
+            test.reader();
+            Assertions.assertEquals(expected, actualOutput.toString().trim());
+            System.setIn(sysIn);
+        }
+        System.setOut(sysOut);
+        long end = System.nanoTime();
+        if (silent == false)
+            System.out.printf("%sTest(): SUCCESS%s\n", fileName, 
+                String.format(" in %.2fms", (end - start) / 1e6));
     }
 
     @Test
@@ -561,6 +587,7 @@ public class TestRunner {
 
     void kickstartRunner(Boolean silent, TestRunner testRunner) throws IOException {
         testRunner.K22A1Test("K22A1", false);
+        testRunner.K22A2Test("K22A2", false);
         System.out.println("All kickstart tests have been completed successfully.");
     }
 
