@@ -5,6 +5,7 @@ import java.io.*;
 public class A17609 {
     public void solution() throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int len = Integer.parseInt(br.readLine());
         for (int i = 0; i < len; i++) {
             String s = br.readLine();
@@ -22,8 +23,10 @@ public class A17609 {
                     r--;
                 }
             }
-            System.out.println(ans);
+            bw.write(String.valueOf(ans) + "\n");
         }
+        bw.flush();
+        bw.close();
     }
 
     public static int checker(int l, int r, char[] c) {
