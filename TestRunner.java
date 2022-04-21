@@ -46,59 +46,67 @@ class Benchmark {
 
 public class TestRunner {
     @org.junit.jupiter.api.Test
-    void L00007Test() {
+    void L00007Test(Boolean verbose) {
         L00007 test = new L00007();
         Assertions.assertEquals(321, test.reverse(123));
         Assertions.assertEquals(-321, test.reverse(-123));
         Assertions.assertEquals(21, test.reverse(120));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00011Test() {
+    void L00011Test(Boolean verbose) {
         L00011 test = new L00011();
         Assertions.assertEquals(49, test.maxArea(new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 }));
         Assertions.assertEquals(1, test.maxArea(new int[] { 1, 1 }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00012Test() {
+    void L00012Test(Boolean verbose) {
         L00012 test = new L00012();
         Assertions.assertEquals("III", test.intToRoman(3));
         Assertions.assertEquals("LVIII", test.intToRoman(58));
         Assertions.assertEquals("MCMXCIV", test.intToRoman(1994));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00013Test() {
+    void L00013Test(Boolean verbose) {
         L00013 test = new L00013();
         Assertions.assertEquals(3, test.romanToInt("III"));
         Assertions.assertEquals(58, test.romanToInt("LVIII"));
         Assertions.assertEquals(1994, test.romanToInt("MCMXCIV"));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00020Test() {
+    void L00020Test(Boolean verbose) {
         L00020 test = new L00020();
         Assertions.assertTrue(test.isValid("()"));
         Assertions.assertTrue(test.isValid("()[]{}"));
         Assertions.assertFalse(test.isValid("(]"));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00026Test() {
+    void L00026Test(Boolean verbose) {
         L00026 test = new L00026();
         Assertions.assertEquals(2, test.removeDuplicates(new int[] { 1, 1, 2 }));
         Assertions.assertEquals(5, test.removeDuplicates(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00042Test() {
+    void L00042Test(Boolean verbose) {
         L00042 test = new L00042();
         Assertions.assertEquals(6, test.trap(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 }));
         Assertions.assertEquals(9, test.trap(new int[] { 4, 2, 0, 3, 2, 5 }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00054Test() {
+    void L00054Test(Boolean verbose) {
         L00054 test = new L00054();
         Assertions.assertEquals(Arrays.asList(1, 2, 3, 6, 9, 8, 7, 4, 5), test.spiralOrder(new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } }));
         Assertions.assertEquals(Arrays.asList(1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7), test.spiralOrder(new int[][] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
     
-    void L00073Test() {
+    void L00073Test(Boolean verbose) {
         L00073 test = new L00073();
         int[][] matrix = new int[][] { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 } };
         int[][] expected = new int[][] { { 1, 0, 1 }, { 0, 0, 0 }, { 1, 0, 1 } };
@@ -108,22 +116,25 @@ public class TestRunner {
         expected = new int[][] { { 0, 0, 0, 0 }, { 0, 4, 5, 0 }, { 0, 3, 1, 0 } };
         test.setZeroes(matrix);
         Assertions.assertArrayEquals(expected, matrix);
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00079Test() {
+    void L00079Test(Boolean verbose) {
         L00079 test = new L00079();
         Assertions.assertTrue(test.exist(new char[][] { { 'A', 'B', 'C', 'E' }, { 'S', 'F', 'C', 'S' }, { 'A', 'D', 'E', 'E' } }, "ABCCED"));
         Assertions.assertTrue(test.exist(new char[][] { { 'A', 'B', 'C', 'E' }, { 'S', 'F', 'C', 'S' }, { 'A', 'D', 'E', 'E' } }, "SEE"));
         Assertions.assertFalse(test.exist(new char[][] { { 'A', 'B', 'C', 'E' }, { 'S', 'F', 'C', 'S' }, { 'A', 'D', 'E', 'E' } }, "ABCB"));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00096Test() {
+    void L00096Test(Boolean verbose) {
         L00096 test = new L00096();
         Assertions.assertEquals(5, test.numTrees(3));
         Assertions.assertEquals(1, test.numTrees(1));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00118Test() {
+    void L00118Test(Boolean verbose) {
         L00118 test = new L00118();
         Assertions.assertEquals(Arrays.asList(
                 List.of(1),
@@ -132,34 +143,38 @@ public class TestRunner {
             Arrays.asList(1, 3, 3, 1), 
             Arrays.asList(1, 4, 6, 4, 1)), test.generate(5));
         Assertions.assertEquals(List.of(List.of(1)), test.generate(1));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00130Test() {
+    void L00130Test(Boolean verbose) {
         L00130 test = new L00130();
         char[][] board = new char[][] { { 'X', 'X', 'X', 'X' }, { 'X', 'O', 'O', 'X' }, { 'X', 'X', 'O', 'X' }, { 'X', 'O', 'X', 'X' } };
         char[][] expected = new char[][] { { 'X', 'X', 'X', 'X' }, { 'X', 'X', 'X', 'X' }, { 'X', 'X', 'X', 'X' }, { 'X', 'O', 'X', 'X' } };
         test.solve(board);
         Assertions.assertArrayEquals(expected, board);
 
-        board = new char[][] { { 'X' }};
-        expected = new char[][] { { 'X' }};
+        board = new char[][] { { 'X' } };
+        expected = new char[][] { { 'X' } };
         test.solve(board);
         Assertions.assertArrayEquals(expected, board);
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00135Test() {
+    void L00135Test(Boolean verbose) {
         L00135 test = new L00135();
         Assertions.assertEquals(5, test.candy(new int[] { 1, 0, 2 }));
         Assertions.assertEquals(4, test.candy(new int[] { 1, 2, 2 }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00202Test() {
+    void L00202Test(Boolean verbose) {
         L00202 test = new L00202();
         Assertions.assertTrue(test.isHappy(19));
         Assertions.assertFalse(test.isHappy(2));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00442Test() {
+    void L00442Test(Boolean verbose) {
         L00442 test = new L00442();
         Assertions.assertTrue(
             Arrays.asList(2, 3).size() == test.findDuplicates(new int[] { 4, 3, 2, 7, 8, 2, 3, 1 }).size()
@@ -168,35 +183,40 @@ public class TestRunner {
         );
         Assertions.assertEquals(List.of(1), test.findDuplicates(new int[] { 1, 1, 2 }));
         Assertions.assertEquals(List.of(), test.findDuplicates(new int[] { 1 }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00463Test() {
+    void L00463Test(Boolean verbose) {
         L00463 test = new L00463();
         Assertions.assertEquals(16, test.islandPerimeter(new int[][] { { 0, 1, 0, 0 }, { 1, 1, 1, 0 }, { 0, 1, 0, 0 }, { 1, 1, 0, 0 } }));
         Assertions.assertEquals(4, test.islandPerimeter(new int[][] { { 1 } }));
         Assertions.assertEquals(4, test.islandPerimeter(new int[][] { { 1, 0 } }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00567Test() {
+    void L00567Test(Boolean verbose) {
         L00567 test = new L00567();
         Assertions.assertTrue(test.checkInclusion("ab", "eidbaooo"));
         Assertions.assertFalse(test.checkInclusion("ab", "eidboaoo"));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00640Test() {
+    void L00640Test(Boolean verbose) {
         L00640 test = new L00640();
         Assertions.assertEquals("x=2", test.solveEquation("x+5-3+x=6+x-2"));
         Assertions.assertEquals("Infinite solutions", test.solveEquation("x=x"));
         Assertions.assertEquals("x=0", test.solveEquation("2x=x"));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00658Test() {
+    void L00658Test(Boolean verbose) {
         L00658 test = new L00658();
         Assertions.assertEquals(Arrays.asList(1, 2, 3, 4), test.findClosestElements(new int[] { 1, 2, 3, 4, 5 }, 4, 3));
         Assertions.assertEquals(Arrays.asList(1, 2, 3, 4), test.findClosestElements(new int[] { 1, 2, 3, 4, 5 }, 4, -1));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00721Test() {
+    void L00721Test(Boolean verbose) {
         L00721 test = new L00721();
         List<List<String>> expected = new ArrayList<>() {{
             add(Arrays.asList("John", "john00@mail.com", "john_newyork@mail.com", "johnsmith@mail.com"));
@@ -225,30 +245,34 @@ public class TestRunner {
             Arrays.asList("Fern", "Fern5@m.co", "Fern1@m.co", "Fern0@m.co"))
         );
         Assertions.assertTrue(expected.size() == actual.size() && expected.containsAll(actual) && actual.containsAll(expected));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L00752Test() {
+    void L00752Test(Boolean verbose) {
         L00752 test = new L00752();
         Assertions.assertEquals(6, test.openLock(new String[] { "0201", "0101", "0102", "1212", "2002" }, "0202"));
         Assertions.assertEquals(1, test.openLock(new String[] { "8888" }, "0009"));
         Assertions.assertEquals(-1, test.openLock(new String[] { "8887", "8889", "8878", "8898", "8788", "8988", "7888", "9888" }, "8888"));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L01053Test() {
+    void L01053Test(Boolean verbose) {
         L01053 test = new L01053();
         Assertions.assertArrayEquals(new int[] { 3, 1, 2 }, test.prevPermOpt1(new int[] { 3, 2, 1 }));
         Assertions.assertArrayEquals(new int[] { 1, 1, 5 }, test.prevPermOpt1(new int[] { 1, 1, 5 }));
         Assertions.assertArrayEquals(new int[] { 1, 7, 4, 6, 9 }, test.prevPermOpt1(new int[] { 1, 9, 4, 6, 7 }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L01654Test() {
+    void L01654Test(Boolean verbose) {
         L01654 test = new L01654();
         Assertions.assertEquals(3, test.minimumJumps(new int[] { 14, 4, 18, 1, 15 }, 3, 15, 9));
         Assertions.assertEquals(-1, test.minimumJumps(new int[] { 8, 3, 16, 6, 12, 20 }, 15, 13, -11));
         Assertions.assertEquals(2, test.minimumJumps(new int[] { 1, 6, 2, 14, 5, 17, 4 }, 16, 9, 7));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L01851Test() {
+    void L01851Test(Boolean verbose) {
         L01851 test = new L01851();
         Assertions.assertArrayEquals(new int[] { 3, 3, 1, 4 },
                 test.minInterval(new int[][] { { 1, 4 }, { 2, 4 }, { 3, 6 }, { 4,4 } },
@@ -256,32 +280,36 @@ public class TestRunner {
         Assertions.assertArrayEquals(new int[] { 2, -1, 4, 6 },
                     test.minInterval(new int[][] { { 2, 3 }, { 2, 5 }, { 1, 8 }, { 20,25 } },
                         new int[] { 2, 9, 5, 22 }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L01922Test() {
+    void L01922Test(Boolean verbose) {
         L01922 test = new L01922();
         Assertions.assertEquals(5, test.countGoodNumbers(1L));
         Assertions.assertEquals(400, test.countGoodNumbers(4L));
         Assertions.assertEquals(564908303, test.countGoodNumbers(50L));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void L01942Test() {
+    void L01942Test(Boolean verbose) {
         L01942 test = new L01942();
         Assertions.assertEquals(1, test.smallestChair(
                 new int[][] { { 1, 4 }, { 2, 3 }, { 4, 6 } }, 1));
         Assertions.assertEquals(2, test.smallestChair(
                 new int[][] { { 3, 10 }, { 1, 5 }, { 2, 6 } }, 0));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void P01878Test() {
+    void P01878Test(Boolean verbose) {
         P01878 test = new P01878();
         Assertions.assertArrayEquals(new int[] { 1, 10 }, 
             test.solution(new int[][] { { 1, 4 }, { 3, 4 }, { 3, 10 } }));
         Assertions.assertArrayEquals(new int[] { 2, 1 }, 
             test.solution(new int[][] { { 1, 1 }, { 2, 2 }, { 1, 2 } }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void P42576Test() {
+    void P42576Test(Boolean verbose) {
         P42576 test = new P42576();
         Assertions.assertEquals("leo",
             test.solution(new String[] { "leo", "kiki", "eden" }, 
@@ -292,22 +320,25 @@ public class TestRunner {
         Assertions.assertEquals("mislav",
             test.solution(new String[] { "mislav", "stanko", "mislav", "ana" },
                           new String[] { "stanko", "ana", "mislav" }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void P42579Test() {
+    void P42579Test(Boolean verbose) {
         P42579 test = new P42579();
         Assertions.assertArrayEquals(new int[] { 4, 1, 3, 0 }, 
             test.solution(new String[] { "classic", "pop", "classic", "classic", "pop" },
                           new int[] { 500, 600, 150, 800, 2500 }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void P42587Test() {
+    void P42587Test(Boolean verbose) {
         P42587 test = new P42587();
         Assertions.assertEquals(1, test.solution(new int[] { 2, 1, 3, 2 }, 2));
         Assertions.assertEquals(5, test.solution(new int[] { 1, 1, 9, 1, 1, 1 }, 0));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
-    void P67258Test() {
+    void P67258Test(Boolean verbose) {
         P67258 test = new P67258();
         Assertions.assertArrayEquals(new int[] { 3, 7 }, 
             test.solution(new String[] { "DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA" }));
@@ -317,14 +348,16 @@ public class TestRunner {
             test.solution(new String[] { "XYZ", "XYZ", "XYZ" }));
         Assertions.assertArrayEquals(new int[] { 1, 5 }, 
             test.solution(new String[] { "ZZZ", "YYY", "NNNN", "YYY", "BBB" }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
     @Test
-    void K22A1Test(String fileName, Boolean silent) throws IOException {
+    void K22A1Test(Boolean verbose) throws IOException {
         K22A1 test = new K22A1();
-        long start = System.nanoTime();
+        String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
         ArrayList<String[]> files = mockInOutTestHelper(fileName);
         final PrintStream sysOut = System.out;
+        long start = System.nanoTime();
         for (int i = 0; i < files.size() / 2; i++) {
             String mockData = files.get(0)[i], expected = files.get(1)[i];
             InputStream sysIn = System.in;
@@ -335,19 +368,20 @@ public class TestRunner {
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
-        System.setOut(sysOut);
         long end = System.nanoTime();
-        if (silent == false)
+        System.setOut(sysOut);
+        if (verbose)
             System.out.printf("%sTest(): SUCCESS%s\n", fileName,
                 String.format(" in %.2fms", (end - start) / 1e6));
     }
 
     @Test
-    void K22A2Test(String fileName, Boolean silent) throws IOException {
+    void K22A2Test(Boolean verbose) throws IOException {
         K22A2 test = new K22A2();
-        long start = System.nanoTime();
+        String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
         ArrayList<String[]> files = mockInOutTestHelper(fileName);
         final PrintStream sysOut = System.out;
+        long start = System.nanoTime();
         for (int i = 0; i < files.size() / 2; i++) {
             String mockData = files.get(0)[i], expected = files.get(1)[i];
             InputStream sysIn = System.in;
@@ -358,18 +392,20 @@ public class TestRunner {
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
-        System.setOut(sysOut);
         long end = System.nanoTime();
-        if (silent == false)
+        System.setOut(sysOut);
+        if (verbose)
             System.out.printf("%sTest(): SUCCESS%s\n", fileName, 
                 String.format(" in %.2fms", (end - start) / 1e6));
     }
 
     @Test
-    void A01406Test(String fileName, Boolean silent) throws IOException {
+    void A01406Test(Boolean verbose) throws IOException {
         A01406 test = new A01406();
+        String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
         ArrayList<String[]> files = mockInOutTestHelper(fileName);
         final PrintStream sysOut = System.out;
+        long start = System.nanoTime();
         for (int i = 0; i < files.size() / 2; i++) {
             String mockData = files.get(0)[i], expected = files.get(1)[i];
             InputStream sysIn = System.in;
@@ -380,16 +416,20 @@ public class TestRunner {
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
+        long end = System.nanoTime();
         System.setOut(sysOut);
-        if (silent == false)
-            System.out.printf("%sTest(): SUCCESS\n", fileName);
+        if (verbose)
+            System.out.printf("%sTest(): SUCCESS%s\n", fileName, 
+                String.format(" in %.2fms", (end - start) / 1e6));
     }
 
     @Test
-    void A01874Test(String fileName, Boolean silent) throws IOException {
+    void A01874Test(Boolean verbose) throws IOException {
         A01874 test = new A01874();
+        String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
         ArrayList<String[]> files = mockInOutTestHelper(fileName);
         final PrintStream sysOut = System.out;
+        long start = System.nanoTime();
         for (int i = 0; i < files.size() / 2; i++) {
             String mockData = files.get(0)[i], expected = files.get(1)[i];
             InputStream sysIn = System.in;
@@ -400,15 +440,19 @@ public class TestRunner {
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
+        long end = System.nanoTime();
         System.setOut(sysOut);
-        if (silent == false)
-            System.out.printf("%sTest(): SUCCESS\n", fileName);
+        if (verbose)
+            System.out.printf("%sTest(): SUCCESS%s\n", fileName, 
+                String.format(" in %.2fms", (end - start) / 1e6));
     }
 
     @Test
-    void A01914Test(String fileName, Boolean silent) throws IOException {
+    void A01914Test(Boolean verbose) throws IOException {
+        String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
         ArrayList<String[]> files = mockInOutTestHelper(fileName);
         final PrintStream sysOut = System.out;
+        long start = System.nanoTime();
         for (int i = 0; i < files.size() / 2; i++) {
             String mockData = files.get(0)[i], expected = files.get(1)[i];
             InputStream sysIn = System.in;
@@ -420,16 +464,20 @@ public class TestRunner {
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
+        long end = System.nanoTime();
         System.setOut(sysOut);
-        if (silent == false)
-            System.out.printf("%sTest(): SUCCESS\n", fileName);
+        if (verbose)
+            System.out.printf("%sTest(): SUCCESS%s\n", fileName, 
+                String.format(" in %.2fms", (end - start) / 1e6));
     }
 
     @Test
-    void A02346Test(String fileName, Boolean silent) throws IOException {
+    void A02346Test(Boolean verbose) throws IOException {
         A02346 test = new A02346();
+        String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
         ArrayList<String[]> files = mockInOutTestHelper(fileName);
         final PrintStream sysOut = System.out;
+        long start = System.nanoTime();
         for (int i = 0; i < files.size() / 2; i++) {
             String mockData = files.get(0)[i], expected = files.get(1)[i];
             InputStream sysIn = System.in;
@@ -440,16 +488,20 @@ public class TestRunner {
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
+        long end = System.nanoTime();
         System.setOut(sysOut);
-        if (silent == false)
-            System.out.printf("%sTest(): SUCCESS\n", fileName);
+        if (verbose)
+            System.out.printf("%sTest(): SUCCESS%s\n", fileName, 
+                String.format(" in %.2fms", (end - start) / 1e6));
     }
 
     @Test
-    void A03190Test(String fileName, Boolean silent) throws IOException {
+    void A03190Test(Boolean verbose) throws IOException {
         A03190 test = new A03190();
+        String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
         ArrayList<String[]> files = mockInOutTestHelper(fileName);
         final PrintStream sysOut = System.out;
+        long start = System.nanoTime();
         for (int i = 0; i < files.size() / 2; i++) {
             String mockData = files.get(0)[i], expected = files.get(1)[i];
             InputStream sysIn = System.in;
@@ -460,16 +512,20 @@ public class TestRunner {
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
+        long end = System.nanoTime();
         System.setOut(sysOut);
-        if (silent == false)
-            System.out.printf("%sTest(): SUCCESS\n", fileName);
+        if (verbose)
+            System.out.printf("%sTest(): SUCCESS%s\n", fileName, 
+                String.format(" in %.2fms", (end - start) / 1e6));
     }
 
     @Test
-    void A17609Test(String fileName, Boolean silent) throws IOException {
+    void A17609Test(Boolean verbose) throws IOException {
         A17609 test = new A17609();
+        String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
         ArrayList<String[]> files = mockInOutTestHelper(fileName);
         final PrintStream sysOut = System.out;
+        long start = System.nanoTime();
         for (int i = 0; i < files.size() / 2; i++) {
             String mockData = files.get(0)[i], expected = files.get(1)[i];
             InputStream sysIn = System.in;
@@ -480,9 +536,11 @@ public class TestRunner {
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
+        long end = System.nanoTime();
         System.setOut(sysOut);
-        if (silent == false)
-            System.out.printf("%sTest(): SUCCESS\n", fileName);
+        if (verbose)
+            System.out.printf("%sTest(): SUCCESS%s\n", fileName, 
+                String.format(" in %.2fms", (end - start) / 1e6));
     }
 
     private ArrayList<String[]> mockInOutTestHelper(String filename) throws IOException {
@@ -511,101 +569,67 @@ public class TestRunner {
         }};
     }
 
-    void leetcodeRunner(Boolean silent, TestRunner testRunner) {
-        String msg = "";
-        testRunner.L00007Test();
-        msg += silent ? "" : "L00007Test(): SUCCESS\n";
-        testRunner.L00011Test();
-        msg += silent ? "" : "L00011Test(): SUCCESS\n";
-        testRunner.L00012Test();
-        msg += silent ? "" : "L00012Test(): SUCCESS\n";
-        testRunner.L00013Test();
-        msg += silent ? "" : "L00013Test(): SUCCESS\n";
-        testRunner.L00020Test();
-        msg += silent ? "" : "L00020Test(): SUCCESS\n";
-        testRunner.L00026Test();
-        msg += silent ? "" : "L00026Test(): SUCCESS\n";
-        testRunner.L00042Test();
-        msg += silent ? "" : "L00042Test(): SUCCESS\n";
-        testRunner.L00054Test();
-        msg += silent ? "" : "L00054Test(): SUCCESS\n";
-        testRunner.L00073Test();
-        msg += silent ? "" : "L00073Test(): SUCCESS\n";
-        testRunner.L00079Test();
-        msg += silent ? "" : "L00079Test(): SUCCESS\n";
-        testRunner.L00096Test();
-        msg += silent ? "" : "L00096Test(): SUCCESS\n";
-        testRunner.L00118Test();
-        msg += silent ? "" : "L00118Test(): SUCCESS\n";
-        testRunner.L00130Test();
-        msg += silent ? "" : "L00130Test(): SUCCESS\n";
-        testRunner.L00135Test();
-        msg += silent ? "" : "L00135Test(): SUCCESS\n";
-        testRunner.L00202Test();
-        msg += silent ? "" : "L00202Test(): SUCCESS\n";
-        testRunner.L00442Test();
-        msg += silent ? "" : "L00442Test(): SUCCESS\n";
-        testRunner.L00463Test();
-        msg += silent ? "" : "L00463Test(): SUCCESS\n";
-        testRunner.L00567Test();
-        msg += silent ? "" : "L00567Test(): SUCCESS\n";
-        testRunner.L00640Test();
-        msg += silent ? "" : "L00640Test(): SUCCESS\n";
-        testRunner.L00658Test();
-        msg += silent ? "" : "L00658Test(): SUCCESS\n";
-        testRunner.L00721Test();
-        msg += silent ? "" : "L00721Test(): SUCCESS\n";
-        testRunner.L00752Test();
-        msg += silent ? "" : "L00752Test(): SUCCESS\n";
-        testRunner.L01053Test();
-        msg += silent ? "" : "L01053Test(): SUCCESS\n";
-        testRunner.L01654Test();
-        msg += silent ? "" : "L01654Test(): SUCCESS\n";
-        testRunner.L01851Test();
-        msg += silent ? "" : "L01851Test(): SUCCESS\n";
-        testRunner.L01922Test();
-        msg += silent ? "" : "L01922Test(): SUCCESS\n";
-        testRunner.L01942Test();
-        msg += silent ? "" : "L01942Test(): SUCCESS\n";
-        System.out.printf("%sAll leetcode tests have been completed successfully.\n", silent ? "" : msg);
+    void leetcodeRunner(Boolean verbose, TestRunner testRunner) {
+        testRunner.L00007Test(verbose);
+        testRunner.L00011Test(verbose);
+        testRunner.L00012Test(verbose);
+        testRunner.L00013Test(verbose);
+        testRunner.L00020Test(verbose);
+        testRunner.L00026Test(verbose);
+        testRunner.L00042Test(verbose);
+        testRunner.L00054Test(verbose);
+        testRunner.L00073Test(verbose);
+        testRunner.L00079Test(verbose);
+        testRunner.L00096Test(verbose);
+        testRunner.L00118Test(verbose);
+        testRunner.L00130Test(verbose);
+        testRunner.L00135Test(verbose);
+        testRunner.L00202Test(verbose);
+        testRunner.L00442Test(verbose);
+        testRunner.L00463Test(verbose);
+        testRunner.L00567Test(verbose);
+        testRunner.L00640Test(verbose);
+        testRunner.L00658Test(verbose);
+        testRunner.L00721Test(verbose);
+        testRunner.L00752Test(verbose);
+        testRunner.L01053Test(verbose);
+        testRunner.L01654Test(verbose);
+        testRunner.L01851Test(verbose);
+        testRunner.L01922Test(verbose);
+        testRunner.L01942Test(verbose);
+        System.out.println("All leetcode tests have been completed successfully.");
     }
 
-    void programmersRunner(Boolean silent, TestRunner testRunner) {
-        String msg = "";
-        testRunner.P01878Test();
-        msg += silent ? "" : "P01878Test(): SUCCESS\n";
-        testRunner.P42576Test();
-        msg += silent ? "" : "P42576Test(): SUCCESS\n";
-        testRunner.P42579Test();
-        msg += silent ? "" : "P42579Test(): SUCCESS\n";
-        testRunner.P42587Test();
-        msg += silent ? "" : "P42587Test(): SUCCESS\n";
-        testRunner.P67258Test();
-        msg += silent ? "" : "P67258Test(): SUCCESS\n";
-        System.out.printf("%sAll programmers tests have been completed successfully.\n", silent ? "" : msg);
+    void programmersRunner(Boolean verbose, TestRunner testRunner) {
+        testRunner.P01878Test(verbose);
+        testRunner.P42576Test(verbose);
+        testRunner.P42579Test(verbose);
+        testRunner.P42587Test(verbose);
+        testRunner.P67258Test(verbose);
+        System.out.println("All programmers tests have been completed successfully.");
     }
 
-    void kickstartRunner(Boolean silent, TestRunner testRunner) throws IOException {
-        testRunner.K22A1Test("K22A1", false);
-        testRunner.K22A2Test("K22A2", false);
+    void kickstartRunner(Boolean verbose, TestRunner testRunner) throws IOException {
+        testRunner.K22A1Test(verbose);
+        testRunner.K22A2Test(verbose);
         System.out.println("All kickstart tests have been completed successfully.");
     }
 
-    void acmicpcRunner(Boolean silent, TestRunner testRunner) throws IOException {
-        testRunner.A01406Test("A01406", false);
-        testRunner.A01874Test("A01874", false);
-        testRunner.A01914Test("A01914", false);
-        testRunner.A02346Test("A02346", false);
-        testRunner.A03190Test("A03190", false);
-        testRunner.A17609Test("A17609", false);
+    void acmicpcRunner(Boolean verbose, TestRunner testRunner) throws IOException {
+        testRunner.A01406Test(verbose);
+        testRunner.A01874Test(verbose);
+        testRunner.A01914Test(verbose);
+        testRunner.A02346Test(verbose);
+        testRunner.A03190Test(verbose);
+        testRunner.A17609Test(verbose);
         System.out.println("All acmicpc tests have been completed successfully.");
     }
 
     public static void main(String[] args) throws IOException {
         TestRunner testRunner = new TestRunner();
-        testRunner.leetcodeRunner(false, testRunner);
-        testRunner.programmersRunner(false, testRunner);
-        testRunner.kickstartRunner(false, testRunner);
-        testRunner.acmicpcRunner(false, testRunner);
+        testRunner.leetcodeRunner(true, testRunner);
+        testRunner.programmersRunner(true, testRunner);
+        testRunner.kickstartRunner(true, testRunner);
+        testRunner.acmicpcRunner(true, testRunner);
     }
 }
