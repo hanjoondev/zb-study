@@ -1,4 +1,5 @@
 from time import perf_counter_ns as ns
+from collections import deque as dq
 
 
 class TreeNode:
@@ -13,7 +14,15 @@ class TreeNode:
 
 class Solution:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
-        return 0
+        deque = dq([(p, q), ])
+        while deque:
+            p, q = deque.popleft()
+            if not (not p and not q) and (not p or not q or p.val != q.val):
+                return False
+            if p:
+                deque.append((p.left, q.left))
+                deque.append((p.right, q.right))
+        return True
 
 
 if __name__ == '__main__':

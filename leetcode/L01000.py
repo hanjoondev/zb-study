@@ -3,7 +3,21 @@ from time import perf_counter_ns as ns
 
 class Solution:
     def mergeStones(self, stones: list[int], k: int) -> int:
-        return 0
+        if (L := len(stones)) == 1:
+            return 0
+        if (L- 1) % (k - 1):
+            return -1
+        ss = [0]
+        for stone in stones: 
+            ss.append(ss[-1] + stone)
+        dp = [[0] * L for _ in range(L)]
+        for i in range(k, L + 1):
+            for j in range(L + 1 - i):
+                dp[j][(t := i + j - 1)] = float('inf')
+                for m in range(j, t, k - 1):
+                    dp[j][t] = min(dp[j][t], dp[j][m] + dp[m + 1][t])
+                dp[j][t] += 0 if (i - 1) % (k - 1) else ss[i + j] - ss[j]
+        return dp[0][L - 1]
 
 
 if __name__ == '__main__':
