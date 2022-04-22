@@ -6,7 +6,7 @@ def solution(arr):
         return arr
     answer = [arr[0]]
     prev = arr[0]
-    for i, n in enumerate(arr[1:]):
+    for n in arr[1:]:
         if prev == n:
             continue
         answer.append(n)
