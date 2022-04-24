@@ -1,3 +1,4 @@
+from sys import stdin as s
 from heapq import heappush as hpush, heappop as hpop
 
 
@@ -14,7 +15,7 @@ def solution(k: int, customers: list[tuple[int, int]]) -> None:
 
 def reader():
     n, k = map(int, input().split())
-    solution(k, [map(int, input().split()) for _ in range(n)])
+    solution(k, [map(int, s.readline().split()) for _ in range(n)])
 
 
 if __name__ == '__main__':
