@@ -135,7 +135,7 @@ dmypy.json
 **/*.iml
 
 # macOS
-.DS_Store
+**/.DS_Store
 
 # others
 **/out/*
