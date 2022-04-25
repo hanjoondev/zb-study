@@ -256,11 +256,38 @@ public class TestRunner {
         if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
+    void L01023Test(Boolean verbose) {
+        L01023 test = new L01023();
+        Assertions.assertEquals(Arrays.asList(true, false, true, true, false), 
+            test.camelMatch(new String[] { "FooBar", "FooBarTest", "FootBall", "FrameBuffer", "ForceFeedBack" }, "FB"));
+        Assertions.assertEquals(Arrays.asList(true, false, true, false, false), 
+            test.camelMatch(new String[] { "FooBar", "FooBarTest", "FootBall", "FrameBuffer", "ForceFeedBack" }, "FoBa"));
+        Assertions.assertEquals(Arrays.asList(false, true, false, false, false), 
+            test.camelMatch(new String[] { "FooBar", "FooBarTest", "FootBall", "FrameBuffer", "ForceFeedBack" }, "FoBaT"));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
+    }
+
     void L01053Test(Boolean verbose) {
         L01053 test = new L01053();
         Assertions.assertArrayEquals(new int[] { 3, 1, 2 }, test.prevPermOpt1(new int[] { 3, 2, 1 }));
         Assertions.assertArrayEquals(new int[] { 1, 1, 5 }, test.prevPermOpt1(new int[] { 1, 1, 5 }));
         Assertions.assertArrayEquals(new int[] { 1, 7, 4, 6, 9 }, test.prevPermOpt1(new int[] { 1, 9, 4, 6, 7 }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
+    }
+
+    void L01354Test(Boolean verbose) {
+        L01354 test = new L01354();
+        Assertions.assertEquals(true, test.isPossible(new int[] { 9, 3, 5 }));
+        Assertions.assertEquals(false, test.isPossible(new int[] { 1, 1, 1, 2 }));
+        Assertions.assertEquals(true, test.isPossible(new int[] { 8, 5 }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
+    }
+
+    void L01383Test(Boolean verbose) {
+        L01383 test = new L01383();
+        Assertions.assertEquals(60, test.maxPerformance(6, new int[] { 2, 10, 3, 1, 5, 8 }, new int[] { 5, 4, 3, 9, 7, 2 }, 2));
+        Assertions.assertEquals(68, test.maxPerformance(6, new int[] { 2, 10, 3, 1, 5, 8 }, new int[] { 5, 4, 3, 9, 7, 2 }, 3));
+        Assertions.assertEquals(72, test.maxPerformance(6, new int[] { 2, 10, 3, 1, 5, 8 }, new int[] { 5, 4, 3, 9, 7, 2 }, 4));
         if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
@@ -520,6 +547,30 @@ public class TestRunner {
     }
 
     @Test
+    void A10026Test(Boolean verbose) throws IOException {
+        A10026 test = new A10026();
+        String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
+        ArrayList<String[]> files = mockInOutTestHelper(fileName);
+        final PrintStream sysOut = System.out;
+        long start = System.nanoTime();
+        for (int i = 0; i < files.size() / 2; i++) {
+            String mockData = files.get(0)[i], expected = files.get(1)[i];
+            InputStream sysIn = System.in;
+            ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+            System.setIn(new ByteArrayInputStream(mockData.getBytes()));
+            System.setOut(new PrintStream(actualOutput));
+            test.reader();
+            Assertions.assertEquals(expected, actualOutput.toString().trim());
+            System.setIn(sysIn);
+        }
+        long end = System.nanoTime();
+        System.setOut(sysOut);
+        if (verbose)
+            System.out.printf("%sTest(): SUCCESS%s\n", fileName, 
+                String.format(" in %.2fms", (end - start) / 1e6));
+    }
+
+    @Test
     void A17609Test(Boolean verbose) throws IOException {
         A17609 test = new A17609();
         String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
@@ -592,7 +643,10 @@ public class TestRunner {
         testRunner.L00658Test(verbose);
         testRunner.L00721Test(verbose);
         testRunner.L00752Test(verbose);
+        testRunner.L01023Test(verbose);
         testRunner.L01053Test(verbose);
+        testRunner.L01354Test(verbose);
+        testRunner.L01383Test(verbose);
         testRunner.L01654Test(verbose);
         testRunner.L01851Test(verbose);
         testRunner.L01922Test(verbose);
@@ -621,6 +675,7 @@ public class TestRunner {
         testRunner.A01914Test(verbose);
         testRunner.A02346Test(verbose);
         testRunner.A03190Test(verbose);
+        testRunner.A10026Test(verbose);
         testRunner.A17609Test(verbose);
         System.out.println("All acmicpc tests have been completed successfully.");
     }
