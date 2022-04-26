@@ -25,7 +25,7 @@ if __name__ == '__main__':
 2 4
 CAAB
 ADCB
-'''  # input data 1
+'''  # input 1
 '''
 3
 '''  # expected 1
@@ -35,7 +35,7 @@ ADCB
 HFDFFB
 AJHGDH
 DGAGEH
-'''  # input data 2
+'''  # input 2
 '''
 6
 '''  # expected 2
@@ -47,7 +47,7 @@ FHFKC
 FFALF
 HFGCF
 HMCHH
-'''  # input data 3
+'''  # input 3
 '''
 10
 '''  # expected 3

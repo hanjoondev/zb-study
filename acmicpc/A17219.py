@@ -34,7 +34,7 @@ startlink.io
 acmicpc.net
 noj.am
 mcc.hanyang.ac.kr
-'''  # input data
+'''  # input
 
 '''
 THEKINGOD
