@@ -1,6 +1,6 @@
 def solution(h: int, w: int, m: list[int]):
     ans = 1
-    queue = set([(0, 0, m[0][0])])
+    queue = {(0, 0, m[0][0])}
     while queue:
         r, c, path = queue.pop()
         for dr, dc in ((1, 0), (0, 1), (-1, 0), (0, -1)):
