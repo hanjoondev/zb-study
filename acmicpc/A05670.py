@@ -46,7 +46,7 @@ def reader():
     while True:
         try:
             n = int(s.readline())
-        except ValueError:
+        except:
             break
         words = [s.readline().strip() for _ in range(n)]
         solution(n, words)

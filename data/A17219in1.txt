@@ -1,18 +1,3 @@
-def reader():
-    line, n = map(int, input().strip('\n').split())
-    d = {}
-    for _ in range(line):
-        url, pwd = input().split()
-        d[url] = pwd
-    for _ in range(n):
-        print(d[input().strip('\n')])
-
-
-if __name__ == '__main__':
-    reader()
-
-
-'''
 16 4
 noj.am IU
 acmicpc.net UAENA
@@ -34,11 +19,3 @@ startlink.io
 acmicpc.net
 noj.am
 mcc.hanyang.ac.kr
-'''  # input
-
-'''
-THEKINGOD
-UAENA
-IU
-ADREAMER
-'''  # expected
