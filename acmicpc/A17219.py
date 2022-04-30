@@ -1,11 +1,36 @@
+from sys import stdin
+
+
+class Trie:
+    def __init__(self):
+        self.root = {}
+        self.pwd = None
+
+    def insert(self, url: str, pwd: str) -> None:
+        node = self.root
+        for c in url:
+            if c not in node:
+                node[c] = {}
+            node = node[c]
+        node['pwd'] = pwd
+
+    def startswith(self, url: str) -> str:
+        node = self.root
+        for c in url:
+            if c not in node:
+                return ""
+            node = node[c]
+        return node['pwd']
+
+
 def reader():
-    line, n = map(int, input().strip('\n').split())
-    d = {}
-    for _ in range(line):
-        url, pwd = input().split()
-        d[url] = pwd
-    for _ in range(n):
-        print(d[input().strip('\n')])
+    num_inserts, num_queries = map(int, stdin.readline().split())
+    t = Trie()
+    for _ in range(num_inserts):
+        url, pwd = stdin.readline().split()
+        t.insert(url, pwd)
+    ans = [t.startswith(stdin.readline().strip()) for _ in range(num_queries)]
+    print('\n'.join(ans))
 
 
 if __name__ == '__main__':
