@@ -12,19 +12,15 @@ from unittest.mock import MagicMock, patch
 class Tester(TestCase):
     def prep(self):
         p = dirname(__file__)
-        data_full_paths = [p + '/data/' + f for f in ldir(join(p, 'data/'))]
+        data_full_paths = [f'{p}/data/{f}' for f in ldir(join(p, 'data'))]
         for folder in 'acmicpc kickstart'.split():
             path = join(p, f'{folder}/')
             for m in sorted([basename(f)[:-3]
                             for f in glob(join(path, "*.py")) if isfile(f)]):
                 d = sorted([f for f in data_full_paths if m in f])
-                with open(f'{p}/{folder}/{m}.py', 'r') as f:
-                    pt = ('sys.stdin.readline'
-                        if 'from sys import stdin' in f.read()
-                        else 'builtins.input')
-                self.test(imodule(f'{folder}.{m}'), self.get_data(d), pt)
+                self.test(imodule(f'{folder}.{m}'), self.get_data(d))
 
-    def get_data(self, data):
+    def get_data(self, data: list[str]) -> tuple[list[str], list[str]]:
         mock_inputs, expected = [], []
         for i in range(length := len(data) // 2):
             with open(data[i], 'r') as f:
@@ -33,21 +29,63 @@ class Tester(TestCase):
                 expected.append([l.strip('\n') for l in f.readlines()])
         return mock_inputs, expected
 
-    def test(self, module, data, patch_target):
+    def test(self, module, data: tuple[list[str], list[str]]) -> None:
         print(f'Module {module.__name__} test result:')
         for i, (mock_inputs, expected) in enumerate(zip(data[0], data[1])):
             mock, start = MagicMock(), ns()
             with redirect_stdout(sio := StringIO()):
-                with patch(patch_target, side_effect=mock_inputs):
+                with patch('sys.stdin.readline', side_effect=mock_inputs):
                     module.reader()
                     for _ in range(len(mock_inputs)):
                         mock()
             for actual, exp in zip(sio.getvalue().split('\n'), expected):
                 self.assertEqual(actual, exp)
             print(f'test set {i + 1}: '
-                  f'{(l := len(expected))} test{"s" if l > 1 else ""} passed '
-                  f'in {(ns() - start) // int(1e3):,}μs')
+                  f'{(l := len(expected))} test{"s" if l > 1 else ""}'
+                  f' passed in {(ns() - start) // int(1e3):,}μs')
+    
+    def benchmark(self, target: str="", iterations: int=1_000, verbose=True) -> None:
+        p = dirname(__file__)
+        files = lambda folder: ldir(join(p, folder))
+        bases = sorted([f.strip('.py') for f in files('acmicpc') 
+                        if f.endswith('.py') 
+                        and f.startswith(target if target else 'A')])
+        d = {b: {'module': imodule(f'acmicpc.{b}')} for b in bases}
+        for k, v in d.items():
+            inputs, outputs = self.get_data(sorted([f'{p}/data/{f}'
+                        for f in files('data') if f.startswith(k)]))
+            v['inputs'] = inputs
+            v['outputs'] = outputs
+        for k, v in d.items():
+            module, inputs, outputs = v['module'], v['inputs'], v['outputs']
+            v['results'] = []
+            print(f'Benchmarking {module.__name__}')
+            for (ins, outs) in zip(inputs, outputs):
+                results = []
+                overall_s = ns()
+                for _ in range(iterations):
+                    mock, start = MagicMock(), ns()
+                    with redirect_stdout(sio := StringIO()):
+                        with patch('sys.stdin.readline', side_effect=ins):
+                            module.reader()
+                            for _ in range(len(ins)):
+                                mock()
+                    for actual, exp in zip(sio.getvalue().split('\n'), outs):
+                        self.assertEqual(actual, exp)
+                    end = ns()
+                    results.append(end - start)
+                overall_e = ns()
+                v['results'].append((overall_e - overall_s, sum(results) / len(results), 
+                                    min(results), max(results)))
+            if verbose:
+                for i, (overall, avg, min_, max_) in enumerate(v['results']):
+                    print(f'{k} test set {i + 1} took '
+                        f'{overall // int(1e6):,}ms for {iterations:,} iterations '
+                        f'(avg. {avg // int(1e3):,}μs |'
+                        f' min. {min_ // int(1e3):,}μs |'
+                        f' max. {max_ // int(1e3):,}μs)')
 
 
 if __name__ == '__main__':
     Tester().prep()
+    Tester().benchmark()
