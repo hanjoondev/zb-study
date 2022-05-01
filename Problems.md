@@ -1,62 +1,104 @@
 # Table of Contents
-|          Problem #[^1]          | Origin | Description |
-| :-----------------------------: | :----: | :---------: |
-| [1. 1. 18_1. 1](#practice-1811) | [leetcode](https://leetcode.com/problems/reverse-integer/)                              | 정수 역순으로 뒤집기 |
-| [1. 1. 18_1. 2](#practice-1812) |                                                                                         | 대소문자 변경 |
-| [1. 1. 18_1. 3](#practice-1813) |                                                                                         | String.replace() 구현 |
-| [1. 1. 18_1. 4](#practice-1814) | acmicpc<br>[2](https://www.acmicpc.net/problem/2438) [3](https://www.acmicpc.net/problem/2439) [4](https://www.acmicpc.net/problem/2442) [5](https://www.acmicpc.net/problem/2444) | asterisk 프린트 |
-| [1. 1. 18_1. 5](#practice-1815) | [leetcode](https://leetcode.com/problems/container-with-most-water/)                    | 저수량이 최대가 되는 벽 고르기 |
-| [1. 1. 18_2. 1](#practice-1821) | [leetcode](https://leetcode.com/problems/roman-to-integer/)                             | 로마 숫자 → Integer |
-| [1. 1. 18_2. 2](#practice-1822) | [leetcode](https://leetcode.com/problems/integer-to-roman/)                             | Integer → 로마 숫자 |
-| [1. 1. 18_2. 3](#practice-1823) | [acmicpc](https://www.acmicpc.net/problem/1406)                                         | 간단한 에디터 구현 |
-| [1. 1. 18_2. 4](#practice-1824) |                                                                                         | ASCII → String |
-| [1. 1. 18_2. 5](#practice-1825) | [leetcode](https://leetcode.com/problems/candy/)                                        | 사탕 나눠주기 |
-| [1. 1. 18_3. 1](#practice-1831) | [leetcode](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)          | 정렬된 배열에서 중복제거 |
-| [1. 1. 18_3. 2](#practice-1832) | [leetcode](https://leetcode.com/problems/find-all-duplicates-in-an-array/)              | 배열에서 두 번 나타나는 정수들 반환 | 
-| [1. 1. 18_3. 3](#practice-1833) | [leetcode](https://leetcode.com/problems/find-k-closest-elements/)                      | 배열에서 절대값 가까운 수 k개 출력 (작은 수 우선) |
-| [1. 1. 18_3. 4](#practice-1834) | [leetcode](https://leetcode.com/problems/spiral-matrix/)                                | 2D 배열 나선형 방향 출력 |
-| [1. 1. 18_3. 5](#practice-1835) | [leetcode](https://leetcode.com/problems/trapping-rain-water/)                          | 벽 사이 총 저수량 |
-| [2. 1. 09_1. 1](#practice-0911) | [leetcode](https://leetcode.com/problems/pascals-triangle/)                             | 파스칼 삼각형 출력 |
-| [2. 1. 09_1. 2](#practice-0912) | [leetcode](https://leetcode.com/problems/previous-permutation-with-one-swap/)           | 한자리 정수 배열, 현배열 다음으로 큰 수 구하기 (1스왑) |
-| [2. 1. 09_1. 3](#practice-0913) | [leetcode](https://leetcode.com/problems/permutation-in-string/)                        | str1의 permutation이 str2에 포함되는지 판별 |
-| [2. 1. 09_1. 4](#practice-0914) | [leetcode](https://leetcode.com/problems/happy-number/)                                 | [Happy Number](https://en.wikipedia.org/wiki/Happy_number) |
-| [2. 1. 09_1. 5](#practice-0915) | [leetcode](https://leetcode.com/problems/island-perimeter/)                             | 해안선 길이 구하기 |
-| [2. 1. 09_2. 1](#practice-0921) | [leetcode](https://leetcode.com/problems/unique-binary-search-trees/)                   | [Catalan Number](https://en.wikipedia.org/wiki/Catalan_number) |
-| [2. 1. 09_2. 2](#practice-0922) | [acmicpc](https://www.acmicpc.net/problem/17609)                                        | palindrome / pseudopalindrome[^4] |
-| [2. 1. 09_2. 3](#practice-0923) | [leetcode](https://leetcode.com/problems/solve-the-equation/)                           | +-만 있는 1차 방정식 풀이 |
-| [2. 1. 09_2. 4](#practice-0924) | [leetcode](https://leetcode.com/problems/count-good-numbers/)                           | 짝수 인덱스에는 짝수, 홀수 인덱스에는 소수인 숫자 갯수 |
-| [2. 1. 09_2. 5](#practice-0925) | [acmicpc](https://www.acmicpc.net/problem/1914)                                         | 하노이의 탑 |
-| [2. 2. 14_1. 1](#practice-1421) |                                                                                         | 주어진 코드에 의해 변형된 배열을 원배열로 되돌리기 |
-| [2. 2. 14_1. 2](#practice-1412) | [leetcode](https://leetcode.com/problems/set-matrix-zeroes/)                            | 2D 배열에서 0이 있는 행과 열을 0으로 변경 |
-| [2. 2. 14_1. 3](#practice-1413) | [acmicpc](https://www.acmicpc.net/problem/2346)                                         | 풍선 터뜨리는 순서 |
-| [2. 2. 14_1. 4](#practice-1414) | [leetcode](https://leetcode.com/problems/valid-parentheses/)                            | 괄호 정상여부 판정 |
-| [2. 2. 14_1. 5](#practice-1415) | [acmicpc](https://www.acmicpc.net/problem/3190)                                         | Snake 게임 종료시점 계산 |
-| [2. 2. 14_2. 1](#practice-1421) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42587)                 | 문서 중요도순 출력 |
-| [2. 2. 14_2. 2](#practice-1422) | [acmicpc](https://www.acmicpc.net/problem/1874)                                         | stack으로 특정 수열 만들기 |
-| [2. 2. 14_2. 3](#practice-1423) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42579)                 | 장르카운트 → 고유카운트 → uid 순서 정렬 (장르별 2개) |
-| [2. 2. 14_2. 4](#practice-1424) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42576)                 | p배열 중 c배열에 포함되지 않은 요소 구하기 (중복可) |
-| [2. 2. 14_2. 5](#practice-1425) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/67258)                 | 배열상 요소를 한 종류씩 포함하는 최단 구간 |
-| [2. 3. 13_1. 1](#practice-1311) | [leetcode](https://leetcode.com/problems/word-search/)                                  | 2D array에서 문자열 찾기 |
-| [2. 3. 13_1. 2](#practice-1312) | [leetcode](https://leetcode.com/problems/surrounded-regions/)                           | 2D array에서 x로 둘러싸인 부분 찾기 |
-| [2. 3. 13_1. 3](#practice-1313) | [leetcode](https://leetcode.com/problems/accounts-merge/)                               | 중복 이메일 병합 (동명이인 존재) |
-| [2. 3. 13_1. 4](#practice-1314) | [leetcode](https://leetcode.com/problems/open-the-lock/)                                | 4 digit combination padlock 회전수 계산 |
-| [2. 3. 13_1. 5](#practice-1315) | [leetcode](https://leetcode.com/problems/minimum-jumps-to-reach-home/)                  | 1D 로봇 이동횟수 계산 |
-| [2. 3. 13_2. 1](#practice-1321) | [leetcode](https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair/)  | 가장 낮은 번호 의자에 앉기 |
-| [2. 3. 13_2. 2](#practice-1322) | [leetcode](https://leetcode.com/problems/minimum-interval-to-include-each-query/)       | 각 쿼리를 포함하는 최소구간 |
-| [2. 3. 13_2. 3](#practice-1323) | [leetcode](https://leetcode.com/problems/construct-target-array-with-multiple-sums/)    | 초기 배열을 타겟 배열로 변형 가부 |
-| [2. 3. 13_2. 4](#practice-1324) | [leetcode](https://leetcode.com/problems/maximum-performance-of-a-team/)                | 팀 작업성능 최적화 |
-| [2. 3. 13_2. 5](#practice-1325) | [leetcode](https://leetcode.com/problems/camelcase-matching/)                           | 문자열+패턴으로 주어진 문자열들을 만들 수 있는지 판별 |
-| [2. 3. 13_3. 1](#practice-1331) | [acmicpc](https://www.acmicpc.net/problem/10026)                                        | 일반인과 색약자에게 보이는 구역수 판정 |
-| [2. 3. 13_3. 2](#practice-1332) |                                                                                         | 불을 켤 수 있는 방의 최대수 |
-| [2. 3. 13_3. 3](#practice-1333) | [acmicpc](https://www.acmicpc.net/problem/17612)                                        | 여러 계산대가 있을 때 계산 완료 순서 |
-| [2. 3. 13_3. 4](#practice-1334) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42577)                 | 전화번호가 다른 전화번호의 접두어인지 식별 |
-| [2. 3. 13_3. 5](#practice-1335) | [acmicpc](https://www.acmicpc.net/problem/5670)                                         | 자동완성 평균 타이핑 수 계산 |
+|           Problem #[^1]           | Origin | Description |
+| :-------------------------------: | :----: | :---------: |
+| [1. 1. 18_1. 1](#practice-111811) | [leetcode](https://leetcode.com/problems/reverse-integer/)                              | 정수 역순으로 뒤집기 |
+| [1. 1. 18_1. 2](#practice-111812) |                                                                                         | 대소문자 변경 |
+| [1. 1. 18_1. 3](#practice-111813) |                                                                                         | String.replace() 구현 |
+| [1. 1. 18_1. 4](#practice-111814) | acmicpc<br>[2](https://www.acmicpc.net/problem/2438) [3](https://www.acmicpc.net/problem/2439) [4](https://www.acmicpc.net/problem/2442) [5](https://www.acmicpc.net/problem/2444) | asterisk 프린트 |
+| [1. 1. 18_1. 5](#practice-111815) | [leetcode](https://leetcode.com/problems/container-with-most-water/)                    | 저수량이 최대가 되는 벽 고르기 |
+| [1. 1. 18_2. 1](#practice-111821) | [leetcode](https://leetcode.com/problems/roman-to-integer/)                             | 로마 숫자 → Integer |
+| [1. 1. 18_2. 2](#practice-111822) | [leetcode](https://leetcode.com/problems/integer-to-roman/)                             | Integer → 로마 숫자 |
+| [1. 1. 18_2. 3](#practice-111823) | [acmicpc](https://www.acmicpc.net/problem/1406)                                         | 간단한 에디터 구현 |
+| [1. 1. 18_2. 4](#practice-111824) |                                                                                         | ASCII → String |
+| [1. 1. 18_2. 5](#practice-111825) | [leetcode](https://leetcode.com/problems/candy/)                                        | 사탕 나눠주기 |
+| [1. 1. 18_3. 1](#practice-111831) | [leetcode](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)          | 정렬된 배열에서 중복제거 |
+| [1. 1. 18_3. 2](#practice-111832) | [leetcode](https://leetcode.com/problems/find-all-duplicates-in-an-array/)              | 배열에서 두 번 나타나는 정수들 반환 | 
+| [1. 1. 18_3. 3](#practice-111833) | [leetcode](https://leetcode.com/problems/find-k-closest-elements/)                      | 배열에서 절대값 가까운 수 k개 출력 (작은 수 우선) |
+| [1. 1. 18_3. 4](#practice-111834) | [leetcode](https://leetcode.com/problems/spiral-matrix/)                                | 2D 배열 나선형 방향 출력 |
+| [1. 1. 18_3. 5](#practice-111835) | [leetcode](https://leetcode.com/problems/trapping-rain-water/)                          | 벽 사이 총 저수량 |
+| [2. 1. 09_1. 1](#practice-210911) | [leetcode](https://leetcode.com/problems/pascals-triangle/)                             | 파스칼 삼각형 출력 |
+| [2. 1. 09_1. 2](#practice-210912) | [leetcode](https://leetcode.com/problems/previous-permutation-with-one-swap/)           | 한자리 정수 배열, 현배열 다음으로 큰 수 구하기 (1스왑) |
+| [2. 1. 09_1. 3](#practice-210913) | [leetcode](https://leetcode.com/problems/permutation-in-string/)                        | str1의 permutation이 str2에 포함되는지 판별 |
+| [2. 1. 09_1. 4](#practice-210914) | [leetcode](https://leetcode.com/problems/happy-number/)                                 | [Happy Number](https://en.wikipedia.org/wiki/Happy_number) |
+| [2. 1. 09_1. 5](#practice-210915) | [leetcode](https://leetcode.com/problems/island-perimeter/)                             | 해안선 길이 구하기 |
+| [2. 1. 09_2. 1](#practice-210921) | [leetcode](https://leetcode.com/problems/unique-binary-search-trees/)                   | [Catalan Number](https://en.wikipedia.org/wiki/Catalan_number) |
+| [2. 1. 09_2. 2](#practice-210922) | [acmicpc](https://www.acmicpc.net/problem/17609)                                        | palindrome / pseudopalindrome[^4] |
+| [2. 1. 09_2. 3](#practice-210923) | [leetcode](https://leetcode.com/problems/solve-the-equation/)                           | +-만 있는 1차 방정식 풀이 |
+| [2. 1. 09_2. 4](#practice-210924) | [leetcode](https://leetcode.com/problems/count-good-numbers/)                           | 짝수 인덱스에는 짝수, 홀수 인덱스에는 소수인 숫자 갯수 |
+| [2. 1. 09_2. 5](#practice-210925) | [acmicpc](https://www.acmicpc.net/problem/1914)                                         | 하노이의 탑 |
+| [2. 2. 14_1. 1](#practice-221421) |                                                                                         | 주어진 코드에 의해 변형된 배열을 원배열로 되돌리기 |
+| [2. 2. 14_1. 2](#practice-221412) | [leetcode](https://leetcode.com/problems/set-matrix-zeroes/)                            | 2D 배열에서 0이 있는 행과 열을 0으로 변경 |
+| [2. 2. 14_1. 3](#practice-221413) | [acmicpc](https://www.acmicpc.net/problem/2346)                                         | 풍선 터뜨리는 순서 |
+| [2. 2. 14_1. 4](#practice-221414) | [leetcode](https://leetcode.com/problems/valid-parentheses/)                            | 괄호 정상여부 판정 |
+| [2. 2. 14_1. 5](#practice-221415) | [acmicpc](https://www.acmicpc.net/problem/3190)                                         | Snake 게임 종료시점 계산 |
+| [2. 2. 14_2. 1](#practice-221421) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42587)                 | 문서 중요도순 출력 |
+| [2. 2. 14_2. 2](#practice-221422) | [acmicpc](https://www.acmicpc.net/problem/1874)                                         | stack으로 특정 수열 만들기 |
+| [2. 2. 14_2. 3](#practice-221423) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42579)                 | 장르카운트 → 고유카운트 → uid 순서 정렬 (장르별 2개) |
+| [2. 2. 14_2. 4](#practice-221424) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42576)                 | p배열 중 c배열에 포함되지 않은 요소 구하기 (중복可) |
+| [2. 2. 14_2. 5](#practice-221425) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/67258)                 | 배열상 요소를 한 종류씩 포함하는 최단 구간 |
+| [2. 3. 13_1. 1](#practice-231311) | [leetcode](https://leetcode.com/problems/word-search/)                                  | 2D array에서 문자열 찾기 |
+| [2. 3. 13_1. 2](#practice-231312) | [leetcode](https://leetcode.com/problems/surrounded-regions/)                           | 2D array에서 x로 둘러싸인 부분 찾기 |
+| [2. 3. 13_1. 3](#practice-231313) | [leetcode](https://leetcode.com/problems/accounts-merge/)                               | 중복 이메일 병합 (동명이인 존재) |
+| [2. 3. 13_1. 4](#practice-231314) | [leetcode](https://leetcode.com/problems/open-the-lock/)                                | 4 digit combination padlock 회전수 계산 |
+| [2. 3. 13_1. 5](#practice-231315) | [leetcode](https://leetcode.com/problems/minimum-jumps-to-reach-home/)                  | 1D 로봇 이동횟수 계산 |
+| [2. 3. 13_2. 1](#practice-231321) | [leetcode](https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair/)  | 가장 낮은 번호 의자에 앉기 |
+| [2. 3. 13_2. 2](#practice-231322) | [leetcode](https://leetcode.com/problems/minimum-interval-to-include-each-query/)       | 각 쿼리를 포함하는 최소구간 |
+| [2. 3. 13_2. 3](#practice-231323) | [leetcode](https://leetcode.com/problems/construct-target-array-with-multiple-sums/)    | 초기 배열을 타겟 배열로 변형 가부 |
+| [2. 3. 13_2. 4](#practice-231324) | [leetcode](https://leetcode.com/problems/maximum-performance-of-a-team/)                | 팀 작업성능 최적화 |
+| [2. 3. 13_2. 5](#practice-231325) | [leetcode](https://leetcode.com/problems/camelcase-matching/)                           | 문자열+패턴으로 주어진 문자열들을 만들 수 있는지 판별 |
+| [2. 3. 13_3. 1](#practice-231331) | [acmicpc](https://www.acmicpc.net/problem/10026)                                        | 일반인과 색약자에게 보이는 구역수 판정 |
+| [2. 3. 13_3. 2](#practice-231332) |                                                                                         | 불을 켤 수 있는 방의 최대수 |
+| [2. 3. 13_3. 3](#practice-231333) | [acmicpc](https://www.acmicpc.net/problem/17612)                                        | 여러 계산대가 있을 때 계산 완료 순서 |
+| [2. 3. 13_3. 4](#practice-231334) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42577)                 | 전화번호가 다른 전화번호의 접23두어인지 식별 |
+| [2. 3. 13_3. 5](#practice-231335) | [acmicpc](https://www.acmicpc.net/problem/5670)                                         | 자동완성 평균 타이핑 수 계산 |
+| [2. 4. 03_1. 1](#practice-240311) | [leetcode](https://leetcode.com/problems/sort-colors/)                                  | 75. Sort Colors |
+| [2. 4. 03_1. 2](#practice-240312) | [leetcode](https://leetcode.com/problems/group-anagrams/)                               | 49. Group Anagrams |
+| [2. 4. 03_1. 3](#practice-240313) | [leetcode](https://leetcode.com/problems/merge-intervals/)                              | 56. Merge Intervals |
+| [2. 4. 03_1. 4](#practice-240314) | [leetcode](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)        | 581. Shortest Unsorted Continuous Subarray |
+| [2. 4. 05_1. 1](#practice-240511) | [leetcode](https://leetcode.com/problems/binary-search/)                                | 704. Binary Search (not a 100% match) |
+| [2. 4. 05_1. 2](#practice-240512) | [leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)               | 33. Search in Rotated Sorted Array |
+| [2. 4. 05_1. 3](#practice-240513) | [leetcode](https://leetcode.com/problems/search-a-2d-matrix/)                           | 74. Search a 2D Matrix |
+| [2. 4. 05_1. 4](#practice-240514) | [leetcode](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)      | 1011. Capacity To Ship Packages Within D Days |
+| [2. 4. 05_1. 5](#practice-240515) | [leetcode](https://leetcode.com/problems/split-array-largest-sum/)                      | 410. Split Array Largest Sum |
+| [2. 4. 07_1. 1](#practice-240711) |                                                                                         |   |
+| [2. 4. 07_1. 2](#practice-240712) | [leetcode](https://leetcode.com/problems/intersection-of-two-arrays/)                   | 349. Intersection of Two Arrays |
+| [2. 4. 07_1. 3](#practice-240713) | [leetcode](https://leetcode.com/problems/reverse-words-in-a-string/)                    | 151. Reverse Words in a String |
+| [2. 4. 07_1. 4](#practice-240714) | [leetcode](https://leetcode.com/problems/3sum/)                                         | 15. 3Sum |
+| [2. 4. 09_1. 1](#practice-240911) | [leetcode](https://leetcode.com/problems/jump-game/)                                    | 55. Jump Game |
+| [2. 4. 09_1. 2](#practice-240912) | [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)           | 122. Best Time to Buy and Sell Stock II |
+| [2. 4. 09_1. 3](#practice-240913) |                                                                                         |   |
+| [2. 4. 09_1. 4](#practice-240914) | [leetcode](https://leetcode.com/problems/gas-station/)                                  | 134. Gas Station |
+| [2. 4. 09_1. 5](#practice-240915) | [leetcode](https://leetcode.com/problems/maximum-swap/)                                 | 670. Maximum Swap |
+| [2. 4. 11_1. 1](#practice-241111) | [leetcode](https://leetcode.com/problems/maximum-subarray/)                             | 53. Maximum Subarray |
+| [2. 4. 11_1. 2](#practice-241112) | [leetcode](https://leetcode.com/problems/merge-k-sorted-lists/)                         | 23. Merge k Sorted Lists |
+| [2. 4. 13_1. 1](#practice-241311) |                                                                                         |   |
+| [2. 4. 13_1. 2](#practice-241312) | [leetcode](https://leetcode.com/problems/longest-continuous-increasing-subsequence/)    | 674. Longest Continuous Increasing Subsequence |
+| [2. 4. 13_1. 3](#practice-241313) | [acmicpc](https://www.acmicpc.net/problem/12865)                                        | 12865. 평범한 배낭 |
+| [2. 4. 15_1. 1](#practice-241511) | [acmicpc](https://www.acmicpc.net/problem/15649)                                        | 15649. N과 M (1) |
+| [2. 4. 15_1. 2](#practice-241512) | [acmicpc](https://www.acmicpc.net/problem/2023)                                         | 2023. 신기한 소수 |
+| [2. 4. 15_1. 3](#practice-241513) | [acmicpc](https://www.acmicpc.net/problem/19949)                                        | 19949. 영재의 시험 |
+| [2. 4. 15_1. 4](#practice-241514) | [acmicpc](https://www.acmicpc.net/problem/16197)                                        | 16197. 두 동전 |
+| [2. 4. 17_1. 1](#practice-241711) | [acmicpc](https://www.acmicpc.net/problem/1504)                                         | 1504. 특정한 최단 경로 |
+| [2. 4. 17_1. 2](#practice-241712) | [acmicpc](https://www.acmicpc.net/problem/1865)                                         | 1865. 웜홀 |
+| [2. 4. 17_1. 3](#practice-241713) | [acmicpc](https://www.acmicpc.net/problem/11404)                                        | 11404. 플로이드 |
+| [2. 4. 19_1. 1](#practice-241911) | [acmicpc](https://www.acmicpc.net/problem/2887)                                         | 2887. 행성 터널 |
+| [2. 4. 19_1. 2](#practice-241912) | [acmicpc](https://www.acmicpc.net/problem/1647)                                         | 1647. 도시 분할 계획 |
+| [2. 4. 20_1. 1](#practice-242011) | [acmicpc](https://www.acmicpc.net/problem/3079)                                         |   |
+| [2. 4. 20_1. 2](#practice-242012) | [acmicpc](https://www.acmicpc.net/problem/15961)                                        |   |
+| [2. 4. 20_1. 3](#practice-242013) | [acmicpc](https://www.acmicpc.net/problem/1700)                                         |   |
+| [2. 4. 20_1. 4](#practice-242014) | [acmicpc](https://www.acmicpc.net/problem/2240)                                         |   |
+| [2. 4. 20_1. 5](#practice-242015) | [acmicpc](https://www.acmicpc.net/problem/13418)                                        |   |
+| [2. 4. 20_2. 1](#practice-242021) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/43236)                 |   |
+| [2. 4. 20_2. 2](#practice-242022) | unknown                                                                                 |   |
+| [2. 4. 20_2. 3](#practice-242023) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42886)                 |   |
+| [2. 4. 20_2. 4](#practice-242024) | [acmicpc](https://www.acmicpc.net/problem/4095)                                         |   |
+| [2. 4. 20_2. 5](#practice-242025) | [leetcode](https://leetcode.com/problems/min-cost-to-connect-all-points/)               |   |
 
 [^1]: Part. Chapter. Subchapter. Problem Number
 
 # Part 01. Java 기초 연습문제
 ## Chapter 01. Java 프로그래밍
-### Practice 1811
+### Practice 111811
 입력된 정수 자료형의 숫자를 거꾸로 변환하는 프로그램을 작성하세요.
 
 - 예를들어 12345가 입력되면 54321로 변환하여 출력하면 된다.
@@ -74,7 +116,7 @@
 
 ---
 
-### Practice 1812
+### Practice 111812
 아스키 코드는 미국정보교환표준부호를 의미한다.  
 
 영어로 American Standard Code for Information Interchange 이며, 줄여서 ASCII 라고 한다.  
@@ -101,7 +143,7 @@
 
 ---
 
-### Practice 1813
+### Practice 111813
 자바의 String 자료형에는 많은 연산자 기능들이 있다.
 
 프로그래밍의 기본기를 익히기 위해 일부 연산자들을 제한하고 다음의 기능을 구현하려 한다.
@@ -118,7 +160,7 @@
 
 ---
 
-### Practice 1814
+### Practice 111814
 여러가지 별찍기 연습을 해보자.  
 반복문과 조건문의 연습에는 과연 별찍기 만한 것이 없다.
 
@@ -150,7 +192,7 @@
 
 ---
 
-### Practice 1815
+### Practice 111815
 n개의 데이터가 height 배열에 주어졌다.  
 height 배열의 각각의 원소는 아래 그림과 같이 각 벽에 대한 높이를 의미한다.
 
@@ -169,7 +211,7 @@ height 배열의 각각의 원소는 아래 그림과 같이 각 벽에 대한 �
 
 ---
 
-### Practice 1821
+### Practice 111821
 로마 숫자 표기를 정수형으로 변환하는 프로그램을 작성하세요.
 
 로마 숫자 표기법은 I, V, X, L, C, D, M 으로 이루어져있다.
@@ -207,7 +249,7 @@ height 배열의 각각의 원소는 아래 그림과 같이 각 벽에 대한 �
 
 ---
 
-### Practice 1822
+### Practice 111822
 정수형 숫자를 로마 숫자 표기로 변환하는 프로그램을 작성하세요.
 
 로마 숫자 표기법은 I, V, X, L, C, D, M 으로 이루어져있다.
@@ -244,7 +286,7 @@ height 배열의 각각의 원소는 아래 그림과 같이 각 벽에 대한 �
 
 ---
 
-### Practice 1823
+### Practice 111823
 간단한 편집기를 구현하려고 한다.
 
 편집기에는 문자열과 편집 명령어가 주어지는데, 명령어의 동작은 다음과 같다.
@@ -273,7 +315,7 @@ height 배열의 각각의 원소는 아래 그림과 같이 각 벽에 대한 �
 
 ---
 
-### Practice 1824
+### Practice 111824
 특수 작전을 위해 상대방의 PC에 키보드 입력 내용을 얻을 수 있는 키로깅 프로그램을 설치했다.
 
 해당 키로깅 프로그램으로부터는 아래와 같이 특정 값으로 내용이 수신된다.
@@ -304,7 +346,7 @@ height 배열의 각각의 원소는 아래 그림과 같이 각 벽에 대한 �
 
 ---
 
-### Practice 1825
+### Practice 111825
 N 명의 아이들이 한 줄로 서있다.  
 각각의 아이들은 점수 표를 가지고 있는데 점수 표에 따라 다음과 같은 규칙으로 사탕을 나누어 줘야 한다.
 
@@ -327,7 +369,7 @@ N 명의 아이들에 대한 점수 표가 ratings 배열에 주어질 때,
 
 ---
 
-### Practice 1831
+### Practice 111831
 정수형 오름차순 데이터가 nums 라는 배열에 주어졌다.  
 현재 배열 내에는 중복된 데이터들이 들어있을 수 있는데 해당 중복들을 제거하는 프로그램을 작성하세요.
 
@@ -345,7 +387,7 @@ nums 배열 하나 만 사용하여 중복 데이터를 제거 후
 
 ---
 
-### Practice 1832
+### Practice 111832
 주어진 nums 배열에서 두 번 나타나는 모든 정수의 배열을 반환하는 프로그램을 작성하세요.  
 * nums 배열은 [1, n] 범위의 정수로 이루어져 있다.
 * 각 정수는 한 번 또는 두 번 나타날 수 있다.
@@ -364,7 +406,7 @@ nums 배열 하나 만 사용하여 중복 데이터를 제거 후
 
 ---
 
-### Practice 1833
+### Practice 111833
 정렬된 정수형 배열 arr 이 주어졌을 때, 다음을 구하는 프로그램을 작성하세요.
 * arr 과 함께 k 와 x 가 주어진다.
 * k 는 개수, x 는 기준 값이다.
@@ -383,7 +425,7 @@ nums 배열 하나 만 사용하여 중복 데이터를 제거 후
 
 ---
 
-### Practice 1834
+### Practice 111834
 MxN 행렬 정보가 2차원 정수형 배열 matrix 에 주어지면  
 아래 그림과 같이 나선형 모양으로 출력하는 프로그램을 작성하세요.
 
@@ -398,7 +440,7 @@ MxN 행렬 정보가 2차원 정수형 배열 matrix 에 주어지면
 
 ---
 
-### Practice 1835
+### Practice 111835
 n개의 정수형 데이터가 height 배열에 주어졌다.  
 height 배열의 각각의 원소는 아래 그림과 같이 각 벽에 대한 높이를 의미한다.
 
@@ -417,7 +459,7 @@ height 배열의 각각의 원소는 아래 그림과 같이 각 벽에 대한 �
 
 # Part 02. 자료구조/알고리즘
 ## Chapter 01. 기초 수학
-### Practice 0911
+### Practice 210911
 파스칼의 삼각형(Pascal's triangle)은 수학에서 이항계수를 삼각형 모양의 기하학적 형태로 배열한 것이다.
 
 파스칼의 삼각형은 다음과 같이 만들 수 있다.
@@ -442,7 +484,7 @@ height 배열의 각각의 원소는 아래 그림과 같이 각 벽에 대한 �
 
 ---
 
-### Practice 0912
+### Practice 210912
 양의 정수로 이루어진 arr 배열이 주어졌을 때  
 해당 데이터로 만들 수 있는 permutation 중에서 다음과 같은 데이터를 출력하는 프로그램을 작성하세요.
 
@@ -461,7 +503,7 @@ height 배열의 각각의 원소는 아래 그림과 같이 각 벽에 대한 �
 
 ---
 
-### Practice 0913
+### Practice 210913
 문자열 s1 과 s2 가 주어졌을 때,  
 s1 을 permutation 한 문자열이 s2 의 부분 문자열에 해당하면 true 를 반환하고  
 그렇지 않으면 false 를 반환하는 프로그램을 작성하세요.
@@ -478,7 +520,7 @@ s1 을 permutation 한 문자열이 s2 의 부분 문자열에 해당하면 true
 
 ---
 
-### Practice 0914
+### Practice 210914
 주어진 양의 정수가 **행복한 수** 인지를 판별하는 프로그램을 작성하세요.
 
 행복한 수란,  
@@ -505,7 +547,7 @@ s1 을 permutation 한 문자열이 s2 의 부분 문자열에 해당하면 true
 
 ---
 
-### Practice 0915
+### Practice 210915
 영토에 대한 지도 정보가 row x col grid 맵 형태로 다음과 같이 주어졌다.
 
 이 때, grid[i][j] 가 1이 면 땅 영역을 의미하고  
@@ -531,7 +573,7 @@ grid[i][j] 가 0 이면 물 영역을 의미한다.
 
 ---
 
-### Practice 0921
+### Practice 210921
 카탈랑 수는 0번, 1번, 2번, ... 순으로 아래와 같이 구성되는 수열을 의미한다.
 - 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, … 
 
@@ -553,7 +595,7 @@ grid[i][j] 가 0 이면 물 영역을 의미한다.
 
 ---
 
-### Practice 0922
+### Practice 210922
 회문 또는 팰린드롬(palindrome)은 앞 뒤 방향으로 같은 순서의 문자로 구성된 문자열을 말한다.  
 - 예시) ‘abba’ ‘kayak’, ‘madam’
 
@@ -585,7 +627,7 @@ grid[i][j] 가 0 이면 물 영역을 의미한다.
 
 ---
 
-### Practice 0923
+### Practice 210923
 주어진 1차 방정식에 대해 풀이를 하는 프로그램을 작성하세요.
 
 해당 방정식은 '+', '-', 'x' 와 '상수'로만 이루어져 있다.
@@ -605,7 +647,7 @@ grid[i][j] 가 0 이면 물 영역을 의미한다.
 
 ---
 
-### Practice 0924
+### Practice 210924
 아래와 같이 구성되는 좋은 수라고 한다.
 * 짝수 인덱스 위치에는 짝수
 * 홀수 인덱스 위치에는 소수 (2, 3, 5, 7)
@@ -639,7 +681,7 @@ grid[i][j] 가 0 이면 물 영역을 의미한다.
 
 ---
 
-### Practice 0925
+### Practice 210925
 하노이의 탑은 퍼즐의 일종이다.
 
 ![M0925.png](./img/M0925.png)  
@@ -663,8 +705,8 @@ grid[i][j] 가 0 이면 물 영역을 의미한다.
 
 
 
-# Chapter 2: 선형 자료구조
-### Practice 1411
+## Chapter 2: 선형 자료구조
+### Practice 221411
 과거에 하기의 modification 함수를 이용해 배열 내 데이터 순서를 변경했었다.
 
 - 최근에 이 변경한 데이터들을 다시 원래의 배열 순서로 변경해야 하는 일이 생겼다.
@@ -709,7 +751,7 @@ Modification 당시 입출력 샘플
 
 ---
 
-### Practice 1412
+### Practice 221412
 정수로 이루어진 M x N 행렬 데이터가 있다고 하자.
 
 - 행렬의 원소 중에 0이 있을 경우 해당 원소가 위치하는 행과 열 전체 데이터를 0으로 변경하는 코드를 작성하세요.
@@ -722,7 +764,7 @@ Modification 당시 입출력 샘플
 
 ---
 
-### Practice 1413
+### Practice 221413
 1번부터 N번까지 N개의 풍선이 원형으로 놓여 있고. i번 풍선의 오른쪽에는 i+1번 풍선이 있고, 왼쪽에는 i-1번 풍선이 있다.  
 단, 1번 풍선의 왼쪽에 N번 풍선이 있고, N번 풍선의 오른쪽에 1번 풍선이 있다.  
 각 풍선 안에는 종이가 하나 들어있고, 종이에는 -N보다 크거나 같고, N보다 작거나 같은 정수가 하나 적혀있다.  
@@ -746,7 +788,7 @@ Modification 당시 입출력 샘플
 
 ---
 
-### Practice 1414
+### Practice 221414
 입력 문자열에서 괄호 짝 검사하여 이상이 없는지 판별하는 프로그램을 작성하세요.
 
 - 괄호의 종류: (), {}, []
@@ -764,7 +806,7 @@ Modification 당시 입출력 샘플
 
 ---
 
-### Practice 1415
+### Practice 221415
 'Dummy' 라는 도스게임이 있다. 이 게임에는 뱀이 나와서 기어다니는데, 사과를 먹으면 뱀 길이가 늘어난다. 뱀이 이리저리 기어다니다가 벽 또는 자기자신의 몸과 부딪히면 게임이 끝난다.
 
 게임은 NxN 정사각 보드위에서 진행되고, 몇몇 칸에는 사과가 놓여져 있다. 보드의 상하좌우 끝에 벽이 있다. 게임이 시작할때 뱀은 맨위 맨좌측에 위치하고 뱀의 길이는 1 이다. 뱀은 처음에 오른쪽을 향한다.
@@ -822,7 +864,7 @@ Modification 당시 입출력 샘플
 
 ---
 
-### Practice 1421
+### Practice 221421
 여러분도 알다시피 여러분의 프린터 기기는 여러분이 인쇄하고자 하는 문서를 인쇄 명령을 받은 ‘순서대로’,  
 즉 먼저 요청된 것을 먼저 인쇄한다. 여러 개의 문서가 쌓인다면 Queue 자료구조에 쌓여서 FIFO - First In First Out - 에 따라 인쇄가 되게 된다.  
 하지만 상근이는 새로운 프린터기 내부 소프트웨어를 개발하였는데, 이 프린터기는 다음과 같은 조건에 따라 인쇄를 하게 된다.
@@ -846,7 +888,7 @@ Modification 당시 입출력 샘플
 
 ---
 
-### Practice 1422
+### Practice 221422
 스택 (stack)은 기본적인 자료구조 중 하나로, 컴퓨터 프로그램을 작성할 때 자주 이용되는 개념이다.  
 스택은 자료를 넣는 (push) 입구와 자료를 뽑는 (pop) 입구가 같다.  
 제일 나중에 들어간 자료가 제일 먼저 나오는 (LIFO, Last in First out) 특성을 가지고 있다.
@@ -868,7 +910,7 @@ Modification 당시 입출력 샘플
 
 ---
 
-### Practice 1423
+### Practice 221423
 스트리밍 사이트에서 장르 별로 가장 많이 재생된 노래를 두 개씩 모아 베스트 앨범을 출시하려 합니다.  
 노래는 고유 번호로 구분하며, 노래를 수록하는 기준은 다음과 같습니다.
 
@@ -904,7 +946,7 @@ Modification 당시 입출력 샘플
 
 ---
 
-### Practice 1424
+### Practice 221424
 수많은 마라톤 선수들이 마라톤에 참여하였습니다. 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.
 
 마라톤에 참여한 선수들의 이름이 담긴 배열 participant와 완주한 선수들의 이름이 담긴 배열 completion이 주어질 때, 완주하지 못한 선수의 이름을 return 하도록 solution 함수를 작성해주세요.
@@ -930,7 +972,7 @@ Modification 당시 입출력 샘플
 
 ---
 
-### Practice 1425
+### Practice 221425
 개발자 출신으로 세계 최고의 갑부가 된 어피치는 스트레스를 받을 때면 이를 풀기 위해 오프라인 매장에 쇼핑을 하러 가곤 합니다.
 어피치는 쇼핑을 할 때면 매장 진열대의 특정 범위의 물건들을 모두 싹쓸이 구매하는 습관이 있습니다.
 어느 날 스트레스를 풀기 위해 보석 매장에 쇼핑을 하러 간 어피치는 이전처럼 진열대의 특정 범위의 보석을 모두 구매하되 특별히 아래 목적을 달성하고 싶었습니다.
@@ -985,8 +1027,8 @@ Modification 당시 입출력 샘플
         - 그러므로 [1, 5]를 return 해주어야 합니다.
 
 
-# Chatper 3: 비선형 자료구조
-### Practice 1311
+## Chatper 3: 비선형 자료구조
+### Practice 231311
 row x col 행렬 형태의 board 와 word 문자열이 주어졌을 때,  
 해당 행렬에서 word 문자열이 인접하게 연결되어 있는지를 확인하는 프로그램을 작성하세요.
 
@@ -1006,7 +1048,7 @@ row x col 행렬 형태의 board 와 word 문자열이 주어졌을 때,
 
 ---
 
-### Practice 1312
+### Practice 231312
 row x col 행렬 형태의 보드에 다음과 같이 X, O 로 표시가 되어 있다.
 
 ![N1312.png](./img/N1312.png)
@@ -1025,7 +1067,7 @@ row x col 행렬 형태의 보드에 다음과 같이 X, O 로 표시가 되어 
 
 ---
 
-### Practice 1313
+### Practice 231313
 이메일 정보를 병합하는 프로그램을 구현하려고 한다.  
 이메일 정보가 들어있는 2차원 문자열 배열 accounts 가 주어졌고,  
 각각의 accounts[i] 에 대해 accounts[i][0] 에는 사람 이름을, 나머지는 이메일을 나타낸다.
@@ -1047,7 +1089,7 @@ row x col 행렬 형태의 보드에 다음과 같이 X, O 로 표시가 되어 
 
 ---
 
-### Practice 1314
+### Practice 231314
 네 자리 비밀번호를 설정할 수 있는 자물쇠가 주어졌다.  
 원형 바퀴 형태로 숫자를 돌려가며 설정하는 방식이고, 아래와 같은 숫자로 구성된다.
 * '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'. 
@@ -1073,7 +1115,7 @@ row x col 행렬 형태의 보드에 다음과 같이 X, O 로 표시가 되어 
 
 ---
 
-### Practice 1315
+### Practice 231315
 x 축 상에 앞 뒤로만 이동할 수 있는 로봇이 0 위치에 놓여 있다.  
 해당 로봇은 다음과 같은 규칙으로 움직일 수 있다.  
 * forward 방향으로는 a 만큼 움직일 수 있다.
@@ -1096,7 +1138,7 @@ forbidden 배열과 a, b, 그리고 목적지 x 가 주어졌을 때,
 
 ---
 
-### Practice 1321
+### Practice 231321
 n 명의 친구가 참석하는 파티가 계획되어 있다. (n = 0 ~ n-1)  
 파티 장소에는 친구들이 앉을 수 있는 충분한 의자들이 있고 
 의자에는 0, 1, 2, ... 순으로 번호가 적혀있다.
@@ -1118,7 +1160,7 @@ n 명의 친구가 참석하는 파티가 계획되어 있다. (n = 0 ~ n-1)
 
 ---
 
-### Practice 1322
+### Practice 231322
 정수형 2차원 배열 intervals 와 정수형 배열 queries 가 주어졌으며 각각의 의미는 다음과 같다.
 * intervals : 구간의 {시작 값, 종료 값} 데이터들로 2차원으로 구성
 * queries : 어떤 값이 intervals 의 구간 내에 포함되어 있는지 확인하기 위한 질문 목록 
@@ -1137,7 +1179,7 @@ n 명의 친구가 참석하는 파티가 계획되어 있다. (n = 0 ~ n-1)
 
 ---
 
-### Practice 1323
+### Practice 231323
 n 개의 정수로 이루어진 배열 target 이 주어졌다.  
 아래와 같은 방법을 통해 초기 배열에서 target 을 만들 수 있는지 판별하는 프로그램을 작성하세요.
 
@@ -1165,7 +1207,7 @@ target 을 만들 수 있으면 true 를 반환, 그렇지 못하면 false 를 �
 
 ---
 
-### Practice 1324
+### Practice 231324
 정수 n 과 k 와 정수형 배열 speed, efficiency 가 주어졌고 각각의 의미는 다음과 같다.
 * n : 총 작업자 수
 * k : 일할 수 있는 작업자 수
@@ -1188,7 +1230,7 @@ k 명의 작업자를 선택할 때, 가장 작업 성능이 뛰어나게 구성
 
 ---
 
-### Practice 1325
+### Practice 231325
 문자열 배열 queries 와 문자열 pattern 이 주어졌을 떄,  
 queries 중 pattern 과 매칭되는 문자열은 true 아닌 경우 false 로 배열을 구성하여 반환하세요. 
 
@@ -1209,7 +1251,7 @@ patter 각 문자의 전후로 소문자 알파벳을 추가했을 때 만들 �
 
 ---
 
-### Practice 1331
+### Practice 231331
 일반인의 경우 빨간색과 초록색의 차이를 잘 구분해 내지만, 적록색약인 경우 빨간색과 초록색의 차이를 거의 느끼지 못한다.   
 따라서, 같은 그림이라도 일반인과 적록색약인 사람이 보는 그림은 다르게 느껴질 수 있다.
 
@@ -1240,7 +1282,7 @@ patter 각 문자의 전후로 소문자 알파벳을 추가했을 때 만들 �
 
 ---
 
-### Practice 1332
+### Practice 231332
 N x N 개의 방의 전등 스위치 정보가 2차원 배열 switches 로 주어졌다.   
 (각 방은 (1, 1) 부터 (N, N) 까지 번호가 매겨져 있다.)
 
@@ -1262,7 +1304,7 @@ N x N 개의 방의 전등 스위치 정보가 2차원 배열 switches 로 주�
 
 ---
 
-### Practice 1333
+### Practice 231333
 K개의 계산대가 있는 쇼핑몰에서,    
 N 명의 고객이 물건을 고르고 계산을 하기 위해 계산대 앞에 줄을 서 있다.
 
@@ -1291,7 +1333,7 @@ N 명의 고객이 물건을 고르고 계산을 하기 위해 계산대 앞에 
 
 ---
 
-### Practice 1334
+### Practice 231334
 전화번호 목록이 nums 배열에 들어있고, 전화번호 구성이 일관성이 있는지를 체크하는 문제가 주어졌다.  
 전화번호 구성이 일관성을 유지하려면, 한 번호가 다른 번호의 접두어인 케이스가 없어야 한다.  
 
@@ -1313,7 +1355,7 @@ N 명의 고객이 물건을 고르고 계산을 하기 위해 계산대 앞에 
 
 ---
 
-### Practice 1335
+### Practice 231335
 길이가 N인 영어 단어를 입력하려면 키보드를 N 번 눌러야 한다.  
 (hello 의 경우 5번 눌러야 한다.)
 
@@ -1341,4 +1383,87 @@ hell 은 2번 입력, hello 는 3번 입력, heaven 은 2번 입력, java 는 1�
 
 
 
-# Chapter 4: 알고리즘
+## Chapter 4: 알고리즘
+### Practice 240311
+
+### Practice 240312
+
+### Practice 240313
+
+### Practice 240314
+
+### Practice 240511
+
+### Practice 240512
+
+### Practice 240513
+
+### Practice 240514
+
+### Practice 240515
+
+### Practice 240711
+
+### Practice 240712
+
+### Practice 240713
+
+### Practice 240714
+
+### Practice 240911
+
+### Practice 240912
+
+### Practice 240913
+
+### Practice 240914
+
+### Practice 240915
+
+### Practice 241111
+
+### Practice 241112
+
+### Practice 241311
+
+### Practice 241312
+
+### Practice 241313
+
+### Practice 241511
+
+### Practice 241512
+
+### Practice 241513
+
+### Practice 241514
+
+### Practice 241711
+
+### Practice 241712
+
+### Practice 241713
+
+### Practice 241911
+
+### Practice 241912
+
+### Practice 242011
+
+### Practice 242012
+
+### Practice 242013
+
+### Practice 242014
+
+### Practice 242015
+
+### Practice 242021
+
+### Practice 242022
+
+### Practice 242023
+
+### Practice 242024
+
+### Practice 242025
