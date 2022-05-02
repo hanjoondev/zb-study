@@ -12,7 +12,7 @@
 | [1. 1. 18_2. 4](#practice-111824) |                                                                                         | ASCII → String |
 | [1. 1. 18_2. 5](#practice-111825) | [leetcode](https://leetcode.com/problems/candy/)                                        | 사탕 나눠주기 |
 | [1. 1. 18_3. 1](#practice-111831) | [leetcode](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)          | 정렬된 배열에서 중복제거 |
-| [1. 1. 18_3. 2](#practice-111832) | [leetcode](https://leetcode.com/problems/find-all-duplicates-in-an-array/)              | 배열에서 두 번 나타나는 정수들 반환 | 
+| [1. 1. 18_3. 2](#practice-111832) | [leetcode](https://leetcode.com/problems/find-all-duplicates-in-an-array/)              | 배열에서 두 번 나타나는 정수들 반환 |
 | [1. 1. 18_3. 3](#practice-111833) | [leetcode](https://leetcode.com/problems/find-k-closest-elements/)                      | 배열에서 절대값 가까운 수 k개 출력 (작은 수 우선) |
 | [1. 1. 18_3. 4](#practice-111834) | [leetcode](https://leetcode.com/problems/spiral-matrix/)                                | 2D 배열 나선형 방향 출력 |
 | [1. 1. 18_3. 5](#practice-111835) | [leetcode](https://leetcode.com/problems/trapping-rain-water/)                          | 벽 사이 총 저수량 |
@@ -26,6 +26,29 @@
 | [2. 1. 09_2. 3](#practice-210923) | [leetcode](https://leetcode.com/problems/solve-the-equation/)                           | +-만 있는 1차 방정식 풀이 |
 | [2. 1. 09_2. 4](#practice-210924) | [leetcode](https://leetcode.com/problems/count-good-numbers/)                           | 짝수 인덱스에는 짝수, 홀수 인덱스에는 소수인 숫자 갯수 |
 | [2. 1. 09_2. 5](#practice-210925) | [acmicpc](https://www.acmicpc.net/problem/1914)                                         | 하노이의 탑 |
+| [2. 2. 03_1. 1](#practice-220311) | unknown                                                                                 |   |
+| [2. 2. 03_1. 2](#practice-220312) | unknown                                                                                 |   |
+| [2. 2. 03_1. 3](#practice-220313) | unknown                                                                                 |   |
+| [2. 2. 03_1. 4](#practice-220314) | unknown                                                                                 |   |
+| [2. 2. 03_1. 5](#practice-220315) | unknown                                                                                 |   |
+| [2. 2. 03_1. 6](#practice-220316) | [leetcode](https://leetcode.com/problems/rotate-image/)                                 | 48. Rotate Image (not a 100% match) |
+| [2. 2. 03_1. 7](#practice-220317) | unknown                                                                                 |   |
+| [2. 2. 05_1. 1](#practice-220511) | [leetcode](https://leetcode.com/problems/remove-duplicates-from-an-unsorted-linked-list)| 1836. Remove Duplicates From an Unsorted Linked List |
+| [2. 2. 05_1. 2](#practice-220512) | [leetcode](https://leetcode.com/problems/palindrome-linked-list/)                       | 234. Palindrome Linked List |
+| [2. 2. 05_1. 3](#practice-220513) | [leetcode](https://leetcode.com/problems/reverse-linked-list-ii/)                       | 92. Reverse Linked List II |
+| [2. 2. 07_1. 1](#practice-220711) | [leetcode](https://leetcode.com/problems/reverse-string/)                               | 344. Reverse String |
+| [2. 2. 07_1. 2](#practice-220712) | [acmicpc](https://www.acmicpc.net/problem/9012)                                         | 9012. 괄호 |
+| [2. 2. 07_1. 3](#practice-220713) | [acmicpc](https://www.acmicpc.net/problem/1935)                                         | 1935. 후위 표기식2 |
+| [2. 2. 07_1. 4](#practice-220714) | [leetcode](https://leetcode.com/problems/backspace-string-compare/)                     | 844. Backspace String Compare |
+| [2. 2. 09_1. 1](#practice-220911) | [acmicpc](https://www.acmicpc.net/problem/2164)                                         | 2164. 카드2 |
+| [2. 2. 09_1. 2](#practice-220912) | [acmicpc](https://www.acmicpc.net/problem/1158)                                         | 1158. 요세푸스 문제 |
+| [2. 2. 11_1. 1](#practice-221111) | [leetcode](https://leetcode.com/problems/reorder-list/)                                 | 143. Reorder List |
+| [2. 2. 11_1. 2](#practice-221112) | [leetcode](https://leetcode.com/problems/valid-palindrome/)                             | 125. Valid Palindrome |
+| [2. 2. 11_1. 3](#practice-221113) | unknown                                                                                 |   |
+| [2. 2. 11_1. 4](#practice-221114) | unknown                                                                                 |   |
+| [2. 2. 13_1. 1](#practice-221311) | unknown                                                                                 |   |
+| [2. 2. 13_1. 2](#practice-221312) | [leetcode](https://leetcode.com/problems/two-sum/)                                      | 1. Two Sum (not a 100% match) |
+| [2. 2. 13_1. 3](#practice-221313) | unknown                                                                                 |   |
 | [2. 2. 14_1. 1](#practice-221421) |                                                                                         | 주어진 코드에 의해 변형된 배열을 원배열로 되돌리기 |
 | [2. 2. 14_1. 2](#practice-221412) | [leetcode](https://leetcode.com/problems/set-matrix-zeroes/)                            | 2D 배열에서 0이 있는 행과 열을 0으로 변경 |
 | [2. 2. 14_1. 3](#practice-221413) | [acmicpc](https://www.acmicpc.net/problem/2346)                                         | 풍선 터뜨리는 순서 |
@@ -129,7 +152,7 @@
 - 출력 가능한 문자들은 52개의 영문 알파벳 대소문자와, 10개의 숫자, 32개의 특수 문자, 1개의 공백 문자로 이루어진다.
 
 이번 문제에서는 아스키 코드 중 알파벳에 대해서,  
-사용자가 입력한 알파벳의 대소문자를 변경하는 프로그램을 작성하시오. 
+사용자가 입력한 알파벳의 대소문자를 변경하는 프로그램을 작성하시오.
 
 
 입출력 예시
@@ -233,8 +256,8 @@ height 배열의 각각의 원소는 아래 그림과 같이 각 벽에 대한 �
   * I 는 V 와 X 의 앞에 올 수 있다. (IV: 4, IX: 9)
   * X 는 L 과 C 의 앞에 올 수 있다. (XL: 40, XC: 90)
   * C 는 D 와 M 의 앞에 올 수 있다. (CD: 400, CM: 900)
-  
-    
+
+
 입출력 예시
 ---
 
@@ -524,7 +547,7 @@ s1 을 permutation 한 문자열이 s2 의 부분 문자열에 해당하면 true
 주어진 양의 정수가 **행복한 수** 인지를 판별하는 프로그램을 작성하세요.
 
 행복한 수란,  
-각 자리수를 제곱한 것을 더하는 과정을 반복했을 때 1로 끝나는 수 이다. 
+각 자리수를 제곱한 것을 더하는 과정을 반복했을 때 1로 끝나는 수 이다.
 행복한 수가 아니라면 1에 도달하지 못하고 같은 수열이 반복하게 된다.
 
 '행복한 수'를 찾는 과정 예시
@@ -575,7 +598,7 @@ grid[i][j] 가 0 이면 물 영역을 의미한다.
 
 ### Practice 210921
 카탈랑 수는 0번, 1번, 2번, ... 순으로 아래와 같이 구성되는 수열을 의미한다.
-- 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, … 
+- 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, …
 
 이를 점화식으로 나타내면 아래와 같다.
 
@@ -665,7 +688,7 @@ grid[i][j] 가 0 이면 물 영역을 의미한다.
 
 1 이상의 정수 n이 주어졌을 때, n 자리로 구성될 수 있는 좋은 수의 개수를 출력하는 프로그램을 작성하세요.
 
-단, n 의 값에 따라 값이 클 수 있으니 결과는 10^9 + 7로 나머지 연산을 한 결과로 출력하시오. 
+단, n 의 값에 따라 값이 클 수 있으니 결과는 10^9 + 7로 나머지 연산을 한 결과로 출력하시오.
 
 
 
@@ -706,6 +729,298 @@ grid[i][j] 가 0 이면 물 영역을 의미한다.
 
 
 ## Chapter 2: 선형 자료구조
+### Practice 220311
+배열 arr 의 모든 데이터에 대해서,
+짝수 데이터들의 평균과 홀수 데이터들의 평균을 출력하세요.
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|[1, 2, 3, 4, 5, 6, 7, 8, 9]|홀수 평균: 5.0<br>짝수 평균: 5.0|
+
+---
+
+### Practice 220312
+배열 arr 에서 target 에 해당하는 값의 인덱스를 출력
+* 해당 값이 여러 개인 경우 가장 큰 인덱스 출력
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|[1, 1, 100, 1, 1, 1, 100]|6|
+---
+
+### Practice 220313
+배열 arr 의 데이터 순서를 거꾸로 변경하세요.
+* 추가 배열을 사용하지 않고 구현
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|[1, 3, 5, 7, 9]|[9, 7, 5, 3, 1]|
+
+---
+
+### Practice 220314
+배열 arr 에서 local maxima를 모두 출력
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|[3, 1, 2, 6, 2, 2, 5, 1, 9, 10, 1, 11]|[3, 6, 5, 10, 11]|
+
+---
+
+### Practice 220315
+배열 arr 의 값을 오름차순으로 출력
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|[5, 3, 1, 4, 6, 1]|[1, 1, 3, 4, 5, 6]|
+
+---
+
+### Practice 220316
+배열 arr 에서 중복 값을 제거한 새 배열을 만드시오.
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|[1, 5, 3, 2, 2, 3, 1, 4, 1, 2, 3, 5]|[1, 5, 3, 2, 4]|
+
+---
+
+### Practice 220317
+2차원 배열 arr 을 시계방향 90도 회전시킨 결과를 출력하세요.
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|[[ 1,&nbsp;&nbsp;2,&nbsp;&nbsp;3,&nbsp;&nbsp;4,&nbsp;&nbsp;5],<br>&nbsp;&nbsp;[ 6,&nbsp;&nbsp;7,&nbsp;&nbsp;8,&nbsp;&nbsp;9, 10],<br>&nbsp;&nbsp;[11, 12, 13, 14, 15]]|[[11, 6, 1],<br>&nbsp;&nbsp;[12, 7, 2],<br>&nbsp;&nbsp;[13, 8, 3],<br>&nbsp;&nbsp;[14, 9, 4],<br>&nbsp;&nbsp;[15, 10, 5]]|
+
+---
+
+### Practice 220511
+단방향 연결 리스트에서 중복 데이터를 찾아 삭제하세요.
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|[1, 3, 3, 1, 4, 2, 4, 2]|[1, 3, 4, 2]|
+
+---
+
+### Practice 220512
+Palindrome 연결 리스트. 추가 자료구조 없이 연결 리스트만으로 풀어보기
+* Palindrome: 앞으로 읽어도 뒤로 읽어도 같은 문자열
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|[1, 3, 5, 3, 1]|true|
+|[3, 5, 5, 3]|true|
+|[1, 3, 5, 1]|false|
+
+---
+
+### Practice 220513
+주어진 연결 리스트에서 시작 위치부터 끝 위치 사이의 노드들을 뒤집으시오.
+
+입출력 예시
+---
+|입력|시작|끝|출력|
+|---|---|--|---|
+|[1, 2, 3, 4, 5]|2|4|[1, 4, 3, 2, 5]
+
+---
+
+### Practice 220514
+주어진 문자열 배열을 연결 리스트 배열로 관리하는 코드를 작성하시오.
+* 관리 규칙: 각 문자열의 첫 글자가 같은 것끼리 같은 연결 리스트로 관리하기
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|["apple", "watermelon", "banana", "apricot", "kiwi", "blueberry", "cherry", "orange"]|[a, b, c, w, k, o]<br>a : apple apricot<br>b : banana blueberry<br>c : cherry<br>k : kiwi<br>o : orange<br>w : watermelon|
+|["ant", "kangaroo", "dog", "cat", "alligator", "duck", "crab", "kitten", "anaconda", "chicken"]|[a, c, d, k]<br>a : ant alligator anaconda<br>c : cat chicken crab<br>d : dog duck<br>k : kangaroo kitten|
+
+### Practice 220711
+문자열 뒤집기
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|"Hello"|"olleH"|
+|"1 3 5 7 9"|"9 7 5 3 1"|
+
+---
+
+### Practice 220712
+괄호 짝 검사
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|"("|false|
+|")"|false|
+|"()"|true|
+|"()()()"|true|
+|"(())()"|true|
+|"(((()))"|false|
+
+---
+
+### Practice 220713
+후위표기법 연산
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|"2 2 +"|4|
+|"2 2 -"|0|
+|"1 1 + 2 * 3 * 2 / 5 -"|1|
+|"5 2 * 3 - 8 * 4 /"|14|
+
+---
+
+### Practice 220714
+두 문자열 비교
+* 단, #은 backspace 로 바로 이전의 문자를 삭제하는 기능이라고 가정
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|s1 = "tree", s2 = "th#ree"|true|
+|s1 = "ab#a", s2 = "aab#"|true|
+|s1 = "wo#w", s2 = "ww#o"|false|
+
+---
+
+### Practice 220911
+카드 섞기
+
+1부터 N 까지의 번호로 구성된 N장의 카드가 있다.
+1번 카드가 가장 위에 그리고 N번 카드는 가장 아래의 상태로 카드가 순서대로 쌓여있다.
+아래의 동작을 카드 한 장만 남을 때까지 반복했을 때, 가장 마지막 남는 카드 번호를 출력하시오.
+
+1. 가장 위의 카드는 버린다.
+2. 그 다음 위의 카드는 쌓여 있는 카드의 가장 아래에 다시 넣는다.
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|4|4|
+|7|6|
+
+---
+
+### Practice 220912
+요세푸스 문제
+
+N과 K가 주어졌을 때 (N, K) 요세푸스 순열을 구하시오.
+N과 K는 N >= K 를 만족하는 양의 정수이다.
+1부터 N 번까지 N명이 순서대로 원을 이루어 모여 있다.
+이 모임에서 원을 따라 순서대로 K번째 사람을 제외한다.
+모든 사람이 제외될 때까지 반복하며 이 때, 제외되는 순서가 요세푸스 순열이다.
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|N = 5, K = 2|[2, 4, 1, 5, 3]|
+|N = 7, K = 3|[3, 6, 2, 7, 5, 1, 4]|
+
+
+---
+
+### Practice 221111
+데이터 재정렬
+* D_0 -> D_1 -> ... -> D_n-1 -> D_n 순으로 되어 있는 데이터를
+* D_0 -> D_n -> D_1 -> D_n-1 -> ... 순이 되도록 재정렬 하시오.
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|[1, 2, 3, 4, 5]|[1, 5, 2, 4, 3]|
+
+---
+
+### Practice 221112
+Palindrome 이면 true, 아니면 false 를 반환하세요.
+* Palindrome: 앞으로 읽어도 거꾸로 읽어도 같은 문자열
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|"a"|true|
+|"madam"|true|
+|"abab"|false|
+
+---
+
+### Practice 221113
+데크 변형: 기본 데크 구조에서 중간에 데이터를 추가하는 기능을 구현하세요.
+* 단, 추가적인 자료구조 생성하지 말고 구현
+
+입출력 예시
+---
+|초기상태|중간입력|출력|
+|---|---|---|
+|[1, 2, 3, 4]|10|[1, 2, 10, 3, 4]|
+
+---
+
+### Practice 221114
+데크 리사이즈: 기본 데크 구조에서 데크 공간이 full 일 때 데이터를 추가하는 경우, 데크 공간을 2배 씩 늘려주는 코드를 작성하세요.
+
+---
+
+### Practice 221311
+해시 테이블을 이용한 수 찾기: 주어진 첫 번째 배열을 이용하여 해시 테이블을 초기화 한 후, 두 번째 배열이 주어졌을 때 해당 배열 내 데이터가 해시 테이블에 있는지 확인하는 코드를 작성하세요.
+
+입출력 예시
+---
+|배열1|배열2|출력|
+|---|---|---|
+|[1, 3, 5, 7, 9]|[1, 2, 3, 4, 5]|[True, False, True, False, True]|
+
+---
+
+### Practice 221312
+정수형 배열 nums 와 target 이 주어졌을 때, nums 에서 임의의 두 수를 더해 target 을 구할 수 있는지 확인하는 프로그램을 작성하세요.
+* 두 수 의 합으로 target 을 구할 수 있으면 해당 값의 index 를 반환하고, 없는 경우 null 을 반환하세요.
+
+입출력 예시
+---
+|nums|target|출력|
+|---|---|---|
+|[7, 11, 5, 3]|10|[0, 3]|
+|[8, 3, -2]|6|[0, 2]|
+
+---
+
+### Practice 221313
+
+---
+
 ### Practice 221411
 과거에 하기의 modification 함수를 이용해 배열 내 데이터 순서를 변경했었다.
 
@@ -934,7 +1249,7 @@ Modification 당시 입출력 샘플
 |---|---|---|
 |["classic", "pop", "classic", "classic", "pop"]|[500, 600, 150, 800, 2500]|[4, 1, 3, 0]|
 
-* 입출력 예 설명 
+* 입출력 예 설명
   - classic 장르는 1,450회 재생되었으며, classic 노래는 다음과 같습니다.
     - 고유 번호 3: 800회 재생
     - 고유 번호 0: 500회 재생
@@ -956,7 +1271,7 @@ Modification 당시 입출력 샘플
 - completion의 길이는 participant의 길이보다 1 작습니다.
 - 참가자의 이름은 1개 이상 20개 이하의 알파벳 소문자로 이루어져 있습니다.
 - 참가자 중에는 동명이인이 있을 수 있습니다.
-  
+
 입출력 예시
 ---
 |participant|completion|return|
@@ -1079,7 +1394,7 @@ row x col 행렬 형태의 보드에 다음과 같이 X, O 로 표시가 되어 
 - 이름이 같고 이메일 중 같은 이메일이 있으면 동일 인이다.
 
 
-주어진 이메일을 정보를 병합하고 출력하는 프로그램을 작성하세요. 
+주어진 이메일을 정보를 병합하고 출력하는 프로그램을 작성하세요.
 
 입출력 예시
 ---
@@ -1092,7 +1407,7 @@ row x col 행렬 형태의 보드에 다음과 같이 X, O 로 표시가 되어 
 ### Practice 231314
 네 자리 비밀번호를 설정할 수 있는 자물쇠가 주어졌다.  
 원형 바퀴 형태로 숫자를 돌려가며 설정하는 방식이고, 아래와 같은 숫자로 구성된다.
-* '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'. 
+* '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'.
 
 바퀴의 숫자는 다음과 같이 전후 이동이 가능하다.
 * '9'를 '0'으로 바꾸거나 '0'을 '9'로 바꿀 수 있다.
@@ -1140,7 +1455,7 @@ forbidden 배열과 a, b, 그리고 목적지 x 가 주어졌을 때,
 
 ### Practice 231321
 n 명의 친구가 참석하는 파티가 계획되어 있다. (n = 0 ~ n-1)  
-파티 장소에는 친구들이 앉을 수 있는 충분한 의자들이 있고 
+파티 장소에는 친구들이 앉을 수 있는 충분한 의자들이 있고
 의자에는 0, 1, 2, ... 순으로 번호가 적혀있다.
 
 먼저 도착한 친구 순으로 비어 있는 의자 중에서 가장 숫자가 작은 의자에 앉는다.  
@@ -1163,7 +1478,7 @@ n 명의 친구가 참석하는 파티가 계획되어 있다. (n = 0 ~ n-1)
 ### Practice 231322
 정수형 2차원 배열 intervals 와 정수형 배열 queries 가 주어졌으며 각각의 의미는 다음과 같다.
 * intervals : 구간의 {시작 값, 종료 값} 데이터들로 2차원으로 구성
-* queries : 어떤 값이 intervals 의 구간 내에 포함되어 있는지 확인하기 위한 질문 목록 
+* queries : 어떤 값이 intervals 의 구간 내에 포함되어 있는지 확인하기 위한 질문 목록
 
 위와 같이 데이터가 주어졌을 때,
 각 query 가 포함될 수 있는 구간 중 최소 구간을 반환하는 프로그램을 작성하세요.  
@@ -1232,7 +1547,7 @@ k 명의 작업자를 선택할 때, 가장 작업 성능이 뛰어나게 구성
 
 ### Practice 231325
 문자열 배열 queries 와 문자열 pattern 이 주어졌을 떄,  
-queries 중 pattern 과 매칭되는 문자열은 true 아닌 경우 false 로 배열을 구성하여 반환하세요. 
+queries 중 pattern 과 매칭되는 문자열은 true 아닌 경우 false 로 배열을 구성하여 반환하세요.
 
 pattern 과의 매칭 여부는,  
 patter 각 문자의 전후로 소문자 알파벳을 추가했을 때 만들 수 있는 문자열을 기준으로 한다.
@@ -1315,7 +1630,7 @@ N 명의 고객이 물건을 고르고 계산을 하기 위해 계산대 앞에 
 * 비어 있는 계산대 중 계산대 번호가 작은 쪽으로 안내
 * 계산대가 꽉 차있는 경우 먼저 끝나는 쪽으로 안내
 * 동시에 끝나는 계산대가 있다면 계산대 번호가 작은쪽으로 안내
- 
+
 계산대에서 계산을 마친 손님은 쇼핑몰을 빠져 나가는데,  
 동시에 계산을 마친 손님이 있는 경우 계산대 번호가 높은 쪽부터 먼저 나가도록 한다.
 
@@ -1386,84 +1701,166 @@ hell 은 2번 입력, hello 는 3번 입력, heaven 은 2번 입력, java 는 1�
 ## Chapter 4: 알고리즘
 ### Practice 240311
 
+---
+
 ### Practice 240312
+
+---
 
 ### Practice 240313
 
+---
+
 ### Practice 240314
+
+---
 
 ### Practice 240511
 
+---
+
 ### Practice 240512
+
+---
 
 ### Practice 240513
 
+---
+
 ### Practice 240514
+
+---
 
 ### Practice 240515
 
+---
+
 ### Practice 240711
+
+---
 
 ### Practice 240712
 
+---
+
 ### Practice 240713
+
+---
 
 ### Practice 240714
 
+---
+
 ### Practice 240911
+
+---
 
 ### Practice 240912
 
+---
+
 ### Practice 240913
+
+---
 
 ### Practice 240914
 
+---
+
 ### Practice 240915
+
+---
 
 ### Practice 241111
 
+---
+
 ### Practice 241112
+
+---
 
 ### Practice 241311
 
+---
+
 ### Practice 241312
+
+---
 
 ### Practice 241313
 
+---
+
 ### Practice 241511
+
+---
 
 ### Practice 241512
 
+---
+
 ### Practice 241513
+
+---
 
 ### Practice 241514
 
+---
+
 ### Practice 241711
+
+---
 
 ### Practice 241712
 
+---
+
 ### Practice 241713
+
+---
 
 ### Practice 241911
 
+---
+
 ### Practice 241912
+
+---
 
 ### Practice 242011
 
+---
+
 ### Practice 242012
+
+---
 
 ### Practice 242013
 
+---
+
 ### Practice 242014
+
+---
 
 ### Practice 242015
 
+---
+
 ### Practice 242021
+
+---
 
 ### Practice 242022
 
+---
+
 ### Practice 242023
 
+---
+
 ### Practice 242024
+
+---
 
 ### Practice 242025
