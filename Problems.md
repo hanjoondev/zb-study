@@ -1,121 +1,121 @@
 # Table of Contents
 |           Problem #[^1]           | Origin | Description |
 | :-------------------------------: | :----: | :---------: |
-| [1. 1. 18_1. 1](#practice-111811) | [leetcode](https://leetcode.com/problems/reverse-integer/)                              | 정수 역순으로 뒤집기 |
-| [1. 1. 18_1. 2](#practice-111812) |                                                                                         | 대소문자 변경 |
-| [1. 1. 18_1. 3](#practice-111813) |                                                                                         | String.replace() 구현 |
+| [1. 1. 18_1. 1](#practice-111811) | [leetcode](https://leetcode.com/problems/reverse-integer/)                                   | 정수 역순으로 뒤집기 |
+| [1. 1. 18_1. 2](#practice-111812) | unknown                                                                                      | 대소문자 변경 |
+| [1. 1. 18_1. 3](#practice-111813) | unknown                                                                                      | String.replace() 구현 |
 | [1. 1. 18_1. 4](#practice-111814) | acmicpc<br>[2](https://www.acmicpc.net/problem/2438) [3](https://www.acmicpc.net/problem/2439) [4](https://www.acmicpc.net/problem/2442) [5](https://www.acmicpc.net/problem/2444) | asterisk 프린트 |
-| [1. 1. 18_1. 5](#practice-111815) | [leetcode](https://leetcode.com/problems/container-with-most-water/)                    | 저수량이 최대가 되는 벽 고르기 |
-| [1. 1. 18_2. 1](#practice-111821) | [leetcode](https://leetcode.com/problems/roman-to-integer/)                             | 로마 숫자 → Integer |
-| [1. 1. 18_2. 2](#practice-111822) | [leetcode](https://leetcode.com/problems/integer-to-roman/)                             | Integer → 로마 숫자 |
-| [1. 1. 18_2. 3](#practice-111823) | [acmicpc](https://www.acmicpc.net/problem/1406)                                         | 간단한 에디터 구현 |
-| [1. 1. 18_2. 4](#practice-111824) |                                                                                         | ASCII → String |
-| [1. 1. 18_2. 5](#practice-111825) | [leetcode](https://leetcode.com/problems/candy/)                                        | 사탕 나눠주기 |
-| [1. 1. 18_3. 1](#practice-111831) | [leetcode](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)          | 정렬된 배열에서 중복제거 |
-| [1. 1. 18_3. 2](#practice-111832) | [leetcode](https://leetcode.com/problems/find-all-duplicates-in-an-array/)              | 배열에서 두 번 나타나는 정수들 반환 |
-| [1. 1. 18_3. 3](#practice-111833) | [leetcode](https://leetcode.com/problems/find-k-closest-elements/)                      | 배열에서 절대값 가까운 수 k개 출력 (작은 수 우선) |
-| [1. 1. 18_3. 4](#practice-111834) | [leetcode](https://leetcode.com/problems/spiral-matrix/)                                | 2D 배열 나선형 방향 출력 |
-| [1. 1. 18_3. 5](#practice-111835) | [leetcode](https://leetcode.com/problems/trapping-rain-water/)                          | 벽 사이 총 저수량 |
-| [2. 1. 09_1. 1](#practice-210911) | [leetcode](https://leetcode.com/problems/pascals-triangle/)                             | 파스칼 삼각형 출력 |
-| [2. 1. 09_1. 2](#practice-210912) | [leetcode](https://leetcode.com/problems/previous-permutation-with-one-swap/)           | 한자리 정수 배열, 현배열 다음으로 큰 수 구하기 (1스왑) |
-| [2. 1. 09_1. 3](#practice-210913) | [leetcode](https://leetcode.com/problems/permutation-in-string/)                        | str1의 permutation이 str2에 포함되는지 판별 |
-| [2. 1. 09_1. 4](#practice-210914) | [leetcode](https://leetcode.com/problems/happy-number/)                                 | [Happy Number](https://en.wikipedia.org/wiki/Happy_number) |
-| [2. 1. 09_1. 5](#practice-210915) | [leetcode](https://leetcode.com/problems/island-perimeter/)                             | 해안선 길이 구하기 |
-| [2. 1. 09_2. 1](#practice-210921) | [leetcode](https://leetcode.com/problems/unique-binary-search-trees/)                   | [Catalan Number](https://en.wikipedia.org/wiki/Catalan_number) |
-| [2. 1. 09_2. 2](#practice-210922) | [acmicpc](https://www.acmicpc.net/problem/17609)                                        | palindrome / pseudopalindrome[^4] |
-| [2. 1. 09_2. 3](#practice-210923) | [leetcode](https://leetcode.com/problems/solve-the-equation/)                           | +-만 있는 1차 방정식 풀이 |
-| [2. 1. 09_2. 4](#practice-210924) | [leetcode](https://leetcode.com/problems/count-good-numbers/)                           | 짝수 인덱스에는 짝수, 홀수 인덱스에는 소수인 숫자 갯수 |
-| [2. 1. 09_2. 5](#practice-210925) | [acmicpc](https://www.acmicpc.net/problem/1914)                                         | 하노이의 탑 |
-| [2. 2. 03_1. 1](#practice-220311) | unknown                                                                                 |   |
-| [2. 2. 03_1. 2](#practice-220312) | unknown                                                                                 |   |
-| [2. 2. 03_1. 3](#practice-220313) | unknown                                                                                 |   |
-| [2. 2. 03_1. 4](#practice-220314) | unknown                                                                                 |   |
-| [2. 2. 03_1. 5](#practice-220315) | unknown                                                                                 |   |
-| [2. 2. 03_1. 6](#practice-220316) | [leetcode](https://leetcode.com/problems/rotate-image/)                                 | 48. Rotate Image (not a 100% match) |
-| [2. 2. 03_1. 7](#practice-220317) | unknown                                                                                 |   |
-| [2. 2. 05_1. 1](#practice-220511) | [leetcode](https://leetcode.com/problems/remove-duplicates-from-an-unsorted-linked-list)| 1836. Remove Duplicates From an Unsorted Linked List |
-| [2. 2. 05_1. 2](#practice-220512) | [leetcode](https://leetcode.com/problems/palindrome-linked-list/)                       | 234. Palindrome Linked List |
-| [2. 2. 05_1. 3](#practice-220513) | [leetcode](https://leetcode.com/problems/reverse-linked-list-ii/)                       | 92. Reverse Linked List II |
-| [2. 2. 07_1. 1](#practice-220711) | [leetcode](https://leetcode.com/problems/reverse-string/)                               | 344. Reverse String |
-| [2. 2. 07_1. 2](#practice-220712) | [acmicpc](https://www.acmicpc.net/problem/9012)                                         | 9012. 괄호 |
-| [2. 2. 07_1. 3](#practice-220713) | [acmicpc](https://www.acmicpc.net/problem/1935)                                         | 1935. 후위 표기식2 |
-| [2. 2. 07_1. 4](#practice-220714) | [leetcode](https://leetcode.com/problems/backspace-string-compare/)                     | 844. Backspace String Compare |
-| [2. 2. 09_1. 1](#practice-220911) | [acmicpc](https://www.acmicpc.net/problem/2164)                                         | 2164. 카드2 |
-| [2. 2. 09_1. 2](#practice-220912) | [acmicpc](https://www.acmicpc.net/problem/1158)                                         | 1158. 요세푸스 문제 |
-| [2. 2. 11_1. 1](#practice-221111) | [leetcode](https://leetcode.com/problems/reorder-list/)                                 | 143. Reorder List |
-| [2. 2. 11_1. 2](#practice-221112) | [leetcode](https://leetcode.com/problems/valid-palindrome/)                             | 125. Valid Palindrome |
-| [2. 2. 11_1. 3](#practice-221113) | unknown                                                                                 |   |
-| [2. 2. 11_1. 4](#practice-221114) | unknown                                                                                 |   |
-| [2. 2. 13_1. 1](#practice-221311) | unknown                                                                                 |   |
-| [2. 2. 13_1. 2](#practice-221312) | [leetcode](https://leetcode.com/problems/two-sum/)                                      | 1. Two Sum (not a 100% match) |
-| [2. 2. 13_1. 3](#practice-221313) | unknown                                                                                 |   |
-| [2. 2. 14_1. 1](#practice-221421) |                                                                                         | 주어진 코드에 의해 변형된 배열을 원배열로 되돌리기 |
-| [2. 2. 14_1. 2](#practice-221412) | [leetcode](https://leetcode.com/problems/set-matrix-zeroes/)                            | 2D 배열에서 0이 있는 행과 열을 0으로 변경 |
-| [2. 2. 14_1. 3](#practice-221413) | [acmicpc](https://www.acmicpc.net/problem/2346)                                         | 풍선 터뜨리는 순서 |
-| [2. 2. 14_1. 4](#practice-221414) | [leetcode](https://leetcode.com/problems/valid-parentheses/)                            | 괄호 정상여부 판정 |
-| [2. 2. 14_1. 5](#practice-221415) | [acmicpc](https://www.acmicpc.net/problem/3190)                                         | Snake 게임 종료시점 계산 |
-| [2. 2. 14_2. 1](#practice-221421) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42587)                 | 문서 중요도순 출력 |
-| [2. 2. 14_2. 2](#practice-221422) | [acmicpc](https://www.acmicpc.net/problem/1874)                                         | stack으로 특정 수열 만들기 |
-| [2. 2. 14_2. 3](#practice-221423) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42579)                 | 장르카운트 → 고유카운트 → uid 순서 정렬 (장르별 2개) |
-| [2. 2. 14_2. 4](#practice-221424) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42576)                 | p배열 중 c배열에 포함되지 않은 요소 구하기 (중복可) |
-| [2. 2. 14_2. 5](#practice-221425) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/67258)                 | 배열상 요소를 한 종류씩 포함하는 최단 구간 |
-| [2. 3. 13_1. 1](#practice-231311) | [leetcode](https://leetcode.com/problems/word-search/)                                  | 2D array에서 문자열 찾기 |
-| [2. 3. 13_1. 2](#practice-231312) | [leetcode](https://leetcode.com/problems/surrounded-regions/)                           | 2D array에서 x로 둘러싸인 부분 찾기 |
-| [2. 3. 13_1. 3](#practice-231313) | [leetcode](https://leetcode.com/problems/accounts-merge/)                               | 중복 이메일 병합 (동명이인 존재) |
-| [2. 3. 13_1. 4](#practice-231314) | [leetcode](https://leetcode.com/problems/open-the-lock/)                                | 4 digit combination padlock 회전수 계산 |
-| [2. 3. 13_1. 5](#practice-231315) | [leetcode](https://leetcode.com/problems/minimum-jumps-to-reach-home/)                  | 1D 로봇 이동횟수 계산 |
-| [2. 3. 13_2. 1](#practice-231321) | [leetcode](https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair/)  | 가장 낮은 번호 의자에 앉기 |
-| [2. 3. 13_2. 2](#practice-231322) | [leetcode](https://leetcode.com/problems/minimum-interval-to-include-each-query/)       | 각 쿼리를 포함하는 최소구간 |
-| [2. 3. 13_2. 3](#practice-231323) | [leetcode](https://leetcode.com/problems/construct-target-array-with-multiple-sums/)    | 초기 배열을 타겟 배열로 변형 가부 |
-| [2. 3. 13_2. 4](#practice-231324) | [leetcode](https://leetcode.com/problems/maximum-performance-of-a-team/)                | 팀 작업성능 최적화 |
-| [2. 3. 13_2. 5](#practice-231325) | [leetcode](https://leetcode.com/problems/camelcase-matching/)                           | 문자열+패턴으로 주어진 문자열들을 만들 수 있는지 판별 |
-| [2. 3. 13_3. 1](#practice-231331) | [acmicpc](https://www.acmicpc.net/problem/10026)                                        | 일반인과 색약자에게 보이는 구역수 판정 |
-| [2. 3. 13_3. 2](#practice-231332) |                                                                                         | 불을 켤 수 있는 방의 최대수 |
-| [2. 3. 13_3. 3](#practice-231333) | [acmicpc](https://www.acmicpc.net/problem/17612)                                        | 여러 계산대가 있을 때 계산 완료 순서 |
-| [2. 3. 13_3. 4](#practice-231334) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42577)                 | 전화번호가 다른 전화번호의 접23두어인지 식별 |
-| [2. 3. 13_3. 5](#practice-231335) | [acmicpc](https://www.acmicpc.net/problem/5670)                                         | 자동완성 평균 타이핑 수 계산 |
-| [2. 4. 03_1. 1](#practice-240311) | [leetcode](https://leetcode.com/problems/sort-colors/)                                  | 75. Sort Colors |
-| [2. 4. 03_1. 2](#practice-240312) | [leetcode](https://leetcode.com/problems/group-anagrams/)                               | 49. Group Anagrams |
-| [2. 4. 03_1. 3](#practice-240313) | [leetcode](https://leetcode.com/problems/merge-intervals/)                              | 56. Merge Intervals |
-| [2. 4. 03_1. 4](#practice-240314) | [leetcode](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)        | 581. Shortest Unsorted Continuous Subarray |
-| [2. 4. 05_1. 1](#practice-240511) | [leetcode](https://leetcode.com/problems/binary-search/)                                | 704. Binary Search (not a 100% match) |
-| [2. 4. 05_1. 2](#practice-240512) | [leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)               | 33. Search in Rotated Sorted Array |
-| [2. 4. 05_1. 3](#practice-240513) | [leetcode](https://leetcode.com/problems/search-a-2d-matrix/)                           | 74. Search a 2D Matrix |
-| [2. 4. 05_1. 4](#practice-240514) | [leetcode](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)      | 1011. Capacity To Ship Packages Within D Days |
-| [2. 4. 05_1. 5](#practice-240515) | [leetcode](https://leetcode.com/problems/split-array-largest-sum/)                      | 410. Split Array Largest Sum |
-| [2. 4. 07_1. 1](#practice-240711) |                                                                                         |   |
-| [2. 4. 07_1. 2](#practice-240712) | [leetcode](https://leetcode.com/problems/intersection-of-two-arrays/)                   | 349. Intersection of Two Arrays |
-| [2. 4. 07_1. 3](#practice-240713) | [leetcode](https://leetcode.com/problems/reverse-words-in-a-string/)                    | 151. Reverse Words in a String |
-| [2. 4. 07_1. 4](#practice-240714) | [leetcode](https://leetcode.com/problems/3sum/)                                         | 15. 3Sum |
-| [2. 4. 09_1. 1](#practice-240911) | [leetcode](https://leetcode.com/problems/jump-game/)                                    | 55. Jump Game |
-| [2. 4. 09_1. 2](#practice-240912) | [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)           | 122. Best Time to Buy and Sell Stock II |
-| [2. 4. 09_1. 3](#practice-240913) |                                                                                         |   |
-| [2. 4. 09_1. 4](#practice-240914) | [leetcode](https://leetcode.com/problems/gas-station/)                                  | 134. Gas Station |
-| [2. 4. 09_1. 5](#practice-240915) | [leetcode](https://leetcode.com/problems/maximum-swap/)                                 | 670. Maximum Swap |
-| [2. 4. 11_1. 1](#practice-241111) | [leetcode](https://leetcode.com/problems/maximum-subarray/)                             | 53. Maximum Subarray |
-| [2. 4. 11_1. 2](#practice-241112) | [leetcode](https://leetcode.com/problems/merge-k-sorted-lists/)                         | 23. Merge k Sorted Lists |
-| [2. 4. 13_1. 1](#practice-241311) |                                                                                         |   |
-| [2. 4. 13_1. 2](#practice-241312) | [leetcode](https://leetcode.com/problems/longest-continuous-increasing-subsequence/)    | 674. Longest Continuous Increasing Subsequence |
-| [2. 4. 13_1. 3](#practice-241313) | [acmicpc](https://www.acmicpc.net/problem/12865)                                        | 12865. 평범한 배낭 |
-| [2. 4. 15_1. 1](#practice-241511) | [acmicpc](https://www.acmicpc.net/problem/15649)                                        | 15649. N과 M (1) |
-| [2. 4. 15_1. 2](#practice-241512) | [acmicpc](https://www.acmicpc.net/problem/2023)                                         | 2023. 신기한 소수 |
-| [2. 4. 15_1. 3](#practice-241513) | [acmicpc](https://www.acmicpc.net/problem/19949)                                        | 19949. 영재의 시험 |
-| [2. 4. 15_1. 4](#practice-241514) | [acmicpc](https://www.acmicpc.net/problem/16197)                                        | 16197. 두 동전 |
-| [2. 4. 17_1. 1](#practice-241711) | [acmicpc](https://www.acmicpc.net/problem/1504)                                         | 1504. 특정한 최단 경로 |
-| [2. 4. 17_1. 2](#practice-241712) | [acmicpc](https://www.acmicpc.net/problem/1865)                                         | 1865. 웜홀 |
-| [2. 4. 17_1. 3](#practice-241713) | [acmicpc](https://www.acmicpc.net/problem/11404)                                        | 11404. 플로이드 |
-| [2. 4. 19_1. 1](#practice-241911) | [acmicpc](https://www.acmicpc.net/problem/2887)                                         | 2887. 행성 터널 |
-| [2. 4. 19_1. 2](#practice-241912) | [acmicpc](https://www.acmicpc.net/problem/1647)                                         | 1647. 도시 분할 계획 |
-| [2. 4. 20_1. 1](#practice-242011) | [acmicpc](https://www.acmicpc.net/problem/3079)                                         |   |
-| [2. 4. 20_1. 2](#practice-242012) | [acmicpc](https://www.acmicpc.net/problem/15961)                                        |   |
-| [2. 4. 20_1. 3](#practice-242013) | [acmicpc](https://www.acmicpc.net/problem/1700)                                         |   |
-| [2. 4. 20_1. 4](#practice-242014) | [acmicpc](https://www.acmicpc.net/problem/2240)                                         |   |
-| [2. 4. 20_1. 5](#practice-242015) | [acmicpc](https://www.acmicpc.net/problem/13418)                                        |   |
-| [2. 4. 20_2. 1](#practice-242021) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/43236)                 |   |
-| [2. 4. 20_2. 2](#practice-242022) | unknown                                                                                 |   |
-| [2. 4. 20_2. 3](#practice-242023) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42886)                 |   |
-| [2. 4. 20_2. 4](#practice-242024) | [acmicpc](https://www.acmicpc.net/problem/4095)                                         |   |
-| [2. 4. 20_2. 5](#practice-242025) | [leetcode](https://leetcode.com/problems/min-cost-to-connect-all-points/)               |   |
+| [1. 1. 18_1. 5](#practice-111815) | [leetcode](https://leetcode.com/problems/container-with-most-water/)                         | 저수량이 최대가 되는 벽 고르기 |
+| [1. 1. 18_2. 1](#practice-111821) | [leetcode](https://leetcode.com/problems/roman-to-integer/)                                  | 로마 숫자 → Integer |
+| [1. 1. 18_2. 2](#practice-111822) | [leetcode](https://leetcode.com/problems/integer-to-roman/)                                  | Integer → 로마 숫자 |
+| [1. 1. 18_2. 3](#practice-111823) | [acmicpc](https://www.acmicpc.net/problem/1406)                                              | 간단한 에디터 구현 |
+| [1. 1. 18_2. 4](#practice-111824) | unknown                                                                                      | ASCII → String |
+| [1. 1. 18_2. 5](#practice-111825) | [leetcode](https://leetcode.com/problems/candy/)                                             | 사탕 나눠주기 |
+| [1. 1. 18_3. 1](#practice-111831) | [leetcode](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)               | 정렬된 배열에서 중복제거 |
+| [1. 1. 18_3. 2](#practice-111832) | [leetcode](https://leetcode.com/problems/find-all-duplicates-in-an-array/)                   | 배열에서 두 번 나타나는 정수들 반환 |
+| [1. 1. 18_3. 3](#practice-111833) | [leetcode](https://leetcode.com/problems/find-k-closest-elements/)                           | 배열에서 절대값 가까운 수 k개 출력 (작은 수 우선) |
+| [1. 1. 18_3. 4](#practice-111834) | [leetcode](https://leetcode.com/problems/spiral-matrix/)                                     | 2D 배열 나선형 방향 출력 |
+| [1. 1. 18_3. 5](#practice-111835) | [leetcode](https://leetcode.com/problems/trapping-rain-water/)                               | 벽 사이 총 저수량 |
+| [2. 1. 09_1. 1](#practice-210911) | [leetcode](https://leetcode.com/problems/pascals-triangle/)                                  | 파스칼 삼각형 출력 |
+| [2. 1. 09_1. 2](#practice-210912) | [leetcode](https://leetcode.com/problems/previous-permutation-with-one-swap/)                | 한자리 정수 배열, 현배열 다음으로 큰 수 구하기 (1스왑) |
+| [2. 1. 09_1. 3](#practice-210913) | [leetcode](https://leetcode.com/problems/permutation-in-string/)                             | str1의 permutation이 str2에 포함되는지 판별 |
+| [2. 1. 09_1. 4](#practice-210914) | [leetcode](https://leetcode.com/problems/happy-number/)                                      | [Happy Number](https://en.wikipedia.org/wiki/Happy_number) |
+| [2. 1. 09_1. 5](#practice-210915) | [leetcode](https://leetcode.com/problems/island-perimeter/)                                  | 해안선 길이 구하기 |
+| [2. 1. 09_2. 1](#practice-210921) | [leetcode](https://leetcode.com/problems/unique-binary-search-trees/)                        | [Catalan Number](https://en.wikipedia.org/wiki/Catalan_number) |
+| [2. 1. 09_2. 2](#practice-210922) | [acmicpc](https://www.acmicpc.net/problem/17609)                                             | palindrome / pseudopalindrome[^4] |
+| [2. 1. 09_2. 3](#practice-210923) | [leetcode](https://leetcode.com/problems/solve-the-equation/)                                | +-만 있는 1차 방정식 풀이 |
+| [2. 1. 09_2. 4](#practice-210924) | [leetcode](https://leetcode.com/problems/count-good-numbers/)                                | 짝수 인덱스에는 짝수, 홀수 인덱스에는 소수인 숫자 갯수 |
+| [2. 1. 09_2. 5](#practice-210925) | [acmicpc](https://www.acmicpc.net/problem/1914)                                              | 하노이의 탑 |
+| [2. 2. 03_1. 1](#practice-220311) | unknown                                                                                      |   |
+| [2. 2. 03_1. 2](#practice-220312) | unknown                                                                                      |   |
+| [2. 2. 03_1. 3](#practice-220313) | unknown                                                                                      |   |
+| [2. 2. 03_1. 4](#practice-220314) | unknown                                                                                      |   |
+| [2. 2. 03_1. 5](#practice-220315) | unknown                                                                                      |   |
+| [2. 2. 03_1. 6](#practice-220316) | [leetcode](https://leetcode.com/problems/rotate-image/)                                      | 48. Rotate Image (not a 100% match) |
+| [2. 2. 03_1. 7](#practice-220317) | unknown                                                                                      |   |
+| [2. 2. 05_1. 1](#practice-220511) | [leetcode](https://leetcode.com/problems/remove-duplicates-from-an-unsorted-linked-list)     | 1836. Remove Duplicates From an Unsorted Linked List |
+| [2. 2. 05_1. 2](#practice-220512) | [leetcode](https://leetcode.com/problems/palindrome-linked-list/)                            | 234. Palindrome Linked List |
+| [2. 2. 05_1. 3](#practice-220513) | [leetcode](https://leetcode.com/problems/reverse-linked-list-ii/)                            | 92. Reverse Linked List II |
+| [2. 2. 07_1. 1](#practice-220711) | [leetcode](https://leetcode.com/problems/reverse-string/)                                    | 344. Reverse String |
+| [2. 2. 07_1. 2](#practice-220712) | [acmicpc](https://www.acmicpc.net/problem/9012)                                              | 9012. 괄호 |
+| [2. 2. 07_1. 3](#practice-220713) | [acmicpc](https://www.acmicpc.net/problem/1935)                                              | 1935. 후위 표기식2 |
+| [2. 2. 07_1. 4](#practice-220714) | [leetcode](https://leetcode.com/problems/backspace-string-compare/)                          | 844. Backspace String Compare |
+| [2. 2. 09_1. 1](#practice-220911) | [acmicpc](https://www.acmicpc.net/problem/2164)                                              | 2164. 카드2 |
+| [2. 2. 09_1. 2](#practice-220912) | [acmicpc](https://www.acmicpc.net/problem/1158)                                              | 1158. 요세푸스 문제 |
+| [2. 2. 11_1. 1](#practice-221111) | [leetcode](https://leetcode.com/problems/reorder-list/)                                      | 143. Reorder List |
+| [2. 2. 11_1. 2](#practice-221112) | [leetcode](https://leetcode.com/problems/valid-palindrome/)                                  | 125. Valid Palindrome |
+| [2. 2. 11_1. 3](#practice-221113) | unknown                                                                                      |   |
+| [2. 2. 11_1. 4](#practice-221114) | unknown                                                                                      |   |
+| [2. 2. 13_1. 1](#practice-221311) | unknown                                                                                      |   |
+| [2. 2. 13_1. 2](#practice-221312) | [leetcode](https://leetcode.com/problems/two-sum/)                                           | 1. Two Sum (not a 100% match) |
+| [2. 2. 13_1. 3](#practice-221313) | unknown                                                                                      |   |
+| [2. 2. 14_1. 1](#practice-221421) | unknown                                                                                      | 주어진 코드에 의해 변형된 배열을 원배열로 되돌리기 |
+| [2. 2. 14_1. 2](#practice-221412) | [leetcode](https://leetcode.com/problems/set-matrix-zeroes/)                                 | 2D 배열에서 0이 있는 행과 열을 0으로 변경 |
+| [2. 2. 14_1. 3](#practice-221413) | [acmicpc](https://www.acmicpc.net/problem/2346)                                              | 풍선 터뜨리는 순서 |
+| [2. 2. 14_1. 4](#practice-221414) | [leetcode](https://leetcode.com/problems/valid-parentheses/)                                 | 괄호 정상여부 판정 |
+| [2. 2. 14_1. 5](#practice-221415) | [acmicpc](https://www.acmicpc.net/problem/3190)                                              | Snake 게임 종료시점 계산 |
+| [2. 2. 14_2. 1](#practice-221421) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42587)                      | 문서 중요도순 출력 |
+| [2. 2. 14_2. 2](#practice-221422) | [acmicpc](https://www.acmicpc.net/problem/1874)                                              | stack으로 특정 수열 만들기 |
+| [2. 2. 14_2. 3](#practice-221423) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42579)                      | 장르카운트 → 고유카운트 → uid 순서 정렬 (장르별 2개) |
+| [2. 2. 14_2. 4](#practice-221424) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42576)                      | p배열 중 c배열에 포함되지 않은 요소 구하기 (중복可) |
+| [2. 2. 14_2. 5](#practice-221425) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/67258)                      | 배열상 요소를 한 종류씩 포함하는 최단 구간 |
+| [2. 3. 13_1. 1](#practice-231311) | [leetcode](https://leetcode.com/problems/word-search/)                                       | 2D array에서 문자열 찾기 |
+| [2. 3. 13_1. 2](#practice-231312) | [leetcode](https://leetcode.com/problems/surrounded-regions/)                                | 2D array에서 x로 둘러싸인 부분 찾기 |
+| [2. 3. 13_1. 3](#practice-231313) | [leetcode](https://leetcode.com/problems/accounts-merge/)                                    | 중복 이메일 병합 (동명이인 존재) |
+| [2. 3. 13_1. 4](#practice-231314) | [leetcode](https://leetcode.com/problems/open-the-lock/)                                     | 4 digit combination padlock 회전수 계산 |
+| [2. 3. 13_1. 5](#practice-231315) | [leetcode](https://leetcode.com/problems/minimum-jumps-to-reach-home/)                       | 1D 로봇 이동횟수 계산 |
+| [2. 3. 13_2. 1](#practice-231321) | [leetcode](https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair/)       | 가장 낮은 번호 의자에 앉기 |
+| [2. 3. 13_2. 2](#practice-231322) | [leetcode](https://leetcode.com/problems/minimum-interval-to-include-each-query/)            | 각 쿼리를 포함하는 최소구간 |
+| [2. 3. 13_2. 3](#practice-231323) | [leetcode](https://leetcode.com/problems/construct-target-array-with-multiple-sums/)         | 초기 배열을 타겟 배열로 변형 가부 |
+| [2. 3. 13_2. 4](#practice-231324) | [leetcode](https://leetcode.com/problems/maximum-performance-of-a-team/)                     | 팀 작업성능 최적화 |
+| [2. 3. 13_2. 5](#practice-231325) | [leetcode](https://leetcode.com/problems/camelcase-matching/)                                | 문자열+패턴으로 주어진 문자열들을 만들 수 있는지 판별 |
+| [2. 3. 13_3. 1](#practice-231331) | [acmicpc](https://www.acmicpc.net/problem/10026)                                             | 일반인과 색약자에게 보이는 구역수 판정 |
+| [2. 3. 13_3. 2](#practice-231332) | unknown                                                                                      | 불을 켤 수 있는 방의 최대수 |
+| [2. 3. 13_3. 3](#practice-231333) | [acmicpc](https://www.acmicpc.net/problem/17612)                                             | 여러 계산대가 있을 때 계산 완료 순서 |
+| [2. 3. 13_3. 4](#practice-231334) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42577)                      | 전화번호가 다른 전화번호의 접23두어인지 식별 |
+| [2. 3. 13_3. 5](#practice-231335) | [acmicpc](https://www.acmicpc.net/problem/5670)                                              | 자동완성 평균 타이핑 수 계산 |
+| [2. 4. 03_1. 1](#practice-240311) | [leetcode](https://leetcode.com/problems/sort-colors/)                                       | 75. Sort Colors |
+| [2. 4. 03_1. 2](#practice-240312) | [leetcode](https://leetcode.com/problems/group-anagrams/)                                    | 49. Group Anagrams |
+| [2. 4. 03_1. 3](#practice-240313) | [leetcode](https://leetcode.com/problems/merge-intervals/)                                   | 56. Merge Intervals |
+| [2. 4. 03_1. 4](#practice-240314) | [leetcode](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)             | 581. Shortest Unsorted Continuous Subarray |
+| [2. 4. 05_1. 1](#practice-240511) | [leetcode](https://leetcode.com/problems/binary-search/)                                     | 704. Binary Search (not a 100% match) |
+| [2. 4. 05_1. 2](#practice-240512) | [leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)                    | 33. Search in Rotated Sorted Array |
+| [2. 4. 05_1. 3](#practice-240513) | [leetcode](https://leetcode.com/problems/search-a-2d-matrix/)                                | 74. Search a 2D Matrix |
+| [2. 4. 05_1. 4](#practice-240514) | [leetcode](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)           | 1011. Capacity To Ship Packages Within D Days |
+| [2. 4. 05_1. 5](#practice-240515) | [leetcode](https://leetcode.com/problems/split-array-largest-sum/)                           | 410. Split Array Largest Sum |
+| [2. 4. 07_1. 1](#practice-240711) | unknown                                                                                      |   |
+| [2. 4. 07_1. 2](#practice-240712) | [leetcode](https://leetcode.com/problems/intersection-of-two-arrays/)                        | 349. Intersection of Two Arrays |
+| [2. 4. 07_1. 3](#practice-240713) | [leetcode](https://leetcode.com/problems/reverse-words-in-a-string/)                         | 151. Reverse Words in a String |
+| [2. 4. 07_1. 4](#practice-240714) | [leetcode](https://leetcode.com/problems/3sum/)                                              | 15. 3Sum |
+| [2. 4. 09_1. 1](#practice-240911) | [leetcode](https://leetcode.com/problems/jump-game/)                                         | 55. Jump Game |
+| [2. 4. 09_1. 2](#practice-240912) | [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)                | 122. Best Time to Buy and Sell Stock II |
+| [2. 4. 09_1. 3](#practice-240913) | unknown                                                                                      |   |
+| [2. 4. 09_1. 4](#practice-240914) | [leetcode](https://leetcode.com/problems/gas-station/)                                       | 134. Gas Station |
+| [2. 4. 09_1. 5](#practice-240915) | [leetcode](https://leetcode.com/problems/maximum-swap/)                                      | 670. Maximum Swap |
+| [2. 4. 11_1. 1](#practice-241111) | [leetcode](https://leetcode.com/problems/maximum-subarray/)                                  | 53. Maximum Subarray |
+| [2. 4. 11_1. 2](#practice-241112) | [leetcode](https://leetcode.com/problems/merge-k-sorted-lists/)                              | 23. Merge k Sorted Lists |
+| [2. 4. 13_1. 1](#practice-241311) | unknown                                                                                      |   |
+| [2. 4. 13_1. 2](#practice-241312) | [leetcode](https://leetcode.com/problems/longest-continuous-increasing-subsequence/)         | 674. Longest Continuous Increasing Subsequence |
+| [2. 4. 13_1. 3](#practice-241313) | [acmicpc](https://www.acmicpc.net/problem/12865)                                             | 12865. 평범한 배낭 |
+| [2. 4. 15_1. 1](#practice-241511) | [acmicpc](https://www.acmicpc.net/problem/15649)                                             | 15649. N과 M (1) |
+| [2. 4. 15_1. 2](#practice-241512) | [acmicpc](https://www.acmicpc.net/problem/2023)                                              | 2023. 신기한 소수 |
+| [2. 4. 15_1. 3](#practice-241513) | [acmicpc](https://www.acmicpc.net/problem/19949)                                             | 19949. 영재의 시험 |
+| [2. 4. 15_1. 4](#practice-241514) | [acmicpc](https://www.acmicpc.net/problem/16197)                                             | 16197. 두 동전 |
+| [2. 4. 17_1. 1](#practice-241711) | [acmicpc](https://www.acmicpc.net/problem/1504)                                              | 1504. 특정한 최단 경로 |
+| [2. 4. 17_1. 2](#practice-241712) | [acmicpc](https://www.acmicpc.net/problem/1865)                                              | 1865. 웜홀 |
+| [2. 4. 17_1. 3](#practice-241713) | [acmicpc](https://www.acmicpc.net/problem/11404)                                             | 11404. 플로이드 |
+| [2. 4. 19_1. 1](#practice-241911) | [acmicpc](https://www.acmicpc.net/problem/2887)                                              | 2887. 행성 터널 |
+| [2. 4. 19_1. 2](#practice-241912) | [acmicpc](https://www.acmicpc.net/problem/1647)                                              | 1647. 도시 분할 계획 |
+| [2. 4. 20_1. 1](#practice-242011) | [acmicpc](https://www.acmicpc.net/problem/3079)                                              |   |
+| [2. 4. 20_1. 2](#practice-242012) | [acmicpc](https://www.acmicpc.net/problem/15961)                                             |   |
+| [2. 4. 20_1. 3](#practice-242013) | [acmicpc](https://www.acmicpc.net/problem/1700)                                              |   |
+| [2. 4. 20_1. 4](#practice-242014) | [acmicpc](https://www.acmicpc.net/problem/2240)                                              |   |
+| [2. 4. 20_1. 5](#practice-242015) | [acmicpc](https://www.acmicpc.net/problem/13418)                                             |   |
+| [2. 4. 20_2. 1](#practice-242021) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/43236)                      |   |
+| [2. 4. 20_2. 2](#practice-242022) | unknown                                                                                      |   |
+| [2. 4. 20_2. 3](#practice-242023) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42886)                      |   |
+| [2. 4. 20_2. 4](#practice-242024) | [acmicpc](https://www.acmicpc.net/problem/4095)                                              |   |
+| [2. 4. 20_2. 5](#practice-242025) | [leetcode](https://leetcode.com/problems/min-cost-to-connect-all-points/)                    |   |
 
 [^1]: Part. Chapter. Subchapter. Problem Number
 
