@@ -59,6 +59,24 @@
 | [2. 2. 14_2. 3](#practice-221423) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42579)                      | 장르카운트 → 고유카운트 → uid 순서 정렬 (장르별 2개) |
 | [2. 2. 14_2. 4](#practice-221424) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/42576)                      | p배열 중 c배열에 포함되지 않은 요소 구하기 (중복可) |
 | [2. 2. 14_2. 5](#practice-221425) | [programmers](https://programmers.co.kr/learn/courses/30/lessons/67258)                      | 배열상 요소를 한 종류씩 포함하는 최단 구간 |
+| [2. 3. 02_1. 1](#practice-230211) | [acmicpc](https://www.acmicpc.net/problem/1802)                                              | 1802. 종이 접기 (not a 100% match) |
+| [2. 3. 02_1. 2](#practice-230212) | [acmicpc](https://www.acmicpc.net/problem/13325)                                             | 13325. 이진 트리 |
+| [2. 3. 04_1. 1](#practice-230411) | [leetcode](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)                     | 230. Kth Smallest Element in a BST |
+| [2. 3. 04_1. 2](#practice-230412) | [leetcode](https://leetcode.com/problems/minimum-absolute-difference-in-bst/)                | 530. Minimum Absolute Difference in BST |
+| [2. 3. 04_1. 3](#practice-230413) | [leetcode](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)                         | 653. Two Sum IV - Input is a BST |
+| [2. 3. 06_1. 1](#practice-230611) | [leetcode](https://leetcode.com/problems/find-center-of-star-graph/)                         | 1791. Find Center of Star Graph |
+| [2. 3. 06_1. 2](#practice-230612) | [leetcode](https://leetcode.com/problems/find-if-path-exists-in-graph/)                      | 1971. Find if Path Exists in Graph |
+| [2. 3. 06_1. 3](#practice-230613) | [leetcode](https://leetcode.com/problems/is-graph-bipartite/)                                | 785. Is Graph Bipartite? |
+| [2. 3. 08_1. 1](#practice-230811) | unknown                                                                                      |   |
+| [2. 3. 08_1. 2](#practice-230812) | [acmicpc](https://www.acmicpc.net/problem/1927)<br>[acmicpc](https://www.acmicpc.net/problem/11279) | 1927. 최소 힙<br>11279. 최대 힙 |
+| [2. 3. 08_1. 3](#practice-230813) | unknown                                                                                      |   |
+| [2. 3. 10_1. 1](#practice-231011) | [leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/)                   | 215. Kth Largest Element in an Array |
+| [2. 3. 10_1. 2](#practice-231012) | [leetcode](https://leetcode.com/problems/last-stone-weight-ii/)                              | 1049. Last Stone Weight II |
+| [2. 3. 10_1. 3](#practice-231013) | [leetcode](https://leetcode.com/problems/top-k-frequent-elements/)                           | 347. Top K Frequent Elements |
+| [2. 3. 10_1. 4](#practice-231014) | [leetcode](https://leetcode.com/problems/reorganize-string/)                                 | 767. Reorganize String |
+| [2. 3. 12_1. 1](#practice-231211) | [leetcode](https://leetcode.com/problems/counting-words-with-a-given-prefix/)                | 2185. Counting Words With a Given Prefix (not a 100% match) |
+| [2. 3. 12_1. 2](#practice-231212) | [leetcode](https://leetcode.com/problems/replace-words/)                                     | 648. Replace Words |
+| [2. 3. 12_1. 3](#practice-231213) | unknown                                                                                      |   |
 | [2. 3. 13_1. 1](#practice-231311) | [leetcode](https://leetcode.com/problems/word-search/)                                       | 2D array에서 문자열 찾기 |
 | [2. 3. 13_1. 2](#practice-231312) | [leetcode](https://leetcode.com/problems/surrounded-regions/)                                | 2D array에서 x로 둘러싸인 부분 찾기 |
 | [2. 3. 13_1. 3](#practice-231313) | [leetcode](https://leetcode.com/problems/accounts-merge/)                                    | 중복 이메일 병합 (동명이인 존재) |
@@ -1317,7 +1335,6 @@ Modification 당시 입출력 샘플
 
 입출력 예시
 ---
-
 |gems|result|
 |----|------|
 |["DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"]|[3, 7]|
@@ -1342,7 +1359,223 @@ Modification 당시 입출력 샘플
         - 그러므로 [1, 5]를 return 해주어야 합니다.
 
 
+
 ## Chatper 3: 비선형 자료구조
+### Practice 230211
+종이를 반으로 접었을 때, 안으로 파인 부분은 0, 볼록 튀어나온 부분은 1이라고 하자.
+종이를 접을 때는 오른쪽에서 왼쪽으로 접는다.
+종이를 N번 접었을 때의 접힌 상태를 출력하는 문제를 작성하세요.
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|1|0|
+|2|001|
+|3|0010011|
+
+---
+
+### Practice 230212
+각각의 에지에 가중치가 있는 포화 이진 트리가 있다.
+루트에서 각 리프까지의 경로 길이를 모두 같게 설정하고,
+이 때, 모든 가중치들의 총합이 최소가 되도록 하는 프로그램을 작성하세요.
+
+---
+
+### Practice 230411
+주어진 이진 탐색 트리에서 N 번째로 작은 수 구하기
+
+입출력 예시
+---
+|BST|N|Output|
+|---|---|
+|[3, 1, 4, null, 2]|1|1|
+|[5, 3, 6, 2, 4, null, null, 1]|3|3|
+
+---
+
+### Practice 230412
+주어진 BST 에서 인접한 노드 간의 차이값 중 최소 값을 구하세요.
+
+입출력 예시
+---
+|BST|Output|
+|---|------|
+|[4, 2, 6, 1, 3]|1|
+|[5, 1, 48, null, null, 12, 51]|3|
+
+---
+
+### Practice 230413
+주어진 BST 에서 두 노드의 합이 target 값이 되는 경우가 있는지 확인하세요.
+* 있으면 true, 없으면 false 반환
+
+입출력 예시
+---
+|BST|target|Output|
+|---|------|------|
+|[5, 3, 6, 2, 4, null, 7]|9|true|
+|[5, 3, 6, 2, 4, null, 7]|28|false|
+
+---
+
+### Practice 230611
+Undirected 그래프에서 center node 를 출력하세요.
+* Center node 는 다른 모든 노드와 연결된 노드를 의미
+* 다른 모드와 연결된 노드는 하나라고 가정
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|[[1, 2], [2, 3], [4, 2]]|2|
+|[[1, 2], [5, 1], [1, 3], [1, 4]]|1|
+
+---
+
+### Practice 230612
+주어진 그래프에서 시작 노드에서 끝 노드로 가는 길이 있는지 확인하는 프로그램을 작성하세요.
+* path 가 존재하면 true 없으면 false 출력
+
+입출력 예시
+---
+|node|edges|source|destination|output|
+|----|-----|------|-----------|------|
+|3|[[0, 1], [1, 2], [2, 0]]|0|2|true|
+|6|[[0, 1], [0, 2], [3, 5], [5, 4], [4, 3]]|0|5|false|
+
+---
+
+### Practice 230613
+주어진 그래프를 두 개의 그래프로 분리할 수 있는지 확인 하는 프로그램을 작성하세요.
+* 분리 조건: 인접하지 않은 노드끼리 분리
+
+모든 노드는 연결되어 있다.
+* 분리 가능하면 true, 불가능하면 false 출력
+
+입출력 예시
+---
+|graph|output|
+|---|---|
+|[[1, 3], [0, 2], [1, 3], [0, 2]]|true|
+|[[1, 2, 3], [0, 2], [0, 1, 3], [0, 2]]|false|
+
+---
+
+### Practice 230811
+최소 힙에서 특정 값을 변경하는 코드를 작성하세요.
+* 특정 값이 여러개라면 모두 바꿔주세요.
+
+---
+
+### Practice 230812
+* 최소 힙, 최대 힙을 이용하여 데이터를 오름차순, 내림차순으로 출력해보세요.
+
+---
+
+### Practice 230813
+정수들을 힙 자료구조에 추가하고 n번 삭제 후 절대값이 큰 값부터 출력하세요.
+
+입출력 예시
+---
+|입력|삭제횟수|출력|
+|---|---|---|
+|3 0 -2 -5 9 6 -11, 20, -30|1|20 -11 9 6 -5 3 -2 0|
+
+---
+
+### Practice 231011
+nums 배열에 주어진 정수들 중에서 k 번째로 큰 수를 반환하는 프로그램을 작성하세요.
+
+입출력 예시
+---
+|입력|K|출력|
+|---|---|---|
+|[3, 1, 2, 7, 6, 4]|2|6|
+|[1, 3, 7, 4, 2, 8, 9]|7|1|
+
+---
+
+### Practice 231012
+돌의 무게 데이터로 이루어진 정수형 stones 배열이 주어졌을 때 다음의 내용에 따라 프로그램을 작성하세요.
+해당 배열로부터 가장 무게가 많이 나가는 돌 두개를 꺼내세요.
+두 개의 돌을 충돌시키는데, 무게가 같으면 둘다 소멸,
+무게가 다르면 남은 무게만큼의 돌은 다시 추가합니다.
+이 과정을 반복하며 가장 마지막의 돌의 무게를 출력하세요.
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|[2, 7, 4, 1, 8, 1]|1|
+|[5, 3, 5, 3, 4]|2|
+
+---
+
+### Practice 231013
+nums 배열에 주어진 정수들 중에서 가장 많이 발생한 숫자들 순으로 k 번째 까지 출력하세요.
+* 빈도가 같은 경우에는 값이 작은 숫자가 먼저 출력되도록 구현하세요.
+
+입출력 예시
+---
+|입력|k|출력|
+|---|---|---|
+|[1, 1, 1, 2, 2, 3]|2|[1, 2]|
+|[3, 1, 5, 5, 3, 3, 1, 2, 2, 1, 3]|3|[3, 1, 2]|
+
+---
+
+### Practice 231014
+문자열 s 가 주어졌을 때, 문자열 내에 동일한 알파벳이 연속적으로 배치되지 않도록 재배치 하세요.
+* 재배치가 가능한 경우 재정렬한 문자열을 반환하고 불가능한 경우 null 을 반환하세요.
+
+입출력 예시
+---
+|입력|출력|
+|---|---|
+|"aabb"|"abab"|
+|"aaca"|null|
+
+---
+
+### Practice 231211
+문자열 배열 strs 와 문자열 prefix 가 주어졌을 때,
+문자열 배열 내에 prefix 로 시작하는 단어가 있는지를 확인하는 프로그램을 작성하세요.
+* prefix 로 시작하는 단어가 있으면 true, 없으면 false 를 반환하세요.
+
+입출력 예시
+---
+|strs|prefix|output|
+|---|---|---|
+|["apple", "april", "app", "ace", "bear", "best"]|"app"|true|
+|["apple", "april", "app", "ace", "bear", "best"]|"pre"|false|
+
+---
+
+### Practice 231212
+문자열 배열 dictionary 와 문자열 sentence 가 주어졌을 때 sentence 내의 단어 중 dictionary 의 단어로 시작하는 경우, 해당 단어로 변경하여 출력하는 프로그램을 작성하세요.
+
+입출력 예시
+---
+|dictionary|sentence|output|
+|---|---|---|
+|["cat", "bat", "rat"]|"the cattle was rattled by the battery"|"the cat was rat by the bat"|
+|["a", "b", "c"]|"apple banana carrot water"|"a b c water"|
+
+---
+
+### Practice 231213
+문자열 배열 strs 와 targets 가 주어졌을 때, targets 내의 단어 중 한 문자만 바꾸면 strs 중의 단어가 되는지 판별하는 프로그램을 작성하세요.
+
+입출력 예시
+---
+|strs|targets|output|
+|---|---|---|
+|["apple", "banana", "kiwi"]|["applk", "bpple", "apple"]|[true, true, false]|
+
+---
+
 ### Practice 231311
 row x col 행렬 형태의 board 와 word 문자열이 주어졌을 때,  
 해당 행렬에서 word 문자열이 인접하게 연결되어 있는지를 확인하는 프로그램을 작성하세요.
