@@ -591,6 +591,30 @@ public class TestRunner {
     }
 
     @Test
+    void A09012Test(Boolean verbose) throws IOException {
+        A09012 test = new A09012();
+        String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
+        ArrayList<String[]> files = mockInOutTestHelper(fileName);
+        final PrintStream sysOut = System.out;
+        long start = System.nanoTime();
+        for (int i = 0; i < files.size() / 2; i++) {
+            String mockData = files.get(0)[i], expected = files.get(1)[i];
+            InputStream sysIn = System.in;
+            ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+            System.setIn(new ByteArrayInputStream(mockData.getBytes()));
+            System.setOut(new PrintStream(actualOutput));
+            test.solution();
+            Assertions.assertEquals(expected, actualOutput.toString().trim());
+            System.setIn(sysIn);
+        }
+        long end = System.nanoTime();
+        System.setOut(sysOut);
+        if (verbose)
+            System.out.printf("%sTest(): SUCCESS%s\n", fileName, 
+                String.format(" in %.2fms", (end - start) / 1e6));
+    }
+
+    @Test
     void A10026Test(Boolean verbose) throws IOException {
         A10026 test = new A10026();
         String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
@@ -770,6 +794,7 @@ public class TestRunner {
         testRunner.A02346Test(verbose);
         testRunner.A03190Test(verbose);
         testRunner.A05670Test(verbose);
+        testRunner.A09012Test(verbose);
         testRunner.A10026Test(verbose);
         testRunner.A16934Test(verbose);
         testRunner.A17609Test(verbose);
