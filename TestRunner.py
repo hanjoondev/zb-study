@@ -44,26 +44,32 @@ class Tester(TestCase):
                   f'{(l := len(expected))} test{"s" if l > 1 else ""}'
                   f' passed in {(ns() - start) // int(1e3):,}μs')
     
-    def benchmark(self, target: str="", iterations: int=1_000, verbose=True) -> None:
+    def benchmark(self, target: str="", iters: int=100, 
+                        verbose=True, big_data=False) -> None:
+        dt = 'data' if not big_data else 'data_big'
+        iters = 1_000 if big_data and iters == 100 else iters
         p = dirname(__file__)
         files = lambda folder: ldir(join(p, folder))
-        bases = sorted([f.strip('.py') for f in files('acmicpc') 
+        bases = sorted([f.strip('.py') for f in files('acmicpc')
                         if f.endswith('.py') 
                         and f.startswith(target if target else 'A')])
+        if big_data:
+            bases = {f[:6] for f in files(f'{dt}')}
         d = {b: {'module': imodule(f'acmicpc.{b}')} for b in bases}
         for k, v in d.items():
-            inputs, outputs = self.get_data(sorted([f'{p}/data/{f}'
-                        for f in files('data') if f.startswith(k)]))
+            inputs, outputs = self.get_data(sorted([f'{p}/{dt}/{f}'
+                        for f in files(dt) if f.startswith(k)]))
             v['inputs'] = inputs
             v['outputs'] = outputs
         for k, v in d.items():
             module, inputs, outputs = v['module'], v['inputs'], v['outputs']
             v['results'] = []
-            print(f'Benchmarking {module.__name__}')
+            print(f'Benchmarking {module.__name__} with ', end='')
+            print(f'{"large random" if big_data else "sample"} data sets')
             for (ins, outs) in zip(inputs, outputs):
                 results = []
                 overall_s = ns()
-                for _ in range(iterations):
+                for _ in range(iters):
                     mock, start = MagicMock(), ns()
                     with redirect_stdout(sio := StringIO()):
                         with patch('sys.stdin.readline', side_effect=ins):
@@ -75,12 +81,12 @@ class Tester(TestCase):
                     end = ns()
                     results.append(end - start)
                 overall_e = ns()
-                v['results'].append((overall_e - overall_s, sum(results) / len(results), 
-                                    min(results), max(results)))
+                v['results'].append((overall_e - overall_s, 
+                    sum(results) / len(results), min(results), max(results)))
             if verbose:
                 for i, (overall, avg, min_, max_) in enumerate(v['results']):
                     print(f'{k} test set {i + 1} took '
-                        f'{overall // int(1e6):,}ms for {iterations:,} iterations '
+                        f'{overall // int(1e6):,}ms for {iters:,} iterations '
                         f'(avg. {avg // int(1e3):,}μs |'
                         f' min. {min_ // int(1e3):,}μs |'
                         f' max. {max_ // int(1e3):,}μs)')
@@ -89,3 +95,4 @@ class Tester(TestCase):
 if __name__ == '__main__':
     Tester().prep()
     Tester().benchmark()
+    Tester().benchmark(big_data=True)
