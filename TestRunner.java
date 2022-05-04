@@ -398,6 +398,15 @@ public class TestRunner {
         if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
+    void P84512Test(Boolean verbose) {
+        P84512 test = new P84512();
+        Assertions.assertEquals(6, test.solution("AAAAE"));
+        Assertions.assertEquals(10, test.solution("AAAE"));
+        Assertions.assertEquals(1563, test.solution("I"));
+        Assertions.assertEquals(1189, test.solution("EIO"));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
+    }
+
     @Test
     void K22A1Test(Boolean verbose) throws IOException {
         K22A1 test = new K22A1();
@@ -778,6 +787,7 @@ public class TestRunner {
         testRunner.P42587Test(verbose);
         testRunner.P42892Test(verbose);
         testRunner.P67258Test(verbose);
+        testRunner.P84512Test(verbose);
         System.out.println("All programmers tests have been completed successfully.");
     }
 
