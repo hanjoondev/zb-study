@@ -4,20 +4,28 @@ from random import randint as ri, choice as rc, sample as rs
 
 
 class TestDataGenerator:
-    def __init__(self, name, n=5):
-        self.name = name
-        self.tdir = join(dirname(__file__), 'data_big')
+    def __init__(self, n=5):
+        self.td = join(dirname(__file__), 'data_big')
+
+    def generate(self, name='', n=5) -> None:
+        generators = [m for m in dir(self) if m.startswith('gen_')]
+        target = {f'{n.upper()[4:]}': getattr(self, n) for n in generators}
+        if name:
+            if name.upper() not in target:
+                raise ValueError(f'There is no generator for {name.upper()}')
+            target = {k: v for k, v in target.items() if k == name.upper()}
         self.mkdir()
-        self.save(self.gen_a01935(n))
+        for k, func in target.items():
+            self.save(k, func(n))
 
     def mkdir(self) -> None:
         """ make directory if not exists """
         try:
-            P(self.tdir).mkdir(exist_ok=False)
+            P(self.td).mkdir(exist_ok=False)
         except FileExistsError:
             pass
     
-    def save(self, data: tuple[str]) -> None:
+    def save(self, name: str, data: tuple[str]) -> None:
         """ save test data to the following path:
             inputs: ./data_big/{name}in{i}.txt
             outputs: ./data_big/{name}out{i}.txt
@@ -27,9 +35,9 @@ class TestDataGenerator:
         """
         inputs, outputs = data
         for i, (inp, out) in enumerate(zip(inputs, outputs)):
-            with open(join(self.tdir, f'{self.name}in{i+1}.txt'), 'w') as f:
+            with open(join(self.td, f'{name}in{i+1}.txt'), 'w') as f:
                 f.write(inp)
-            with open(join(self.tdir, f'{self.name}out{i+1}.txt'), 'w') as f:
+            with open(join(self.td, f'{name}out{i+1}.txt'), 'w') as f:
                 f.write(out)
 
     def gen_a01935(self, n=5) -> tuple[list[str], list[str]]:
@@ -65,8 +73,10 @@ class TestDataGenerator:
                 outputs.append(''.join(o))
         return inputs, outputs
 
-    def check_a01935(self, rpn: str, vals: list[str]):
-        """ check the validity of the test case """
+    def check_a01935(self, rpn: str, vals: list[str]) -> str | bool:
+        """ check the validity of the test case.
+            if it's valid, return the expected answer else return False
+        """
         from collections import deque as dq
         from operator import add, sub, mul, truediv as div
 
@@ -89,6 +99,27 @@ class TestDataGenerator:
                 return False
         return f'{q.pop():.2f}'
 
+    def gen_a02164(self, n=5) -> tuple[list[str], list[str]]:
+        """ generate test data for acmicpc.A02164 """
+        inputs, outputs = [], []
+        for _ in range(n):
+            random_n = ri(250000, 500000)
+            inputs.append(str(random_n) + '\n')
+            outputs.append(self.ans_a02164(random_n) + '\n')
+        return inputs, outputs
+    
+    def ans_a02164(self, n: int) -> str:
+        """ return the expected answer for acmicpc.A02164 """
+        from collections import deque as dq
+
+        q = dq()
+        for i in range(1, n + 1):
+            q.append(i)
+        while len(q) > 1:
+            q.popleft()
+            q.append(q.popleft())
+        return str(q.pop())
 
 if __name__ == '__main__':
-    generator = TestDataGenerator('A01935')
+    generator = TestDataGenerator()
+    generator.generate('A02164')
