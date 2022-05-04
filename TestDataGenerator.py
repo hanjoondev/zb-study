@@ -110,15 +110,14 @@ class TestDataGenerator:
     
     def ans_a02164(self, n: int) -> str:
         """ return the expected answer for acmicpc.A02164 """
-        from collections import deque as dq
+        if n < 2:
+            return n
+        exp = 1
+        while 2**exp < n:
+            exp += 1
+        exp -= 1
+        return (n - 2**exp) * 2
 
-        q = dq()
-        for i in range(1, n + 1):
-            q.append(i)
-        while len(q) > 1:
-            q.popleft()
-            q.append(q.popleft())
-        return str(q.pop())
 
 if __name__ == '__main__':
     generator = TestDataGenerator()

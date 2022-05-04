@@ -3,13 +3,13 @@ from sys import stdin as s
 
 
 def solution(n: int) -> None:
-    q = dq()
-    for i in range(1, n + 1):
-        q.append(i)
-    while len(q) > 1:
-        q.popleft()
-        q.append(q.popleft())
-    print(q.pop())
+    if n < 2:
+        return print(n)
+    exp = 1
+    while 2**exp < n:
+        exp += 1
+    exp -= 1
+    print((n - 2**exp) * 2)
 
 
 def reader():
