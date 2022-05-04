@@ -456,6 +456,30 @@ public class TestRunner {
     }
 
     @Test
+    void A01158Test(Boolean verbose) throws IOException {
+        A01158 test = new A01158();
+        String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
+        ArrayList<String[]> files = mockInOutTestHelper(fileName);
+        final PrintStream sysOut = System.out;
+        long start = System.nanoTime();
+        for (int i = 0; i < files.size() / 2; i++) {
+            String mockData = files.get(0)[i], expected = files.get(1)[i];
+            InputStream sysIn = System.in;
+            ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
+            System.setIn(new ByteArrayInputStream(mockData.getBytes()));
+            System.setOut(new PrintStream(actualOutput));
+            test.solution();
+            Assertions.assertEquals(expected, actualOutput.toString().trim());
+            System.setIn(sysIn);
+        }
+        long end = System.nanoTime();
+        System.setOut(sysOut);
+        if (verbose)
+            System.out.printf("%sTest(): SUCCESS%s\n", fileName, 
+                String.format(" in %.2fms", (end - start) / 1e6));
+    }
+
+    @Test
     void A01406Test(Boolean verbose) throws IOException {
         A01406 test = new A01406();
         String fileName = new Object() {}.getClass().getEnclosingMethod().getName().replace("Test", "");
@@ -798,6 +822,7 @@ public class TestRunner {
     }
 
     void acmicpcRunner(Boolean verbose, TestRunner testRunner) throws IOException {
+        testRunner.A01158Test(verbose);
         testRunner.A01406Test(verbose);
         testRunner.A01874Test(verbose);
         testRunner.A01914Test(verbose);

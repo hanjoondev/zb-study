@@ -40,6 +40,36 @@ class TestDataGenerator:
             with open(join(self.td, f'{name}out{i+1}.txt'), 'w') as f:
                 f.write(out)
 
+    def gen_a01158(self, n=5) -> tuple[list[str], list[str]]:
+        """ generate test data for acmicpc.A01158 """
+        inputs, outputs = [], []
+        for _ in range(n):
+            N = ri(3000, 5000)
+            K = ri(5, N - 100)
+            inputs.append(f'{N} {K}\n')
+            outputs.append(self.ans_a01158(N, K) + '\n')
+        return inputs, outputs
+
+    def ans_a01158(self, n: int, k: int) -> str:
+        """ return the expected answer for acmicpc.A01158 """
+        from collections import deque as dq
+
+        ans = []
+        q = dq()
+        for i in range(1, n + 1):
+            if not i % k:
+                ans.append(str(i))
+                continue
+            q.append(i)
+        i = n % k
+        while q:
+            i += 1
+            if not i % k:
+                ans.append(str(q.popleft()))
+                continue
+            q.append(q.popleft())
+        return f'<{", ".join(ans)}>'
+
     def gen_a01935(self, n=5) -> tuple[list[str], list[str]]:
         """ generate test data for acmicpc.A01935 """
         inputs, outputs = [], []
@@ -99,25 +129,6 @@ class TestDataGenerator:
                 return False
         return f'{q.pop():.2f}'
 
-    def gen_a02164(self, n=5) -> tuple[list[str], list[str]]:
-        """ generate test data for acmicpc.A02164 """
-        inputs, outputs = [], []
-        for _ in range(n):
-            random_n = ri(250000, 500000)
-            inputs.append(str(random_n) + '\n')
-            outputs.append(self.ans_a02164(random_n) + '\n')
-        return inputs, outputs
-    
-    def ans_a02164(self, n: int) -> str:
-        """ return the expected answer for acmicpc.A02164 """
-        if n < 2:
-            return n
-        exp = 1
-        while 2**exp < n:
-            exp += 1
-        exp -= 1
-        return (n - 2**exp) * 2
-
     def gen_a02023(self, n=5) -> tuple[list[str], list[str]]:
         """ generate test data for acmicpc.A02023 """
         inputs = rs(range(1, 9), min(n, 8))
@@ -138,7 +149,26 @@ class TestDataGenerator:
         }
         return '\n'.join(d[n]) + '\n'
 
+    def gen_a02164(self, n=5) -> tuple[list[str], list[str]]:
+        """ generate test data for acmicpc.A02164 """
+        inputs, outputs = [], []
+        for _ in range(n):
+            random_n = ri(250000, 500000)
+            inputs.append(str(random_n) + '\n')
+            outputs.append(self.ans_a02164(random_n) + '\n')
+        return inputs, outputs
+    
+    def ans_a02164(self, n: int) -> str:
+        """ return the expected answer for acmicpc.A02164 """
+        if n < 2:
+            return n
+        exp = 1
+        while 2**exp < n:
+            exp += 1
+        exp -= 1
+        return (n - 2**exp) * 2
+
 
 if __name__ == '__main__':
     generator = TestDataGenerator()
-    generator.generate('A02023')
+    generator.generate('A01158')

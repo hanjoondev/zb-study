@@ -82,7 +82,7 @@ class Tester(TestCase):
                     results.append(end - start)
                 overall_e = ns()
                 v['results'].append((overall_e - overall_s, 
-                    sum(results) / len(results), min(results), max(results)))
+                    sum(results) // len(results), min(results), max(results)))
             if verbose:
                 for i, (overall, avg, min_, max_) in enumerate(v['results']):
                     print(f'{k} test set {i + 1} took '
