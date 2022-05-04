@@ -54,7 +54,7 @@ class Tester(TestCase):
                         if f.endswith('.py') 
                         and f.startswith(target if target else 'A')])
         if big_data:
-            bases = {f[:6] for f in files(f'{dt}')}
+            bases = sorted({f[:6] for f in files(f'{dt}')})
         d = {b: {'module': imodule(f'acmicpc.{b}')} for b in bases}
         for k, v in d.items():
             inputs, outputs = self.get_data(sorted([f'{p}/{dt}/{f}'
