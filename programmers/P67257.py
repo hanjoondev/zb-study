@@ -1,31 +1,35 @@
 from time import perf_counter_ns as ns
-import operator
+from operator import add, sub, mul
 
 
 def solution(expression):
-    answer, nums, ops, n = 0, [], [], ''
+    count = {k: 0 for k in '+-*'}
+    d = {c: f for c, f in zip('+-*', (add, sub, mul))}
+    e, tmp = [], []
     for c in expression:
-        if c in '+-*':
-            nums.append(int(n))
-            ops.append(c)
-            n = ''
+        if c in '+-*':           
+            e.append(int(''.join(tmp)))
+            e.append(c)
+            count[c] += 1
+            tmp = []
         else:
-            n += c
-    nums.append(int(n))
+            tmp.append(c)
+    e.append(int(''.join(tmp)))
+    ans = 0
     for order in '+-* +*- *+- *-+ -+* -*+'.split():
-        ops_copy, nums_copy = [o for o in ops], [n for n in nums]
+        exp = [elem for elem in e]
         for op in order:
-            calc = operator.add if op == '+' else operator.sub if op == '-' else operator.mul
-            i = 0
-            while i < len(ops_copy):
-                if ops_copy[i] == op:
-                    nums_copy[i] = calc(nums_copy[i], nums_copy[i + 1])
-                    del ops_copy[i]
-                    del nums_copy[i + 1]
+            i, o, op_count, op_target = 1, d[op], 0, count[op]
+            while op_count < op_target:
+                if exp[i] == op:
+                    exp[i - 1] = o(exp[i - 1], exp[i + 1])
+                    del exp[i:i + 2]
+                    op_count += 1
                 else:
-                    i += 1
-        answer = max(abs(answer), abs(nums_copy[0]))
-    return answer
+                    i += 2
+        if (tmp := abs(exp[0])) > ans:
+            ans = tmp
+    return ans
 
 
 if __name__ == '__main__':
