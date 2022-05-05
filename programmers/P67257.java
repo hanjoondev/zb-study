@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class P67257 {
-    private Long calc(Long a, Long b, char op) {
-        Long result;
+    private long calc(long a, long b, char op) {
+        long result;
         switch (op) {
             case '+':
                 result = a + b;
