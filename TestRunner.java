@@ -385,6 +385,16 @@ public class TestRunner {
         if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
+    void P60057Test(Boolean verbose) {
+        P60057 test = new P60057();
+        Assertions.assertEquals(7, test.solution("aabbaccc"));
+        Assertions.assertEquals(9, test.solution("ababcdcdababcdcd"));
+        Assertions.assertEquals(8, test.solution("abcabcdede"));
+        Assertions.assertEquals(14, test.solution("abcabcabcabcdededededede"));
+        Assertions.assertEquals(17, test.solution("xababcdcdababcdcd"));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
+    }
+
     void P67257Test(Boolean verbose) {
         P67257 test = new P67257();
         Assertions.assertEquals(60420, test.solution("100-200*300-500+20"));
@@ -817,6 +827,7 @@ public class TestRunner {
         testRunner.P42579Test(verbose);
         testRunner.P42587Test(verbose);
         testRunner.P42892Test(verbose);
+        testRunner.P60057Test(verbose);
         testRunner.P67257Test(verbose);
         testRunner.P67258Test(verbose);
         testRunner.P84512Test(verbose);
