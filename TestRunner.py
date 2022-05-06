@@ -47,7 +47,7 @@ class Tester(TestCase):
     def benchmark(self, target: str="", iters: int=100, 
                         verbose=True, big_data=False) -> None:
         dt = 'data' if not big_data else 'data_big'
-        iters = 10 if big_data and iters == 100 else iters
+        iters = 3 if big_data and iters == 100 else iters
         p = dirname(__file__)
         files = lambda folder: ldir(join(p, folder))
         bases = sorted([f.strip('.py') for f in files('acmicpc')

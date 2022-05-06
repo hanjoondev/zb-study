@@ -70,6 +70,49 @@ class TestDataGenerator:
             q.append(q.popleft())
         return f'<{", ".join(ans)}>'
 
+    def gen_a01802(self, n=5) -> tuple[list[str], list[str]]:
+        """ generate test data for acmicpc.A01802 """
+        inputs, outputs = [], []
+        for _ in range(n):
+            i, o = '', ''
+            t = ri(50, 100)
+            i += str(t) + '\n'
+            half_random = t * ri(50, 100) // 100
+            full_random = t - half_random
+            for _ in range(half_random):
+                length = 2**(exp := ri(5, 12)) - 1
+                mid = str(ri(0, 1))
+                correct = ri(0, 1)
+                if not correct:
+                    lft = ''.join(rc('01') for _ in range(length // 2))
+                    rgt = lft[::-1]
+                    i += f'{lft}{mid}{rgt}\n'
+                if correct:
+                    base = rc('01')
+                    for _ in range(exp - 1):
+                        base += mid + ''.join('0' if c == '1' else '1' for c in base[::-1])
+                    i += f'{base}\n'
+                o += self.ans_a01802(f'{lft}{mid}{rgt}' if not correct else base) + '\n'
+            for _ in range(full_random):
+                length = 2**ri(5, 12) - 1
+                full = ''.join(rc('01') for _ in range(length))
+                i += f'{full}\n'
+                o += self.ans_a01802(full) + '\n'
+            inputs.append(i)
+            outputs.append(o)
+        return inputs, outputs
+
+    def ans_a01802(self, s) -> str:
+        if len(s) <= 1:
+            return 'YES'
+        length = len(s) // 2
+        i = 0
+        while i < length:
+            if s[i] == s[-1 - i]:
+                return 'NO'
+            i += 1
+        return self.ans_a01802(s[:length])
+
     def gen_a01935(self, n=5) -> tuple[list[str], list[str]]:
         """ generate test data for acmicpc.A01935 """
         inputs, outputs = [], []
@@ -155,7 +198,7 @@ class TestDataGenerator:
         for _ in range(n):
             random_n = ri(250000, 500000)
             inputs.append(str(random_n) + '\n')
-            outputs.append(self.ans_a02164(random_n) + '\n')
+            outputs.append(str(self.ans_a02164(random_n)) + '\n')
         return inputs, outputs
     
     def ans_a02164(self, n: int) -> str:
@@ -171,4 +214,4 @@ class TestDataGenerator:
 
 if __name__ == '__main__':
     generator = TestDataGenerator()
-    generator.generate('A01158')
+    generator.generate()
