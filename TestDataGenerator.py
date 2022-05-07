@@ -235,6 +235,41 @@ class TestDataGenerator:
         dfs(1)
         return str(sum(e))
 
+    def gen_a15649(self, n=5) -> tuple[list[str], list[str]]:
+        """ generate test data for acmicpc.A15649 """
+        inputs, outputs = [], []
+        for _ in range(n):
+            f = ri(6, 8)
+            b = ri(1, f)
+            inputs.append(f'{f} {b}\n')
+            perms = '\n'.join(' '.join(str(p) for p in perm) 
+                    for perm in self.ans_a15649(range(1, f + 1), b))
+            outputs.append(perms + '\n')
+        return inputs, outputs
+
+    def ans_a15649(self, iterable, r=None) -> str:
+        pool = tuple(iterable)
+        n = len(pool)
+        r = n if r is None else r
+        if r > n:
+            return
+        indices = list(range(n))
+        cycles = list(range(n, n-r, -1))
+        yield tuple(pool[i] for i in indices[:r])
+        while n:
+            for i in reversed(range(r)):
+                cycles[i] -= 1
+                if cycles[i] == 0:
+                    indices[i:] = indices[i+1:] + indices[i:i+1]
+                    cycles[i] = n - i
+                else:
+                    j = cycles[i]
+                    indices[i], indices[-j] = indices[-j], indices[i]
+                    yield tuple(pool[i] for i in indices[:r])
+                    break
+            else:
+                return
+
 
 if __name__ == '__main__':
     generator = TestDataGenerator()
