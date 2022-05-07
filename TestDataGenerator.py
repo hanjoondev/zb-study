@@ -201,7 +201,7 @@ class TestDataGenerator:
             outputs.append(str(self.ans_a02164(random_n)) + '\n')
         return inputs, outputs
     
-    def ans_a02164(self, n: int) -> str:
+    def ans_a02164(self, n: int) -> int:
         """ return the expected answer for acmicpc.A02164 """
         if n < 2:
             return n
@@ -210,6 +210,30 @@ class TestDataGenerator:
             exp += 1
         exp -= 1
         return (n - 2**exp) * 2
+
+    def gen_a13325(self, n=5) -> tuple[list[str], list[str]]:
+        """ generate test data for acmicpc.A13325 """
+        inputs, outputs = [], []
+        for _ in range(n):
+            k = ri(10, 20)
+            edges = [ri(1, 1000) for _ in range(2**(k + 1) - 2)]
+            e = ' '.join(str(i) for i in edges)
+            inputs.append(f'{k}\n{e}\n')
+            outputs.append(self.ans_a13325(k, edges) + '\n')
+        return inputs, outputs
+    
+    def ans_a13325(self, k: int, edges: list[int]) -> str:
+        def dfs(i: int, length: int) -> int:
+            if i >= length:
+                return 0
+            lsum, rsum = dfs(l(i), length) + e[l(i)], dfs(r(i), length) + e[r(i)]
+            e[l(i) if lsum < rsum else r(i)] += abs(lsum - rsum)
+            return max(lsum, rsum)
+
+        l, r = lambda x: x * 2, lambda x: x * 2 + 1
+        e = [0, 0] + edges
+        dfs(1, 2**k)
+        return str(sum(e))
 
 
 if __name__ == '__main__':
