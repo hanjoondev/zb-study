@@ -343,19 +343,21 @@ class TestDataGenerator:
 
     def ans_a19949(self, a: list[int]) -> str:
         """ return the expected answer for acmicpc.A19949 """
-        def dfs_bt(pp: int=0, p: int=0, i: int=0, hit: int=0) -> None:
-            if dfs_bt.len - i + hit < 5 or i == dfs_bt.len:
-                dfs_bt.res += hit >= 5
-                return None
-            repeated = p if i > 1 and pp == p else None
+        def bt(i: int=0, pp: int=0, p: int=0, hit: int=0,
+               memo=[[[[0] * 11 for _ in range(6)] for _ in range(6)]
+                                                  for _ in range(11)]) -> int:
+            if memo[i][pp][p][hit]:
+                return memo[i][pp][p][hit]
+            if i == 10:
+                return hit >= 5
             for guess in range(1, 6):
-                if guess == repeated:
+                if pp == p == guess:
                     continue
-                dfs_bt(p, guess, i + 1, hit + (guess == a[i]))
-
-        dfs_bt.len, dfs_bt.res = len(a), 0
-        dfs_bt()
-        return str(dfs_bt.res)
+                memo[i][pp][p][hit] += (
+                    bt(i + 1, p, guess, hit + 1) if a[i] == guess
+                    else bt(i + 1, p, guess, hit))
+            return memo[i][pp][p][hit]
+        return str(bt())
 
 
 if __name__ == '__main__':
