@@ -90,9 +90,11 @@ class TestDataGenerator:
                 if correct:
                     base = rc('01')
                     for _ in range(exp - 1):
-                        base += mid + ''.join('0' if c == '1' else '1' for c in base[::-1])
+                        base += mid + ''.join('0' if c == '1'
+                                         else '1' for c in base[::-1])
                     i += f'{base}\n'
-                o += self.ans_a01802(f'{lft}{mid}{rgt}' if not correct else base) + '\n'
+                o += self.ans_a01802(
+                    f'{lft}{mid}{rgt}' if not correct else base) + '\n'
             for _ in range(full_random):
                 length = 2**ri(5, 12) - 1
                 full = ''.join(rc('01') for _ in range(length))
@@ -129,7 +131,7 @@ class TestDataGenerator:
                         if i > 5 else rc('+*/') for i in range(len_a - 1)]
             rep = sorted(rs(range(len_a - 1), ri(1, len_a - 1)))
             ops = ([base_ops[:rep[0]]] 
-                   + [base_ops[rep[j]:r] for j, r in enumerate(rep[1:])] 
+                   + [base_ops[rep[j]:r] for j, r in enumerate(rep[1:])]
                    + [base_ops[rep[-1]:]])
             
             final = actual[0]
@@ -183,11 +185,17 @@ class TestDataGenerator:
         d = {
             1: map(str, [2, 3, 5, 7]),
             2: map(str, [23, 29, 31, 37, 53, 59, 71, 73, 79]),
-            3: map(str, [233, 239, 293, 311, 313, 317, 373, 379, 593, 599, 719, 733, 739, 797]),
-            4: map(str, [2333, 2339, 2393, 2399, 2939, 3119, 3137, 3733, 3739, 3793, 3797, 5939, 7193, 7331, 7333, 7393]),
-            5: map(str, [23333, 23339, 23399, 23993, 29399, 31193, 31379, 37337, 37339, 37397, 59393, 59399, 71933, 73331, 73939]),
-            6: map(str, [233993, 239933, 293999, 373379, 373393, 593933, 593993, 719333, 739391, 739393, 739397, 739399]),
-            7: map(str, [2339933, 2399333, 2939999, 3733799, 5939333, 7393913, 7393931, 7393933]),
+            3: map(str, [233, 239, 293, 311, 313, 317, 373, 379, 593, 599,
+                         719, 733, 739, 797]),
+            4: map(str, [2333, 2339, 2393, 2399, 2939, 3119, 3137, 3733, 3739,
+                         3793, 3797, 5939, 7193, 7331, 7333, 7393]),
+            5: map(str, [23333, 23339, 23399, 23993, 29399, 31193, 31379,
+                         37337, 37339, 37397, 59393, 59399, 71933, 73331,
+                         73939]),
+            6: map(str, [233993, 239933, 293999, 373379, 373393, 593933,
+                         593993, 719333, 739391, 739393, 739397, 739399]),
+            7: map(str, [2339933, 2399333, 2939999, 3733799, 5939333, 7393913,
+                         7393931, 7393933]),
             8: map(str, [23399339, 29399999, 37337999, 59393339, 73939133]),
         }
         return '\n'.join(d[n]) + '\n'
@@ -269,6 +277,36 @@ class TestDataGenerator:
                     break
             else:
                 return
+
+    def gen_a19949(self, n=5) -> tuple[list[str], list[str]]:
+        """ generate test data for acmicpc.A19949 """
+        inputs, outputs = [], []
+        for _ in range(n):
+            ins = []
+            nums = [i for i in range(1, 6)]
+            pp, p = None, rc(nums)
+            for _ in range(10):
+                ins.append(p)
+                pp, p = p, rc([i for i in nums if p != i]
+                              if pp == p else nums)
+            inputs.append(' '.join(map(str, ins)) + '\n')
+            outputs.append(self.ans_a19949(ins) + '\n')
+        return inputs, outputs
+
+    def ans_a19949(self, a: list[int]) -> str:
+        def dfs_bt(pp: int=0, p: int=0, i: int=0, hit: int=0) -> None:
+            if dfs_bt.len - i + hit < 5 or i == dfs_bt.len:
+                dfs_bt.res += hit >= 5
+                return None
+            repeated = p if i > 1 and pp == p else None
+            for guess in range(1, 6):
+                if guess == repeated:
+                    continue
+                dfs_bt(p, guess, i + 1, hit + (guess == a[i]))
+
+        dfs_bt.len, dfs_bt.res = len(a), 0
+        dfs_bt()
+        return str(dfs_bt.res)
 
 
 if __name__ == '__main__':
