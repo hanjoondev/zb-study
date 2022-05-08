@@ -39,7 +39,7 @@ if __name__ == '__main__':
                 fastest, slowest = min(time, fastest), max(time, slowest)
                 total += time
             print(f'in an average of {total / ITERATIONS / 1e3:,.2f}μs '
-                  f'(min: {fastest / 1e3:,.2f}ms, '
-                  f'max: {slowest / 1e3:,.2f}ms)')
+                  f'(min: {fastest / 1e3:,.2f}μs, '
+                  f'max: {slowest / 1e3:,.2f}μs)')
         else:
             print(f'a wrong result {result} (expected: {expected})')
