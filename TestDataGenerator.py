@@ -281,8 +281,8 @@ class TestDataGenerator:
             else:
                 return
 
-    def gen_a16917(self, n=5) -> tuple[list[str], list[str]]:
-        """ generate test data for acmicpc.A16917 """
+    def gen_a16197(self, n=5) -> tuple[list[str], list[str]]:
+        """ generate test data for acmicpc.A16197 """
         inputs, outputs = [], []
         for _ in range(n):
             h, w = ri(10, 20), ri(10, 20)
@@ -292,11 +292,11 @@ class TestDataGenerator:
             coin2 = rc(range(h // 2, h - 1)), rc(range(w // 2, w - 1))
             board[coin1[0]][coin1[1]] = board[coin2[0]][coin2[1]] = 'o'
             inputs.append(hw + '\n'.join(''.join(r) for r in board) + '\n')
-            outputs.append(self.ans_a16917(board, (coin1, coin2)) + '\n')
+            outputs.append(self.ans_a16197(board, (coin1, coin2)) + '\n')
         return inputs, outputs
 
-    def ans_a16917(self, m: list[str], coins: tuple[tuple[int]]) -> str:
-        """ return the expected answer for acmicpc.A16917 """
+    def ans_a16197(self, m: list[str], coins: tuple[tuple[int]]) -> str:
+        """ return the expected answer for acmicpc.A16197 """
         def dfs(coin1, coin2, idx) -> None:
             if idx == dfs.len or idx == dfs.res:
                 return
