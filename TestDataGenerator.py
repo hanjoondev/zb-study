@@ -105,6 +105,7 @@ class TestDataGenerator:
         return inputs, outputs
 
     def ans_a01802(self, s) -> str:
+        """ return the expected answer for acmicpc.A01802 """
         if len(s) <= 1:
             return 'YES'
         length = len(s) // 2
@@ -231,6 +232,7 @@ class TestDataGenerator:
         return inputs, outputs
     
     def ans_a13325(self, k: int, edges: list[int]) -> str:
+        """ return the expected answer for acmicpc.A13325 """
         def dfs(i: int) -> int:
             if i >= length:
                 return 0
@@ -256,6 +258,7 @@ class TestDataGenerator:
         return inputs, outputs
 
     def ans_a15649(self, iterable, r=None) -> str:
+        """ return the expected answer for acmicpc.A15649 """
         pool = tuple(iterable)
         n = len(pool)
         r = n if r is None else r
@@ -278,6 +281,51 @@ class TestDataGenerator:
             else:
                 return
 
+    def gen_a16917(self, n=5) -> tuple[list[str], list[str]]:
+        """ generate test data for acmicpc.A16917 """
+        inputs, outputs = [], []
+        for _ in range(n):
+            h, w = ri(10, 20), ri(10, 20)
+            hw = str(h) + ' ' + str(w) + '\n'
+            board = [[rc('.#') for _ in range(w)] for _ in range(h)]
+            coin1 = rc(range(h // 2 - 1)), rc(range(w // 2 - 1))
+            coin2 = rc(range(h // 2, h - 1)), rc(range(w // 2, w - 1))
+            board[coin1[0]][coin1[1]] = board[coin2[0]][coin2[1]] = 'o'
+            inputs.append(hw + '\n'.join(''.join(r) for r in board) + '\n')
+            outputs.append(self.ans_a16917(board, (coin1, coin2)) + '\n')
+        return inputs, outputs
+
+    def ans_a16917(self, m: list[str], coins: tuple[tuple[int]]) -> str:
+        """ return the expected answer for acmicpc.A16917 """
+        def dfs(coin1, coin2, idx) -> None:
+            if idx == dfs.len or idx == dfs.res:
+                return
+            (r1, c1), (r2, c2) = coin1, coin2
+            for dr, dc in ((0, 1), (0, -1), (1, 0), (-1, 0)):
+                nr1, nc1, nr2, nc2 = r1 + dr, c1 + dc, r2 + dr, c2 + dc
+                if (not (0 <= nr1 < h and 0 <= nc1 < w) 
+                    and not (0 <= nr2 < h and 0 <= nc2 < w)):
+                    continue
+                if not (0 <= nr1 < h and 0 <= nc1 < w 
+                    and 0 <= nr2 < h and 0 <= nc2 < w):
+                    dfs.res = min(dfs.res, idx + 1)
+                    continue
+                nr1, nc1 = coin1 if m[nr1][nc1] == '#' else (nr1, nc1)
+                nr2, nc2 = coin2 if m[nr2][nc2] == '#' else (nr2, nc2)
+                if v[nr1][nc1][nr2][nc2]:
+                    continue
+                v[nr1][nc1][nr2][nc2] = 1
+                dfs((nr1, nc1), (nr2, nc2), idx + 1)
+                v[nr1][nc1][nr2][nc2] = 0
+
+        h, w = len(m), len(m[0])
+        v = [[[[0] * w for _ in range(h)] 
+              for _ in range(w)] for _ in range(h)]
+        v[coins[0][0]][coins[0][1]][coins[1][0]][coins[1][1]] = 1
+        dfs.len, dfs.res = 10, float('inf')
+        dfs(coins[0], coins[1], 0)
+        return str(dfs.res) if dfs.res != float('inf') else '-1'
+
     def gen_a19949(self, n=5) -> tuple[list[str], list[str]]:
         """ generate test data for acmicpc.A19949 """
         inputs, outputs = [], []
@@ -294,6 +342,7 @@ class TestDataGenerator:
         return inputs, outputs
 
     def ans_a19949(self, a: list[int]) -> str:
+        """ return the expected answer for acmicpc.A19949 """
         def dfs_bt(pp: int=0, p: int=0, i: int=0, hit: int=0) -> None:
             if dfs_bt.len - i + hit < 5 or i == dfs_bt.len:
                 dfs_bt.res += hit >= 5
