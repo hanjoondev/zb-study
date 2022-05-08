@@ -384,6 +384,12 @@ public class TestRunner {
         Assertions.assertEquals(5, test.solution(new int[] { 1, 1, 9, 1, 1, 1 }, 0));
         if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
+    
+    void P43236Test(Boolean verbose) {
+        P43236 test = new P43236();
+        Assertions.assertEquals(4, test.solution(25, new int[] { 2, 4, 11, 21, 17 }, 2));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
+    }
 
     void P60057Test(Boolean verbose) {
         P60057 test = new P60057();
@@ -827,6 +833,7 @@ public class TestRunner {
         testRunner.P42579Test(verbose);
         testRunner.P42587Test(verbose);
         testRunner.P42892Test(verbose);
+        testRunner.P43236Test(verbose);
         testRunner.P60057Test(verbose);
         testRunner.P67257Test(verbose);
         testRunner.P67258Test(verbose);
