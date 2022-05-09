@@ -123,7 +123,16 @@ public class TestRunner {
         Assertions.assertEquals(Arrays.asList(1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7), test.spiralOrder(new int[][] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } }));
         if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
-    
+
+    void L00056Test(Boolean verbose) {
+        L00056 test = new L00056();
+        Assertions.assertArrayEquals(new int[][] { { 1, 6 }, { 8, 10 }, { 15, 18 } }, test.merge(new int[][] { { 1, 3 }, { 2, 6 }, { 8, 10 }, {15, 18} }));
+        Assertions.assertArrayEquals(new int[][] { { 1, 5 } }, test.merge(new int[][] { { 1, 4 }, { 4, 5 } }));
+        Assertions.assertArrayEquals(new int[][] { { 0, 0 }, { 1, 4 } }, test.merge(new int[][] { { 1, 4 }, { 0, 0 } }));
+        Assertions.assertArrayEquals(new int[][] { { 1, 10 } }, test.merge(new int[][] { {2, 3}, {4, 5}, {6, 7}, {8, 9}, {1, 10} }));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
+    }
+
     void L00073Test(Boolean verbose) {
         L00073 test = new L00073();
         int[][] matrix = new int[][] { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 } };
@@ -843,6 +852,7 @@ public class TestRunner {
         testRunner.L00042Test(verbose);
         testRunner.L00049Test(verbose);
         testRunner.L00054Test(verbose);
+        testRunner.L00056Test(verbose);
         testRunner.L00073Test(verbose);
         testRunner.L00075Test(verbose);
         testRunner.L00079Test(verbose);
