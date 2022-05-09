@@ -99,6 +99,24 @@ public class TestRunner {
         if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
+    void L00049Test(Boolean verbose) {
+        L00049 test = new L00049();
+        List<List<String>> expected = new ArrayList<>() {{
+            add(Arrays.asList("bat"));
+            add(Arrays.asList("nat", "tan"));
+            add(Arrays.asList("ate", "eat", "tea"));
+        }};
+        List<List<String>> actual = test.groupAnagrams(new String[] { "eat", "tea", "tan", "ate", "nat", "bat" });
+        Assertions.assertTrue(expected.size() == actual.size());
+        Collections.sort(actual, (a, b) -> a.size() - b.size());
+        Collections.sort(actual, (a, b) -> a.size() - b.size());
+        for (int i = 0; i < expected.size(); i++)
+            Assertions.assertTrue(expected.get(i).size() == actual.get(i).size()
+                                  && expected.get(i).containsAll(actual.get(i))
+                                  && actual.get(i).containsAll(expected.get(i)));
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
+    }
+
     void L00054Test(Boolean verbose) {
         L00054 test = new L00054();
         Assertions.assertEquals(Arrays.asList(1, 2, 3, 6, 9, 8, 7, 4, 5), test.spiralOrder(new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } }));
@@ -823,6 +841,7 @@ public class TestRunner {
         testRunner.L00020Test(verbose);
         testRunner.L00026Test(verbose);
         testRunner.L00042Test(verbose);
+        testRunner.L00049Test(verbose);
         testRunner.L00054Test(verbose);
         testRunner.L00073Test(verbose);
         testRunner.L00075Test(verbose);
