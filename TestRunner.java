@@ -119,6 +119,17 @@ public class TestRunner {
         if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
     }
 
+    void L00075Test(Boolean verbose) {
+        L00075 test = new L00075();
+        int[] before = new int[] { 2, 0, 2, 1, 1, 0 };
+        test.sortColors(before);
+        Assertions.assertArrayEquals(new int[] { 0, 0, 1, 1, 2, 2 }, before);
+        before = new int[] { 2, 0, 1 };
+        test.sortColors(before);
+        Assertions.assertArrayEquals(new int[] { 0, 1, 2 }, before);
+        if (verbose) System.out.println(new Object() {}.getClass().getEnclosingMethod().getName() + "(): SUCCESS");
+    }
+
     void L00079Test(Boolean verbose) {
         L00079 test = new L00079();
         Assertions.assertTrue(test.exist(new char[][] { { 'A', 'B', 'C', 'E' }, { 'S', 'F', 'C', 'S' }, { 'A', 'D', 'E', 'E' } }, "ABCCED"));
@@ -814,6 +825,7 @@ public class TestRunner {
         testRunner.L00042Test(verbose);
         testRunner.L00054Test(verbose);
         testRunner.L00073Test(verbose);
+        testRunner.L00075Test(verbose);
         testRunner.L00079Test(verbose);
         testRunner.L00096Test(verbose);
         testRunner.L00118Test(verbose);
