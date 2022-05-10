@@ -3,16 +3,14 @@ from time import perf_counter_ns as ns
 
 def remove_blocks(b, h: int, w: int) -> int:
     block = ((0, 0), (0, 1), (1, 0), (1, 1))
-    blocks = set()
+    blocks = []
     for r in range(h - 1):
         for c in range(w - 1):
-            target = [(r + dr, c + dc) for dr, dc in block]
-            cand = [b[nr][nc] for nr, nc in target]
-            if cand.count(cand[0]) == 4 and cand[0] != 0:
-                for pos in target:
-                    blocks.add(pos)
-    num_removed = len(blocks)
-    for r, c in blocks:
+            v = [b[r + dr][c + dc] for dr, dc in block]
+            if v[0] and v.count(v[0]) == 4:
+                blocks += [(r + dr, c + dc) for dr, dc in block]
+    num_removed = len(unique_blocks := set(blocks))
+    for r, c in unique_blocks:
         b[r][c] = 0
     return num_removed
 
@@ -20,11 +18,12 @@ def remove_blocks(b, h: int, w: int) -> int:
 def drop(b, h: int, w: int) -> None:
     for r in range(1, h):
         for c in range(w):
-            if not b[r][c]:
-                for k in range(r, 0, -1):
-                    if not b[k - 1][c]:
-                        break
-                    b[k][c], b[k - 1][c] = b[k - 1][c], b[k][c]
+            if b[r][c]:
+                continue
+            for k in range(r, 0, -1):
+                if not b[k - 1][c]:
+                    break
+                b[k][c], b[k - 1][c] = b[k - 1][c], b[k][c]
 
 
 def solution(h: int, w: int, b) -> int:
