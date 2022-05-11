@@ -3,17 +3,17 @@ package acmicpc;
 import java.io.*;
 
 public class A01300 {
-    public static int solution(int n, int k) {
-        int low = 1, high = k;
+    public static int solution(int n, int required) {
+        int low = 1, high = required;
         while (low <= high) {
-            int mid = (low + high) / 2, count = 0;
+            int mid = low + (high - low) / 2, count = 0;
             for (int i = 1; i <= n; i++) {
                 count += Math.min(n, mid / i);
             }
-            if (count >= k)
-                high = mid - 1;
-            else
+            if (count < required)
                 low = mid + 1;
+            else
+                high = mid - 1;
         }
         return low;
     }
