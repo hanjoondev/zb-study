@@ -32,7 +32,7 @@ public class A16934 {
         }
     }
 
-    public void solution() throws IOException {
+    public void reader() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
@@ -46,6 +46,6 @@ public class A16934 {
 
     public static void main(String[] args) throws IOException {
         A16934 test = new A16934();
-        test.solution();
+        test.reader();
     }
 }

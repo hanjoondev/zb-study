@@ -46,7 +46,7 @@ public class A05670 {
         }
     }
 
-    public void solution() throws IOException {
+    public void reader() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
@@ -67,6 +67,6 @@ public class A05670 {
 
     public static void main(String[] args) throws IOException {
         A05670 test = new A05670();
-        test.solution();
+        test.reader();
     }
 }

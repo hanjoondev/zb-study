@@ -541,7 +541,7 @@ public class TestRunner {
             ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
             System.setIn(new ByteArrayInputStream(mockData.getBytes()));
             System.setOut(new PrintStream(actualOutput));
-            test.solution();
+            test.reader();
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
@@ -589,7 +589,7 @@ public class TestRunner {
             ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
             System.setIn(new ByteArrayInputStream(mockData.getBytes()));
             System.setOut(new PrintStream(actualOutput));
-            test.solution();
+            test.reader();
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
@@ -709,7 +709,7 @@ public class TestRunner {
             ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
             System.setIn(new ByteArrayInputStream(mockData.getBytes()));
             System.setOut(new PrintStream(actualOutput));
-            test.solution();
+            test.reader();
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
@@ -733,7 +733,7 @@ public class TestRunner {
             ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
             System.setIn(new ByteArrayInputStream(mockData.getBytes()));
             System.setOut(new PrintStream(actualOutput));
-            test.solution();
+            test.reader();
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
@@ -781,7 +781,7 @@ public class TestRunner {
             ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
             System.setIn(new ByteArrayInputStream(mockData.getBytes()));
             System.setOut(new PrintStream(actualOutput));
-            test.solution();
+            test.reader();
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
@@ -805,7 +805,7 @@ public class TestRunner {
             ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
             System.setIn(new ByteArrayInputStream(mockData.getBytes()));
             System.setOut(new PrintStream(actualOutput));
-            test.solution();
+            test.reader();
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }
@@ -829,7 +829,7 @@ public class TestRunner {
             ByteArrayOutputStream actualOutput = new ByteArrayOutputStream();
             System.setIn(new ByteArrayInputStream(mockData.getBytes()));
             System.setOut(new PrintStream(actualOutput));
-            test.solution();
+            test.reader();
             Assertions.assertEquals(expected, actualOutput.toString().trim());
             System.setIn(sysIn);
         }

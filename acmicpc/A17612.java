@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class A17612 {
-    public void solution() throws IOException {
+    public void reader() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken()), k = Integer.parseInt(st.nextToken());
@@ -29,6 +29,6 @@ public class A17612 {
 
     public static void main(String[] args) throws IOException {
         A17612 test = new A17612();
-        test.solution();
+        test.reader();
     }
 }

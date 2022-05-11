@@ -3,7 +3,7 @@ package acmicpc;
 import java.io.*;
 
 public class A17609 {
-    public void solution() throws NumberFormatException, IOException {
+    public void reader() throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int len = Integer.parseInt(br.readLine());
@@ -41,6 +41,6 @@ public class A17609 {
 
     public static void main(String[] args) throws IOException {
         A17609 test = new A17609();
-        test.solution();
+        test.reader();
     }
 }

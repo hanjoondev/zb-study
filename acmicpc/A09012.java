@@ -32,7 +32,7 @@ public class A09012 {
         return stack.isEmpty();
     }
 
-    public void solution() throws IOException {
+    public void reader() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(br.readLine());
@@ -44,6 +44,6 @@ public class A09012 {
 
     public static void main(String[] args) throws IOException {
         A09012 test = new A09012();
-        test.solution();
+        test.reader();
     }
 }

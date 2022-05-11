@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class A01406 {
-    public void solution() throws IOException {
+    public void reader() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         Stack<String> l = new Stack<String>(), r = new Stack<String>();
@@ -34,6 +34,6 @@ public class A01406 {
 
     public static void main(String[] args) throws IOException {
         A01406 test = new A01406();
-        test.solution();
+        test.reader();
     }
 }
