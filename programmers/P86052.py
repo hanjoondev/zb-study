@@ -11,18 +11,14 @@ def solution(grid):
         for c in range(w):
             for _d in range(4):
                 if not v[r][c][_d]:
-                    v[r][c][_d] = True
-                    length = 1
-                    started_from = (r, c, _d)
-                    while True:
+                    started_from, length = (r, c, _d), 0
+                    while not v[r][c][_d]:
+                        v[r][c][_d] = True
                         r, c = (r + d[_d][0]) % h, (c + d[_d][1]) % w
                         _d = (_d + t[grid[r][c]]) % 4
-                        if v[r][c][_d]:
-                            if (r, c, _d) == started_from:
-                                ans.append(length)
-                            break
-                        v[r][c][_d] = True
                         length += 1
+                    if (r, c, _d) == started_from:
+                        ans.append(length)
     return sorted(ans)
 
 
