@@ -3,21 +3,20 @@ from time import perf_counter_ns as ns
 
 def solution(grid):
     h, w = len(grid), len(grid[0])
-    d = ((-1, 0), (0, 1), (1, 0), (0, -1))
-    t = {k: v for k, v in zip('SLR', (0, -1, 1))}
+    dr, dc = (-1, 0, 1, 0), (0, 1, 0, -1)
+    t = lambda r, c, d: ('LSR'.index(grid[r][c]) - 1 + d) % 4
     v = [[[False] * 4 for _ in range(w)] for _ in range(h)]
     ans = []
     for r in range(h):
         for c in range(w):
-            for _d in range(4):
-                if not v[r][c][_d]:
-                    started_from, length = (r, c, _d), 0
-                    while not v[r][c][_d]:
-                        v[r][c][_d] = True
-                        r, c = (r + d[_d][0]) % h, (c + d[_d][1]) % w
-                        _d = (_d + t[grid[r][c]]) % 4
+            for d in range(4):
+                if not v[r][c][d]:
+                    started_from, length = (r, c, d), 0
+                    while not v[r][c][d]:
+                        v[r][c][d] = True
+                        d = t(r := (r + dr[d]) % h, c := (c + dc[d]) % w, d)
                         length += 1
-                    if (r, c, _d) == started_from:
+                    if (r, c, d) == started_from:
                         ans.append(length)
     return sorted(ans)
 
