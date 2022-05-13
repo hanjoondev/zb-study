@@ -2,42 +2,39 @@ from time import perf_counter_ns as ns
 
 
 class Solution:
-    def findUnsortedSubarray(self, nums: list[int]) -> int:
-        if (length := len(nums)) <= 1:
-            return 0
-        l, r, floor, ceil = length, -1, -int(1e5), int(1e5)
-        for i, n in enumerate(nums):
-            if n < floor:
-                r = i
-            else:
-                floor = n
-        for i in range(len(nums) - 1, -1, -1):
-            if nums[i] > ceil:
-                l = i
-            else:
-                ceil = nums[i]
-        return max(r - l + 1, 0)
+    def maximumSwap(self, num: int) -> int:
+        s = [s for s in str(num)]
+        length = len(s)
+        maximum = length - 1
+        cand = [maximum] * 2
+        for i in range(length - 1, -1, -1):
+            if s[i] > s[maximum]:
+                maximum = i
+            elif s[i] != s[maximum]:
+                cand[0], cand[1] = i, maximum
+        if cand[0] == cand[1]:
+            return num
+        s[cand[0]], s[cand[1]] = s[cand[1]], s[cand[0]]
+        return int(''.join(s))
 
 
 if __name__ == '__main__':
     ITERATIONS = 1_000
     print(f'Running the basic tests {ITERATIONS:,} times...')
     tests = (
-        ([2, 6, 4, 8, 10, 9, 15], 5),
-        ([1, 2, 3, 4], 0),
-        ([1], 0),
-        ([2, 1], 2),
+        (2736, 7236),
+        (9973, 9973)
     )
     s = Solution()
-    for numbers, expected in tests:
-        print(f'findUnsortedSubarray({numbers}) returned', end=' ')
-        if (result := s.findUnsortedSubarray(numbers)) == expected:
+    for number, expected in tests:
+        print(f'maximumSwap({number}) returned', end=' ')
+        if (result := s.maximumSwap(number)) == expected:
             print(f'the expected result {expected}', end=' ')
             fastest = float('inf')
             slowest = total = 0
             for _ in range(ITERATIONS):
                 start = ns()
-                s.findUnsortedSubarray(numbers)
+                s.maximumSwap(number)
                 end = ns()
                 time = end - start
                 fastest, slowest = min(time, fastest), max(time, slowest)
