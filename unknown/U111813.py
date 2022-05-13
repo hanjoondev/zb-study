@@ -9,4 +9,4 @@ if __name__ == '__main__':
         ["POP", "P", "W"]
     ]
     for s, fr, to in data:
-        print(solution(s, fr ,to))
+        print(solution(s, fr, to))
