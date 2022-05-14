@@ -28,15 +28,15 @@ if __name__ == '__main__':
     tests = (
         (25, [2, 14, 11, 21, 17], 2, 4),
     )
-    for distance, rocks, num_removal, expected in tests:
-        print(f'solution({distance}, {rocks}, {num_removal}) returned', end=' ')
-        if (result := solution(distance, rocks, num_removal)) == expected:
+    for dist, rocks, num_removal, expected in tests:
+        print(f'solution({dist}, {rocks}, {num_removal}) returned', end=' ')
+        if (result := solution(dist, rocks, num_removal)) == expected:
             print(f'the expected result {expected}', end=' ')
             fastest = float('inf')
             slowest = total = 0
             for _ in range(ITERATIONS):
                 start = ns()
-                solution(distance, rocks, num_removal)
+                solution(dist, rocks, num_removal)
                 end = ns()
                 time = end - start
                 fastest, slowest = min(time, fastest), max(time, slowest)

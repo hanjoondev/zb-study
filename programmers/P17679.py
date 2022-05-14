@@ -41,7 +41,8 @@ if __name__ == '__main__':
     print(f'Running the basic tests {ITERATIONS:,} times...')
     tests = (
         (4, 5, ["CCBDE", "AAADE", "AAABF", "CCBBF"], 14),
-        (6, 6, ["TTTANT", "RRFACC", "RRRFCC", "TRRRAA", "TTMMMF", "TMMTTJ"], 15)
+        (6, 6, ["TTTANT", "RRFACC", "RRRFCC", "TRRRAA", "TTMMMF", "TMMTTJ"],
+         15)
     )
     for m, n, board, expected in tests:
         print(f'solution({m}, {n}, {board}) returned', end=' ')
