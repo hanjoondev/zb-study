@@ -18,14 +18,12 @@ def two_pointer(n: int) -> int:
     if not (primes := get_primes(n + 1)):
         return 0
     length = len(primes)
-    slow = fast = ans = 0
-    sum_ = primes[0]
-    while slow <= fast:
+    primes += [0]
+    slow = fast = sum_ = ans = 0
+    while fast <= length:
         if sum_ < n:
-            fast += 1
-            if fast == length:
-                break
             sum_ += primes[fast]
+            fast += 1
         else:
             ans += sum_ == n
             sum_ -= primes[slow]
