@@ -8,17 +8,17 @@ def solution(target: int, length: int, broken: list[int]) -> int:
     if not length:
         return min(abs(target - 100), len(str(target)))
     length = len(str(target))
-    available = [str(i) for i in range(10) if i not in broken]
+    available = [i for i in range(10) if i not in broken]
     ans = abs(target - 100)
     q = dq()
     for a in available:
-        q.append(a)
+        q.append((a, 1, a))
     while q:
-        tmp = q.pop()
-        ans = min(ans, abs(target - int(tmp)) + (len_t := len(tmp)))
-        if len_t < length or len_t == length and tmp.startswith('1'):
+        tmp, len_t, first = q.pop()
+        ans = min(ans, abs(target - tmp) + len_t)
+        if len_t < length or len_t == length and first == 1:
             for a in available:
-                q.append(tmp + a)
+                q.append((tmp * 10 + a, len_t + 1, first))
     return ans
 
 
