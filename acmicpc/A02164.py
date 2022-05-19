@@ -1,4 +1,3 @@
-from collections import deque as dq
 from sys import stdin as s
 
 
