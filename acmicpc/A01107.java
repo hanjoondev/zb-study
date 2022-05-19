@@ -12,7 +12,7 @@ public class A01107 {
     public static void brute(int num, int d, int started) {
         int v = d + (target > num ? target - num : num - target);
         ans = ans < v ? ans : v;
-        if (d < digits || d == digits && started == 1)
+        if (d < digits || d == digits && d != 6 && started == 1)
             for (int a : available)
                 brute(num * 10 + a, d + 1, started);
     }

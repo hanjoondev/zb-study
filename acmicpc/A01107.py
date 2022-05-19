@@ -5,7 +5,7 @@ def solution(target: int, length: int, broken: list[int]) -> int:
     def brute(num: int, d: int, started: int) -> None:
         nonlocal ans, length, available
         ans = min(ans, d + abs(target - num))
-        if d < length or d == length and started == 1:
+        if d < length or d == length != 6 and started == 1:
             for a in available:
                 brute(num * 10 + a, d + 1, started)
 
