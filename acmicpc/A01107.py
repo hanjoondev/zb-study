@@ -5,6 +5,8 @@ from sys import stdin
 def solution(target: int, length: int, broken: list[int]) -> int:
     if length == 10 or target == 100:
         return abs(target - 100)
+    if not length:
+        return min(abs(target - 100), len(str(target)))
     length = len(str(target))
     available = [str(i) for i in range(10) if i not in broken]
     ans = abs(target - 100)
