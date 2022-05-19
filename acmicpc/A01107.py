@@ -12,7 +12,7 @@ def solution(target: int, length: int, broken: list[int]) -> int:
     for a in available:
         q.append(a)
     while q:
-        tmp = q.popleft()
+        tmp = q.pop()
         ans = min(ans, abs(target - int(tmp)) + (len_t := len(tmp)))
         if len_t < length or len_t == length and tmp.startswith('1'):
             for a in available:
