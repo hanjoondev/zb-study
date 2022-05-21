@@ -1,4 +1,3 @@
-from collections import Counter
 from time import perf_counter_ns as ns
 
 
@@ -6,8 +5,8 @@ class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         d = {}
         for i, s in enumerate(strs):
-            d.setdefault((k := ''.join(sorted(s))), []).append(i)
-        return [[strs[i] for i in l] for l in d.values()]
+            d.setdefault(''.join(sorted(s)), []).append(i)
+        return [[strs[i] for i in lst] for lst in d.values()]
 
 
 if __name__ == '__main__':
@@ -15,7 +14,7 @@ if __name__ == '__main__':
     print(f'Running the basic tests {ITERATIONS:,} times...')
     tests = (
         (["eat", "tea", "tan", "ate", "nat", "bat"],
-         [["bat"], ["nat","tan"], ["ate","eat","tea"]]),
+         [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]),
         ([""], [[""]]),
         (["a"], [["a"]])
     )
@@ -23,7 +22,7 @@ if __name__ == '__main__':
     for strings, expected in tests:
         print(f'groupAnagrams({strings}) returned', end=' ')
         if (len(result := s.groupAnagrams(strings)) == len(expected)
-            and all(sorted(r) == sorted(e) for r, e in 
+            and all(sorted(r) == sorted(e) for r, e in
                     zip(sorted(result, key=len), sorted(expected, key=len)))):
             print(f'the expected result {expected}', end=' ')
             fastest = float('inf')
