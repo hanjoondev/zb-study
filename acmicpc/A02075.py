@@ -3,37 +3,25 @@ from sys import stdin
 
 class Heap:
     def __init__(self):
-        self.heap = []
-
-    def parent(self, i):
-        return (i - 1) // 2
+        self.h = []
 
     def insert(self, data):
-        self.heap.append(data)
-        p = self.parent(i := (len(self) - 1))
-        while i and self.heap[p] > self.heap[i]:
-            self.heap[p], self.heap[i], i = self.heap[i], self.heap[p], p
-            p = self.parent(i)
+        self.h.append(data)
+        p = ((i := len(self.h) - 1) - 1) // 2
+        while i and self.h[p] > self.h[i]:
+            self.h[p], self.h[i], i = self.h[i], self.h[p], p
+            p = (i - 1) // 2
 
     def pop(self):
-        if not self.heap:
-            return None
-        self.heap[-1], self.heap[0], i = self.heap[0], self.heap[-1], 0
-        smallest = self.heap.pop()
-        length = len(self)
-        while (l := 2 * i + 1) < length:
-            if (r := 2 * i + 2) < length and self.heap[l] > self.heap[r]:
-                l = r
-            if self.heap[l] > self.heap[i]:
+        self.h[-1], self.h[0], i = self.h[0], self.h[-1], 0
+        smallest, length = self.h.pop(), len(self.h)
+        while (lft := 2 * i + 1) < length:
+            if (rgt := 2 * i + 2) < length and self.h[lft] > self.h[rgt]:
+                lft = rgt
+            if self.h[lft] > self.h[i]:
                 break
-            self.heap[l], self.heap[i], i = self.heap[i], self.heap[l], l
+            self.h[lft], self.h[i], i = self.h[i], self.h[lft], lft
         return smallest
-
-    def peek(self):
-        return self.heap[0]
-
-    def __len__(self):
-        return len(self.heap)
 
 
 def reader():
@@ -43,7 +31,7 @@ def reader():
         h.insert(i)
     for _ in range(n):
         for i in list(map(int, read().split())):
-            if i > h.peek():
+            if i > h.h[0]:
                 h.pop()
                 h.insert(i)
     print(h.pop())
