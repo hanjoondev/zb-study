@@ -8,12 +8,6 @@ class Heap:
     def parent(self, i):
         return (i - 1) // 2
 
-    def lft(self, i):
-        return 2 * i + 1
-
-    def rgt(self, i):
-        return 2 * i + 2
-
     def insert(self, data):
         self.heap.append(data)
         p = self.parent(i := (len(self) - 1))
@@ -26,8 +20,9 @@ class Heap:
             return None
         self.heap[-1], self.heap[0], i = self.heap[0], self.heap[-1], 0
         smallest = self.heap.pop()
-        while (l := self.lft(i)) < len(self):
-            if (r := self.rgt(i)) < len(self) and self.heap[l] > self.heap[r]:
+        length = len(self)
+        while (l := 2 * i + 1) < length:
+            if (r := 2 * i + 2) < length and self.heap[l] > self.heap[r]:
                 l = r
             if self.heap[l] > self.heap[i]:
                 break
