@@ -141,3 +141,7 @@ dmypy.json
 **/out/*
 **/*.class
 *.out
+
+# Rust
+*.pdb
+*.exe
