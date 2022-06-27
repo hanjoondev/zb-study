@@ -3,22 +3,24 @@ use std::collections::HashMap;
 static mut ANS: i32 = 0;
 
 fn dfs(cur: usize, prev: usize, k: usize, e: &HashMap<usize, Vec<usize>>) -> usize {
-    let mut v = vec![0];
+    let mut max: usize = 0;
     for &n in e[&cur].iter() {
         if n != prev {
-            v.push(dfs(n, cur, k, e));
+            let tmp = dfs(n, cur, k, e);
+            if tmp > max {
+                max = tmp;
+            }
         }
     }
-    let max_val: usize = *v.iter().max().unwrap();
-    if max_val >= k {
+    if max >= k {
         unsafe {
             ANS += 1;
         }
     }
-    return 1 + max_val;
+    return 1 + max;
 }
 
-fn reader() {
+fn main() {
     let (r, w) = (std::io::stdin(), std::io::stdout());
     let mut sc = IO::new(r.lock(), w.lock());
     let (n, s, d) = (sc.read(), sc.read(), sc.read());
@@ -37,10 +39,6 @@ fn reader() {
         }
         sc.write(ANS);
     }
-}
-
-fn main() {
-    reader();
 }
 
 pub struct IO<R, W: std::io::Write>(R, std::io::BufWriter<W>);
