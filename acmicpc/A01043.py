@@ -4,23 +4,18 @@ from sys import stdin
 class UF:
     def __init__(self, length):
         self.parties = []
-        self.parent = [i for i in range(length + 1)]
-        self.r = [0] * (length + 1)
+        self.parent = {i: None for i in range(1, length + 1)}
 
-    def add(self, e: tuple[int]):
-        self.parties.append(e)
+    def add(self, party):
+        self.parties.append(party)
 
-    def find(self, i):
-        while i != self.parent[i]:
-            i = self.parent[i]
-        return i
+    def find(self, k):
+        while k != self.parent[k] != None:
+            k = self.parent[k]
+        return k
 
     def union(self, a, b):
-        if self.r[a := self.find(a)] < self.r[b := self.find(b)]:
-            self.parent[a] = b
-        else:
-            self.parent[b] = a
-            self.r[a] += self.r[a] == self.r[b]
+        self.parent[self.find(a)] = self.find(b)
 
 
 def solution(g: UF, t: dict[int, bool]):
