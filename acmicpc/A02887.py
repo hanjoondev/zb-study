@@ -2,37 +2,37 @@ from sys import stdin
 from heapq import heappop as hpop, heappush as hpush
 
 
-def calc(p1, p2):
-    return min(abs(p1[0] - p2[0]), abs(p1[1] - p2[1]), abs(p1[2] - p2[2]))
-
-
-def solution(pts: dict[int, tuple[int]], length: int):
-    costs, h, v = {i: [] for i in range(length)}, [(0, 0)], set()
-    for i in range(length):
-        for j in range(i + 1, length):
-            cost = calc(pts[i], pts[j])
-            costs[i].append((cost, j))
-            costs[j].append((cost, i))
-    ans = count = 0
-    while count < length:
-        cost, cur = hpop(h)
-        if cur in v:
-            continue
-        ans += cost
-        count += 1
-        v.add(cur)
-        for nxt_cost, nxt in costs[cur]:
-            if nxt in v:
-                continue
-            hpush(h, (nxt_cost, nxt))
-    return ans
+def find(parent, i):
+    while i != parent[i]:
+        i = parent[i]
+    return i
 
 
 def reader():
     read = stdin.readline
     n = int(read().strip())
-    pts = {i: tuple(map(int, read().split())) for i in range(n)}
-    print(solution(pts, n))
+    x, y, z, h, parents, ans = [], [], [], [], [i for i in range(n)], 0
+    for i in range(n):
+        a, b, c = map(int, read().split())
+        x.append((a, i))
+        y.append((b, i))
+        z.append((c, i))
+    x.sort()
+    y.sort()
+    z.sort()
+    for i in range(n - 1):
+        hpush(h, (abs(x[i][0] - x[i + 1][0]), x[i][1], x[i + 1][1]))
+        hpush(h, (abs(y[i][0] - y[i + 1][0]), y[i][1], y[i + 1][1]))
+        hpush(h, (abs(z[i][0] - z[i + 1][0]), z[i][1], z[i + 1][1]))
+    while h:
+        cost, a, b = hpop(h)
+        if (a := find(parents, a)) != (b := find(parents, b)):
+            if a > b:
+                parents[b] = a
+            else:
+                parents[a] = b
+            ans += cost
+    print(ans)
 
 
 if __name__ == '__main__':
