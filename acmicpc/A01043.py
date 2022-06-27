@@ -15,7 +15,10 @@ class UF:
         return k
 
     def union(self, a, b):
-        self.parent[self.find(a)] = self.find(b)
+        if (a := self.find(a)) > (b := self.find(b)):
+            self.parent[b] = a
+        else:
+            self.parent[a] = b
 
 
 def solution(g: UF, t: dict[int, bool]):
