@@ -1,29 +1,38 @@
 from sys import stdin
-from heapq import heapify as h, heappop as hpop, _siftdown as siftdown
+from heapq import heappop as hpop, heappush as hpush
 
 
 def calc(p1, p2):
     return min(abs(p1[0] - p2[0]), abs(p1[1] - p2[1]), abs(p1[2] - p2[2]))
 
 
-def solution(pts):
-    ans = 0
-    heap = [(calc(pts[i], pts[0]), 0, i) for i in range(1, len(pts))]
-    h(heap)
-    while heap:
-        cheapest, _, to = hpop(heap)
-        ans += cheapest
-        for idx, (cost, _, i) in enumerate(heap):
-            if (c := calc(pts[i], pts[to])) < cost:
-                heap[idx] = c, to, i
-                siftdown(heap, 0, idx)
+def solution(pts: dict[int, tuple[int]], length: int):
+    costs, h, v = {i: [] for i in range(length)}, [(0, 0)], set()
+    for i in range(length):
+        for j in range(i + 1, length):
+            cost = calc(pts[i], pts[j])
+            costs[i].append((cost, j))
+            costs[j].append((cost, i))
+    ans = count = 0
+    while count < length:
+        cost, cur = hpop(h)
+        if cur in v:
+            continue
+        ans += cost
+        count += 1
+        v.add(cur)
+        for nxt_cost, nxt in costs[cur]:
+            if nxt in v:
+                continue
+            hpush(h, (nxt_cost, nxt))
     return ans
 
 
 def reader():
     read = stdin.readline
     n = int(read().strip())
-    print(solution([list(map(int, read().split())) for _ in range(n)]))
+    pts = {i: tuple(map(int, read().split())) for i in range(n)}
+    print(solution(pts, n))
 
 
 if __name__ == '__main__':
