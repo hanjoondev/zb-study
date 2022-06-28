@@ -2,13 +2,13 @@ from sys import stdin
 
 
 def solution(classroom: list[str], h: int, w: int) -> str:
-    def dfs(r, c): 
+    def dfs(r, c):
         if v[r][c] == matched:
             return False
         v[r][c] = matched
         for dr, dc in ((-1, -1), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 1)):
             nr, nc = r + dr, c + dc
-            if 0<= nr < h and 0 <= nc < w and classroom[nr][nc] == '.':
+            if 0 <= nr < h and 0 <= nc < w and classroom[nr][nc] == '.':
                 if (nr, nc) not in m or dfs(m[(nr, nc)][0], m[(nr, nc)][1]):
                     m[(r, c)], m[(nr, nc)] = (nr, nc), (r, c)
                     return True

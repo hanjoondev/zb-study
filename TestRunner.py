@@ -24,9 +24,9 @@ class Tester(TestCase):
         mock_inputs, expected = [], []
         for i in range(length := len(data) // 2):
             with open(data[i], 'r') as f:
-                mock_inputs.append([l.strip('\n') for l in f.readlines()])
+                mock_inputs.append([r.strip('\n') for r in f.readlines()])
             with open(data[i + length], 'r') as f:
-                expected.append([l.strip('\n') for l in f.readlines()])
+                expected.append([r.strip('\n') for r in f.readlines()])
         return mock_inputs, expected
 
     def test(self, module, data: tuple[list[str], list[str]]) -> None:
@@ -43,21 +43,22 @@ class Tester(TestCase):
             print(f'test set {i + 1}: '
                   f'{(l := len(expected))} test{"s" if l > 1 else ""}'
                   f' passed in {(ns() - start) // int(1e3):,}μs')
-    
-    def benchmark(self, target: str="", iters: int=100, 
-                        verbose=True, big_data=False) -> None:
+
+    def benchmark(self, target: str = "", iters: int = 100,
+                  verbose: bool = True, big_data: bool = False) -> None:
         dt = 'data' if not big_data else 'data_big'
         iters = 3 if big_data and iters == 100 else iters
         p = dirname(__file__)
         files = lambda folder: ldir(join(p, folder))
         bases = sorted([f.strip('.py') for f in files('acmicpc')
-                        if f.endswith('.py') 
+                        if f.endswith('.py')
                         and f.startswith(target if target else 'A')])
         if big_data:
             bases = sorted({f[:6] for f in files(f'{dt}')})
         d = {b: {'module': imodule(f'acmicpc.{b}')} for b in bases}
         for k, v in d.items():
-            inputs, outputs = self.get_data(sorted([f'{p}/{dt}/{f}'
+            inputs, outputs = self.get_data(
+                sorted([f'{p}/{dt}/{f}'
                         for f in files(dt) if f.startswith(k)]))
             v['inputs'] = inputs
             v['outputs'] = outputs
@@ -81,15 +82,16 @@ class Tester(TestCase):
                     end = ns()
                     results.append(end - start)
                 overall_e = ns()
-                v['results'].append((overall_e - overall_s, 
-                    sum(results) // len(results), min(results), max(results)))
+                v['results'].append((overall_e - overall_s,
+                                     sum(results) // len(results),
+                                     min(results), max(results)))
             if verbose:
                 for i, (overall, avg, min_, max_) in enumerate(v['results']):
                     print(f'{k} test set {i + 1} took '
-                        f'{overall // int(1e6):,}ms for {iters:,} iterations '
-                        f'(avg. {avg // int(1e3):,}μs |'
-                        f' min. {min_ // int(1e3):,}μs |'
-                        f' max. {max_ // int(1e3):,}μs)')
+                          f'{overall // int(1e6):,}ms for {iters:,} iterations'
+                          f' (avg. {avg // int(1e3):,}μs |'
+                          f' min. {min_ // int(1e3):,}μs |'
+                          f' max. {max_ // int(1e3):,}μs)')
 
 
 if __name__ == '__main__':
