@@ -71,7 +71,7 @@ class MEC:
 
     def solve(self):
         c = self.welzl(self.pts.copy(), [], self.length)
-        return str(round(c.r * 2, 2))
+        return f'{round(c.r * 2, 2):.2f}'
 
 
 def reader():
@@ -79,7 +79,7 @@ def reader():
     n = int(read().strip())
     pts = []
     for _ in range(n):
-        x, y = map(int, read().split())
+        x, y = map(float, read().split())
         pts.append(Point(x, y))
     print(MEC(pts, n).solve())
 
