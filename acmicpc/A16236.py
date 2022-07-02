@@ -3,10 +3,11 @@ from collections import deque as dq
 
 
 class Fish:
-    def __init__(self, r, c, w):
+    def __init__(self, r, c, w, dist=0):
         self.r = r
         self.c = c
         self.w = w
+        self.dist = dist
         self.ate = 0
 
     def eat(self, fish) -> None:
@@ -16,8 +17,10 @@ class Fish:
         if self.ate == self.w:
             self.w += 1
             self.ate = 0
+        self.dist = 0
 
     def is_edible(self, shark) -> bool:
+        self.dist = shark.dist + 1
         return self.w < shark.w
 
 
@@ -27,25 +30,23 @@ def bfs(shark: Fish, m: list[list[Fish, int]], n: int) -> list[Fish]:
                 if 0 <= (r := s.r + dr) < n and 0 <= (c := s.c + dc) < n
                 and not v[r][c] and (not m[r][c] or m[r][c].w <= s.w)]
 
-    d, v = [[0] * n for _ in range(n)], [[0] * n for _ in range(n)]
+    v = [[0] * n for _ in range(n)]
     q, v[shark.r][shark.c], ans = dq([shark]), 1, []
     while q:
         s = q.popleft()
         for r, c in get_positions():
-            q.append(Fish(r, c, s.w))
-            d[r][c], v[r][c] = d[s.r][s.c] + 1, 1
+            q.append(Fish(r, c, s.w, s.dist + 1))
+            v[r][c] = 1
             if m[r][c] and m[r][c].is_edible(s):
-                ans.append((d[r][c], m[r][c]))
-    return sorted(ans, key=lambda x: (x[0], x[1].r, x[1].c))
+                ans.append(m[r][c])
+    return sorted(ans, key=lambda x: (x.dist, x.r, x.c))
 
 
 def solution(m: list[list[Fish, int]], n: int, s: Fish) -> str:
     ans = 0
     while (fishes := bfs(s, m, n)):
-        distance, fish = fishes[0]
-        s.eat(fish)
-        m[fish.r][fish.c] = 0
-        ans += distance
+        s.eat(fish := fishes[0])
+        m[fish.r][fish.c], ans = 0, ans + fish.dist
     return ans
 
 
