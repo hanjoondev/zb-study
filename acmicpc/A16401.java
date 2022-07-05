@@ -23,18 +23,18 @@ public class A16401 {
     }
 
     static class CustomScanner {
-        private InputStream in;
+        private InputStream iStream;
         private final byte[] buf = new byte[1048576];
         private int ptr = 0, lenBuf = 0;
     
         public CustomScanner(InputStream inStream) {
-            in = inStream;
+            iStream = inStream;
         }
 
         private void read() {
             ptr = 0;
             try {
-                lenBuf = in.read(buf);
+                lenBuf = iStream.read(buf);
             } catch (IOException e) { }
         }
 
@@ -60,28 +60,21 @@ public class A16401 {
         public String next() {
             skip();
             StringBuilder sb = new StringBuilder();
-            byte b;
-            while ((b = getByte()) != -1) sb.appendCodePoint(b);
+            byte bte;
+            while ((bte = getByte()) != -1) sb.appendCodePoint(bte);
             return sb.toString();
         }
 
         public int nextInt() {
             skip();
-            int n = 0;
-            boolean minus = false;
-            byte b;
-            while ((b = getByte()) != -1) {
-                if (b == '-')
-                    minus = true;
-                else {
-                    n *= 10;
-                    n += (b - '0');
-                }
-            }
-            if (minus)
-                return n * -1;
-            else
-                return n;
+            int nxtInt = 0;
+            byte bte = getByte();
+            boolean neg = bte == '-';
+            if (neg) bte = getByte();
+            do {
+                nxtInt = nxtInt * 10 + bte - '0';
+            } while ((bte = getByte()) != -1);
+            return neg ? -nxtInt : nxtInt;
         }
     }
 }
