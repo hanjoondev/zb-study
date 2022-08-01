@@ -1,0 +1,6 @@
+ACTG
+4
+ACT gua
+ACG sys
+ATG leu
+CTG thr
